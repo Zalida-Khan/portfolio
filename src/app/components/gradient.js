@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
-import { EyeIcon } from "@heroicons/react/24/outline"; // Updated import for EyeIcon
+import { EyeIcon } from "@heroicons/react/24/outline";
 
 const NeatGradient = dynamic(() => import("@firecms/neat").then(mod => mod.NeatGradient), { ssr: false });
 
@@ -60,9 +60,8 @@ export default function GradientComponent() {
           pointerEvents: "none",
         }}
       />
-      <main className="container lg:pt-20 sm:pb-5 lg:pr-0 sm:p-22 sm:pt-16 p-4 md:p-0 md:pt-0 text-left md:pl-10 z-10 relative">
+      <main className="container lg:pt-20 sm:pb-5 lg:pr-0 p-22 sm:pt-16 p-4 md:p-0 md:pt-0 text-left md:pl-10 z-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-3">
-          {/* First column (Typewriter text) */}
           <div className="lg:col-span-3">
             <h1 className="text-[#000] text-3xl md:text-4xl lg:text-4xl lg:pt-20 md:text-3xl md:pt-20 md:pl-20 font-light font-poppins">
               Hello there! I'm
@@ -86,7 +85,6 @@ export default function GradientComponent() {
             </p>
           </div>
 
-          {/* GIF Column */}
           <div className="lg:col-span-1 md:pl-20  flex justify-start items-center">
             <Image
               src="/images/giphy.gif"
@@ -99,8 +97,7 @@ export default function GradientComponent() {
             />
           </div>
 
-          {/* Eye Icon Column */}
-          <div className="lg:col-span-2 lg:pt-20 md:pl-20 md:pr-20 md:pb-20 md:pt-6 lg:pr-0 lg:pt-10 pt-12 flex flex-col items-left">
+          <div className="lg:col-span-2  pl-0 pr-0 lg:pt-20 md:pl-20 md:pr-20 md:pb-20 md:pt-6 lg:pr-0 lg:pt-10 pt-10 flex flex-col items-left">
             <div className="mb-4 flex justify-center">
               <EyeIcon className="w-10 h-10 text-black mr-10" />
             </div>
