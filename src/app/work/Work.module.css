@@ -1,0 +1,75 @@
+/* Grow from center animation */
+@keyframes growFromCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply grow from center to post-card */
+.post-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px; /* Increased border-radius */
+  opacity: 0; /* Initially hidden */
+  animation: growFromCenter 0.5s ease-out forwards; /* Grow from center effect */
+  transform-origin: center; /* Ensure it grows from the center */
+}
+
+/* Add grow-from-center effect when post becomes visible */
+.post-card.visible {
+  opacity: 1;
+  animation: growFromCenter 0.5s ease-out forwards;
+}
+
+/* Hover effect for post content */
+.post-card:hover .post-content {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.post-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Button styles */
+.filterButton {
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: normal;
+  color: white;
+  background-color: none;
+}
+
+.filterButton.active {
+  background-color: #AAAC24;
+  color: white;
+}
+
+.filterButton.inactive {
+  color: #1A428A;
+  background-color: transparent;
+}
+
+.filterButton.inactive:hover {
+  color: #AAAC24;
+}
+
+.filterButton:hover {
+  color: white;
+}
