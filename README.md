@@ -1,4 +1,4 @@
-# Zalida's Portfolio
+# Zalida's [Porfolio](https://zalidakhan.vercel.app).
 
 Welcome to my design and development portfolio, showcasing my work in graphic design, UI/UX design, and front-end development. My focus is on simple yet user-centered designs with minimalist aesthetics and seamless experiences.
 
@@ -18,6 +18,6 @@ Welcome to my design and development portfolio, showcasing my work in graphic de
 - Adobe InDesign, Illustrator, and Photoshop
 
 ## Visit My Portfolio
-Check out my full portfolio [here](https://zalidakhan.vercel.app).
+Check out my full portfolio [here >](https://zalidakhan.vercel.app).
 
 Thanks for visiting!
