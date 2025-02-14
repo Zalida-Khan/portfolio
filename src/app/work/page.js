@@ -75,13 +75,15 @@ export default function Work() {
                                         >
                                             {post.video ? (
                                                 <video
-                                                    className="w-full h-64 object-cover"
-                                                    autoPlay
-                                                    loop
-                                                    muted
-                                                    controls={false}
-                                                    src={post.video}
-                                                    alt={post.title}
+                                                className="w-full h-64 object-cover"
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                preload="auto"
+                                                src={post.video}
+                                                alt={post.title}
+                                                controls={false}
                                                 />
                                             ) : (
                                                 <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" />

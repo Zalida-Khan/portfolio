@@ -44,7 +44,7 @@ export default function ProjectsSection() {
                 ([entry]) => {
                     const button = entry.target;
                     const buttonIndex = button.dataset.index;
-                    
+
                     const isScrollingDown = window.scrollY > lastScrollY.current;
                     lastScrollY.current = window.scrollY;
 
@@ -84,13 +84,22 @@ export default function ProjectsSection() {
                         </Link>
                     </div>
                 </div>
-
                 <div className="lg:col-span-1 grid grid-cols-1 gap-14 lg:gap-6 md:gap-10">
                     {projects.map((project, index) => (
                         <div key={index} className="p-0 lg:pb-10 relative rounded-3xl overflow-hidden">
                             <div className="relative w-full h-72 lg:h-96 rounded-3xl overflow-hidden">
                                 {project.image.endsWith(".mp4") ? (
-                                    <video autoPlay loop muted className="w-full h-full object-cover">
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        preload="auto"
+                                        controls={false}
+
+                                        className={`w-full h-full object-cover ${index === 0 ? "first-video" : ""
+                                            }`}
+                                    >
                                         <source src={project.image} type="video/mp4" />
                                     </video>
                                 ) : (
@@ -103,16 +112,18 @@ export default function ProjectsSection() {
                                     />
                                 )}
                             </div>
-
                             <p className="mt-4 text-black font-medium">{project.category}</p>
                             <div className="flex justify-between items-center mt-3">
-                                <h3 className="text-3xl font-semibold text-[#1A3A7A]">{project.title}</h3>
+                                <h3 className="text-3xl font-semibold text-[#1A3A7A]">
+                                    {project.title}
+                                </h3>
                                 <Link href={project.link}>
                                     <button
-                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${inViewButtons.includes(String(index)) ? "animate-fadeIn" : ""}`}
-                                        data-index={index} 
+                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${inViewButtons.includes(String(index)) ? "animate-fadeIn" : ""
+                                            }`}
+                                        data-index={index}
                                         style={{
-                                            animationDelay: `${index * 0.0}s`, 
+                                            animationDelay: `${index * 0.0}s`,
                                         }}
                                     >
                                         View

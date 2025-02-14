@@ -96,7 +96,7 @@ export default function About() {
                         </section>
 
                         <section className=" text-center py-8 p-10 mb-8">
-                            <p className="mt-4 text-lg">Have a project in mind? Or you want to say hello, get in touch with me.</p>
+                            <p className="mt-4 lg:mr-10 lg:ml-10 md:mr-10 md:ml-10  text-2xl">Have a project in mind? Or you want to say hello, get in touch with me.</p>
                             <a
                                 href="mailto:your-email@example.com"
                                 className="px-6 py-2 rounded-full mt-4 inline-block bg-[#AAAC24] text-white hover:bg-[#1A428A] hover:text-[#ffffff]"
