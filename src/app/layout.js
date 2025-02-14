@@ -1,5 +1,6 @@
 import { Poppins, Syne } from "next/font/google";
 import "./styles/globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,10 +24,11 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en">
         <head>
-          <link rel="icon" href="/favicon.svg" sizes="16x16"/>
+          <link rel="icon" href="/favicon.svg" sizes="16x16" />
         </head>
         <body className={`${poppins.variable} ${syne.variable} antialiased`}>
           {children}
+          <Analytics />
         </body>
       </html>
     </>

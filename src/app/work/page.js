@@ -20,7 +20,7 @@ export default function Work() {
         { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', video: '/images/sugarmagic-animated.mp4', category: ['Graphic Design', 'Product Design'] },
         { id: 3, slug: 'the-waterfall', title: 'The Waterfall', image: '/images/feature-bi-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
         { id: 4, slug: 'the-exhibition', title: 'The Exhibition', image: '/images/feature-exhibition-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
-        { id: 5, slug: 'aether', title: 'Aether App', image: '/images/feature-aether.gif', category: ['UI/UX Design', 'Front–end Development', 'Mobile App'] },
+        { id: 5, slug: 'aether', title: 'Aether App', image: '/images/feature-aether.jpg', category: ['UI/UX Design', 'Front–end Development', 'Mobile App'] },
         { id: 6, slug: 'the-yolk', title: 'The Yolk', image: '/images/feature-theyolk-menu.jpg', category: ['Graphic Design', 'Menu Design', 'Branding'] },
     ];
 
@@ -64,7 +64,7 @@ export default function Work() {
                                     <Link href={`/work/${post.slug}`} key={post.id}>
                                         <motion.div
                                             className={`${styles['post-card']} relative w-full rounded-3xl overflow-hidden shadow-lg`}
-                                            initial={hasLoaded ? { opacity: 0, scale: 0 } : false} 
+                                            initial={hasLoaded ? { opacity: 0, scale: 0 } : false}
                                             animate={hasLoaded ? { opacity: 1, scale: 1 } : false}
                                             transition={{
                                                 duration: 0.5,
