@@ -115,10 +115,10 @@ export default function About() {
                         <section className=" text-center py-8 p-10 mb-8">
                             <p className="mt-4 text-2xl lg:text-3xl">Have a project in mind? Or you want to say hello, get in touch with me.</p>
                             <a
-                                href="mailto:your-email@example.com"
-                                className="px-6 py-4 text-md rounded-full mt-4 inline-block bg-[#AAAC24] text-white font-normal hover:bg-[#1A428A] hover:text-[#ffffff]"
+                                href="mailto:zalidakhan13@gmail.com?subject=Let's Connect"
+                                className="px-6 py-4 text-md rounded-full mt-4 inline-block bg-[#AAAC24] text-white font-normal hover:bg-[#1A428A] hover:text-[#ffffff] transition-all duration-300 ease-in-out"
                             >
-                                Contact Me
+                                Let's Connect!
                             </a>
                         </section>
                     </main>

@@ -136,21 +136,21 @@ function ProductDesign({ post }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                 <img
                     src={post.gallery[11]}
-                    alt="Cherry Dieline"
+                    alt="Cherry Flavour"
                     className="w-full h-full rounded-3xl shadow-lg object-cover cursor-pointer"
                     style={{ cursor: isLgDevice ? "pointer" : "default" }} 
                     onClick={() => openModal(11)}
                 />
                 <img
                     src={post.gallery[12]}
-                    alt="Blueberry Dieline"
+                    alt="Blueberry Flavour"
                     className="w-full h-auto rounded-3xl shadow-lg object-cover cursor-pointer"
                     style={{ cursor: isLgDevice ? "pointer" : "default" }} 
                     onClick={() => openModal(12)}
                 />
                 <img
                     src={post.gallery[13]}
-                    alt="Lemon Dieline"
+                    alt="Lemon Flavour"
                     className="w-full h-full rounded-3xl shadow-lg object-cover cursor-pointer"
                     style={{ cursor: isLgDevice ? "pointer" : "default" }} 
                     onClick={() => openModal(13)}
