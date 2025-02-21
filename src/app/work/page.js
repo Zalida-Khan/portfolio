@@ -62,7 +62,7 @@ export default function Work() {
                             ))}
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 w-full px-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 w-full px-2 mb-20">
                             {visiblePosts.length ? (
                                 visiblePosts.map((post, index) => (
                                     <Link href={`/work/${post.slug}`} key={post.id}>

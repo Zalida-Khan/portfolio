@@ -22,7 +22,7 @@ export default function About() {
                 <Header />
 
                 <FadeIn>
-                    <main className="w-full max-w-4xl px-6 sm:px-8 md:px-12 flex flex-col items-center">
+                    <main className="w-full max-w-4xl px-6 sm:px-8 md:px-12 flex flex-col items-center mb-20">
                         <h1 className="text-[#1A428A] text-5xl md:text-6xl font-semibold text-center font-[Syne] my-6">About Me</h1>
 
                         <section className=" text-center py-8 p-10  mb-8">
