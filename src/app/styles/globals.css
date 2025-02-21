@@ -26,9 +26,43 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* cursor: url('/images/cursor.png') 5 5, auto; */
   color: var(--foreground);
   padding-top: 5px !important;
+  scroll-behavior: smooth;
+}
+
+.custom-rounded {
+  border-radius: 60px;
+}
+
+.custom-rounded-1 {
+  border-radius: 50px;
+}
+
+/* .back-to-projects {
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.back-to-projects:hover {
+  color: #AAAC24;
+  transform: translateY(-4px);
+} */
+
+.back-to-projects {
+  position: absolute;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  top: 5px;
+  left: 5%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-to-projects:hover {
+  transform: translateY(-5px);
+  color: #AAAC24;
 }
 
 h1,
@@ -73,7 +107,7 @@ a:hover {
 }
 
 .container {
-  padding: 50px;
+  padding: 70px;
 }
 
 .container-footer {
@@ -160,6 +194,7 @@ footer {
     transform: translateY(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;

@@ -1,4 +1,3 @@
-/* Grow from center animation */
 @keyframes growFromCenter {
   0% {
     opacity: 0;
@@ -11,25 +10,22 @@
   }
 }
 
-/* Apply grow from center to post-card */
 .post-card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px; /* Increased border-radius */
-  opacity: 0; /* Initially hidden */
-  animation: growFromCenter 0.5s ease-out forwards; /* Grow from center effect */
-  transform-origin: center; /* Ensure it grows from the center */
+  border-radius: 12px; 
+  opacity: 0; 
+  animation: growFromCenter 0.5s ease-out forwards;
+  transform-origin: center;
 }
 
-/* Add grow-from-center effect when post becomes visible */
 .post-card.visible {
   opacity: 1;
   animation: growFromCenter 0.5s ease-out forwards;
 }
 
-/* Hover effect for post content */
 .post-card:hover .post-content {
-  transform: translateX(0);
+  transform: translateY(-5px);
   opacity: 1;
 }
 
@@ -46,7 +42,6 @@
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Button styles */
 .filterButton {
   padding: 10px 20px;
   border-radius: 20px;

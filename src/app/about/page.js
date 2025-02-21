@@ -28,8 +28,8 @@ export default function About() {
                         <section className=" text-center py-8 p-10  mb-8">
                             <div className="mt-6 flex flex-col items-center">
                                 <img
-                                    src="/images/me2.png"
-                                    alt="Melissa"
+                                    src="/images/about/me2.png"
+                                    alt="An image with my face"
                                     className=" object-cover mb-4 rounded-3xl"
 
                                 />
@@ -45,61 +45,78 @@ export default function About() {
                             <h2 className="text-3xl text-center text-[#1A428A] font-semibold mb-4">Skills & Technologies</h2>
                             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                                 <div className="skill-item text-center">
-                                    <img src="/images/github.png" alt="Github" className="pt-3 w-13 h-14 mx-auto" />
-                                    <p className="text-gray-600 mt-2">GitHub</p>
-                                </div>
-                                <div className="skill-item text-center">
-                                    <img src="/images/html.png" alt="HTML" className=" pt-2 w-14 h-15 mx-auto" />
+                                    <img src="/images/about/html.png" alt="HTML" className=" pt-2 w-14 h-15 mx-auto" />
                                     <p className="text-gray-600 mt-1">HTML</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/css.png" alt="CSS" className=" pt-1 w-14 h-15 mx-auto" />
+                                    <img src="/images/about/css.png" alt="CSS" className=" pt-1 w-14 h-15 mx-auto" />
                                     <p className="text-gray-600 mt-1">CSS</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/js.webp" alt="JavaScript" className="w-16 h-16 mx-auto" />
+                                    <img src="/images/about/js.webp" alt="JavaScript" className="w-16 h-16 mx-auto" />
                                     <p className="text-gray-600 mt-0">JavaScript</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/vite.png" alt="React" className="pt-1 w-13 h-14 mx-auto" />
+                                    <img src="/images/about/vite.png" alt="React" className="pt-1 w-13 h-14 mx-auto" />
                                     <p className="text-gray-600 mt-2">Vite</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/tailwindcss.png" alt="TailwindCSS" className=" pt-1 w-14 h-16 mx-auto" />
+                                    <img src="/images/about/react.webp" alt="React" className=" pt-1 w-20 h-14 mx-auto" />
+                                    <p className="text-gray-600 mt-1">React</p>
+                                </div>
+                                <div className="skill-item text-center">
+                                    <img src="/images/about/tailwindcss.png" alt="TailwindCSS" className=" pt-1 w-14 h-16 mx-auto" />
                                     <p className="text-gray-600 mt-1">TailwindCSS</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/google-cloud.png" alt="Google Cloud" className="w-15 h-14 mx-auto" />
+                                    <img src="/images/about/npm.webp" alt="NPM" className=" pt-1 w-14 h-16 mx-auto" />
+                                    <p className="text-gray-600 mt-1">NPM</p>
+                                </div>
+                                <div className="skill-item text-center">
+                                    <img src="/images/about/google-cloud.png" alt="Google Cloud" className="w-15 h-14 mx-auto" />
                                     <p className="text-gray-600 mt-0">Google Cloud</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/wordpress.png" alt="Wordpress" className="w-14 h-14 mx-auto" />
+                                    <img src="/images/about/next-js.svg" alt="Next.js" className=" pt-1 w-14 h-16 mx-auto" />
+                                    <p className="text-gray-600 mt-1">Next.JS</p>
+                                </div>
+                                <div className="skill-item text-center">
+                                    <img src="/images/about/github.png" alt="Github" className=" pb-2 w-13 h-16 mx-auto" />
+                                    <p className="text-gray-600 pt-0">GitHub</p>
+                                </div>
+                                <div className="skill-item text-center">
+                                    <img src="/images/about/vercel.svg" alt="Vercel" className=" pb-1 w-14 h-16 mx-auto" />
+                                    <p className="text-gray-600 mt-0">Vercel</p>
+                                </div>
+
+                                <div className="skill-item text-center">
+                                    <img src="/images/about/wordpress.png" alt="Wordpress" className="w-14 h-14 mx-auto" />
                                     <p className="text-gray-600 mt-0">Wordpress</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/figma.png" alt="Figma" className="w-12 h-12 mx-auto" />
+                                    <img src="/images/about/figma.png" alt="Figma" className="w-12 h-12 mx-auto" />
                                     <p className="text-gray-600 mt-2">Figma</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/indesign.png" alt="Indesign" className="w-12 h-12 mx-auto" />
+                                    <img src="/images/about/indesign.png" alt="Indesign" className="w-12 h-12 mx-auto" />
                                     <p className="text-gray-600 mt-2">Indesign</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/illustrator.png" alt="Illustrator" className="w-12 h-12 mx-auto" />
+                                    <img src="/images/about/illustrator.png" alt="Illustrator" className="w-12 h-12 mx-auto" />
                                     <p className="text-gray-600 mt-2">Illustrator</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/photoshop.png" alt="Photoshop" className="w-12 h-12 mx-auto" />
+                                    <img src="/images/about/photoshop.png" alt="Photoshop" className="w-12 h-12 mx-auto" />
                                     <p className="text-gray-600 mt-2">Photoshop</p>
                                 </div>
                             </div>
                         </section>
 
                         <section className=" text-center py-8 p-10 mb-8">
-                            <p className="mt-4 lg:mr-10 lg:ml-10 md:mr-10 md:ml-10  text-2xl">Have a project in mind? Or you want to say hello, get in touch with me.</p>
+                            <p className="mt-4 text-2xl lg:text-3xl">Have a project in mind? Or you want to say hello, get in touch with me.</p>
                             <a
                                 href="mailto:your-email@example.com"
-                                className="px-6 py-2 rounded-full mt-4 inline-block bg-[#AAAC24] text-white hover:bg-[#1A428A] hover:text-[#ffffff]"
+                                className="px-6 py-4 text-md rounded-full mt-4 inline-block bg-[#AAAC24] text-white font-normal hover:bg-[#1A428A] hover:text-[#ffffff]"
                             >
                                 Contact Me
                             </a>

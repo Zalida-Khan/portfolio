@@ -16,12 +16,12 @@ export default function Work() {
     const [hasLoaded, setHasLoaded] = useState(false);
 
     const posts = [
-        { id: 1, slug: 'arquitectura-organica', title: 'Arquitectura Organica', image: '/images/feature-magazine.jpg', category: ['Graphic Design', 'Magazine Design'] },
-        { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', video: '/images/sugarmagic-animated.mp4', category: ['Graphic Design', 'Product Design'] },
-        { id: 3, slug: 'the-waterfall', title: 'The Waterfall', image: '/images/feature-bi-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
-        { id: 4, slug: 'the-exhibition', title: 'The Exhibition', image: '/images/feature-exhibition-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
-        { id: 5, slug: 'aether', title: 'Aether App', image: '/images/feature-aether.jpg', category: ['UI/UX Design', 'Front–end Development', 'Mobile App'] },
-        { id: 6, slug: 'the-yolk', title: 'The Yolk', image: '/images/feature-theyolk-menu.jpg', category: ['Graphic Design', 'Menu Design', 'Branding'] },
+        { id: 1, slug: 'arquitectura-organica', title: 'Arquitectura Organica', image: '/images/magazine/feature-magazine.jpg', category: ['Graphic Design', 'Magazine Design'] },
+        { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', video: '/images/magic/sugarmagic-animated.mp4', category: ['Graphic Design', 'Product Design'] },
+        { id: 3, slug: 'the-waterfall', title: 'The Waterfall', image: '/images/waterfall/feature-bi-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
+        { id: 4, slug: 'the-exhibition', title: 'The Exhibition', image: '/images/exhibition/feature-exhibition-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
+        { id: 5, slug: 'aether', title: 'Aether App', image: '/images/aether/feature-aether.jpg', category: ['UI/UX Design', 'Front–end Development', 'Mobile App'] },
+        { id: 6, slug: 'the-yolk', title: 'The Yolk', image: '/images/yolk/menu-cover.jpg', category: ['Graphic Design', 'Menu Design', 'Branding'] },
     ];
 
     const filteredPosts = filter === 'All' ? posts : posts.filter(post => post.category.includes(filter));
@@ -35,6 +35,10 @@ export default function Work() {
         setTimeout(() => {
             setHasLoaded(true);
         }, 800);
+    }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0); 
     }, []);
 
     return (
@@ -64,7 +68,7 @@ export default function Work() {
                                     <Link href={`/work/${post.slug}`} key={post.id}>
                                         <motion.div
                                             className={`${styles['post-card']} relative w-full rounded-3xl overflow-hidden shadow-lg`}
-                                            initial={hasLoaded ? { opacity: 0, scale: 0 } : false}
+                                            initial={hasLoaded ? { opacity: 0, scale: 0 } : false} 
                                             animate={hasLoaded ? { opacity: 1, scale: 1 } : false}
                                             transition={{
                                                 duration: 0.5,
@@ -75,15 +79,13 @@ export default function Work() {
                                         >
                                             {post.video ? (
                                                 <video
-                                                className="w-full h-64 object-cover"
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                                preload="auto"
-                                                src={post.video}
-                                                alt={post.title}
-                                                controls={false}
+                                                    className="w-full h-64 object-cover"
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    controls={false}
+                                                    src={post.video}
+                                                    alt={post.title}
                                                 />
                                             ) : (
                                                 <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" />
