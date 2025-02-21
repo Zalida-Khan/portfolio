@@ -65,10 +65,10 @@ export default function ProjectsSection() {
     }, []);
 
     return (
-        <section className="relative container mx-auto py-4 px-4 md:px-6 lg:pl-20 lg:pr-20">
+        <section className="relative container mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div className="lg:col-span-1 lg:pr-6 flex flex-col justify-right">
-                    <h2 className="mt-8 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
+                    <h2 className="mt-4 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-2xl">
                         Ranging from brand design, product design to frontend development and web design.
                     </p>
@@ -81,13 +81,14 @@ export default function ProjectsSection() {
 
                 <div className="lg:col-span-1 grid grid-cols-1 gap-14 lg:gap-6 md:gap-10">
                     {projects.map((project, index) => (
-                        <div key={index} className="p-0 lg:pb-10 relative rounded-3xl overflow-hidden">
+                        <div key={index} className="p-0 pb-10 lg:pb-10 relative rounded-3xl overflow-hidden">
                             <div className="relative w-full h-72 lg:h-96 rounded-3xl overflow-hidden">
                                 {project.image.endsWith(".mp4") ? (
                                     <video
                                         autoPlay
                                         loop
                                         muted
+                                        controls={false}
                                         className="w-full h-full object-cover transition-all duration-300 ease-in-out"
                                     >
                                         <source src={project.image} type="video/mp4" />
@@ -109,12 +110,11 @@ export default function ProjectsSection() {
                                 <h3 className="text-3xl font-semibold text-[#1A3A7A]">{project.title}</h3>
                                 <Link href={project.link}>
                                     <button
-                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${
-                                            inViewButtons.includes(String(index)) ? "animate-fadeIn" : " "
-                                        }`}
+                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${inViewButtons.includes(String(index)) ? "animate-fadeIn" : " "
+                                            }`}
                                         data-index={index}
                                         style={{
-                                            animationDelay: `${index * 0.0}s`,
+                                            animationDelay: `${index * 0.00}s`,
                                         }}
                                     >
                                         View
