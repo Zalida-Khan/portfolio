@@ -37,7 +37,6 @@ function CaseStudy({ post }) {
       </section>
 
       <section>
-        <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: '#1A428A' }}>User Personas</h3>
         <div className="w-full pb-4">
           <h4 className="text-xl font-semibold mb-2" style={{ color: '#AAAC24' }}>| Primary Persona</h4>
           <img
@@ -67,11 +66,11 @@ function CaseStudy({ post }) {
         <div className="mt-4 grid grid-cols-1 gap-8">
           {post.process.map((step, index) => (
             <div key={index} className="border p-4 rounded-lg shadow-md">
-              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1A428A' }}>{step.step}</h4>
+              <h4 className="text-xl font-semibold mb-2" style={{ color: '#AAAC24' }}>| {step.step}</h4>
               <p className="text-md text-black mb-2">{step.description}</p>
               <img
                 src={step.image}
-                alt={`${step.step} image`}
+                alt= "placeholder image"
                 className="w-full h-auto mt-2 rounded-lg"
               />
             </div>
@@ -94,6 +93,14 @@ function CaseStudy({ post }) {
           disablePrevious={modalImageIndex === 0}
         />
       )}
+      <h4 className="text-xl font-semibold mb-2" style={{ color: '#AAAC24' }}>| Final Product</h4>
+      <iframe
+        style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+        className="w-full h-[667px] sm:w-[375px] sm:h-[667px] lg:w-full md:h-[667px]"
+        src="https://embed.figma.com/proto/nzhtkPCGzn1CFTVlAsZSFQ/Aether-App?node-id=2750-7065&scaling=scale-down&content-scaling=fixed&page-id=2750%3A6683&starting-point-node-id=2750%3A7345&embed-host=share"
+        allowFullScreen
+        title="Aether High Fidelity Prototype"
+      ></iframe>
     </div>
   );
 }

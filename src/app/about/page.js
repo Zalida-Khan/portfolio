@@ -35,8 +35,8 @@ export default function About() {
                                 />
                                 <p className="mt-4 text-lg max-w-3xl mx-auto">
                                     Hi, I'm Zalida, a design student passionate about creating user-centered digital experiences.
-                                    I specialize in UI/UX design, typography, and digital tools for improved functionality. In my free time,
-                                    I love experimenting with new design concepts and learning more about emerging technologies.
+                                    I specialize in Graphic Design, UI/UX design, and Front-end development for improved functionality. In my free time,
+                                    I love experimenting with new design concepts and learning more about emerging technologies. Outside of work I love going to nice cafes, making art, and my fav playing video games. 
                                 </p>
                             </div>
                         </section>

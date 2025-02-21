@@ -24,6 +24,11 @@
   }
 }
 
+html {
+  scrollbar-color: #AAAC24 rgb(170, 172, 36, 0.2);
+  scrollbar-width: 0.5px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--foreground);

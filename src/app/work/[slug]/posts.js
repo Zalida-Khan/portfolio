@@ -151,22 +151,22 @@ const posts = [
             {
                 type: 'Lo-fi Wireframes',
                 description: 'Outlined the app’s structure to ensure that all user pain points were addressed early in the design phase, with a focus on accessibility and ease of use.',
-                image: '/images/aether/lo-fi-wireframe.jpg'
+                image: '/images/aether/placeholder.jpg'
             },
             {
                 type: 'Hi-fi Prototypes',
                 description: 'Created detailed, high-fidelity prototypes that showcased the final app layout, interactions, and visual elements, ensuring a seamless user experience.',
-                image: '/images/aether/hi-fi-prototype.jpg'
+                image: '/images/aether/placeholder.jpg'
             },
             {
                 type: 'Brochures and Cards',
                 description: 'Designed marketing materials that explain the app’s key features and demonstrate how it simplifies caregiving tasks, aiding user education.',
-                image: '/images/aether/brochure-design.jpg'
+                image: '/images/aether/placeholder.jpg'
             },
             {
                 type: 'Blog Design',
                 description: 'Developed a blog to share educational content on caregiving tips and how to use the Aether App efficiently, enhancing user engagement and trust.',
-                image: '/images/aether/blog-layout.jpg'
+                image: '/images/aether/placeholder.jpg'
             }
         ],
         gallery: [
@@ -175,7 +175,7 @@ const posts = [
         ],
         links2: 'https://aether-blog.vercel.app/',
         links3: 'https://www.figma.com/proto/7uFLSzWU4gw74WYdgnm9cW/Aether?node-id=366-368&p=f&t=sYUgghyD4nlxljKM-1&scaling=scale-down&content-scaling=fixed&page-id=366%3A367&starting-point-node-id=366%3A368',
-        links4: 'https://www.figma.com/proto/nzhtkPCGzn1CFTVlAsZSFQ/Aether-App?node-id=2750-7345&p=f&t=laV2NAhUtf4cIJHo-1&sc'
+        links4: 'https://www.figma.com/proto/nzhtkPCGzn1CFTVlAsZSFQ/Aether-App?node-id=2750-7065&starting-point-node-id=2750%3A7345&t=ap3DKO0CQW7LBlCE-1'
     },
     {
         id: 6,
