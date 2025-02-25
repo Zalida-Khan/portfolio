@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
-import { EyeIcon } from "@heroicons/react/24/outline";
 
 const NeatGradient = dynamic(() => import("@firecms/neat").then(mod => mod.NeatGradient), { ssr: false });
 
@@ -47,7 +46,7 @@ export default function GradientComponent() {
   }, []);
 
   return (
-    <div className="relative h-[calc(75dvh)]">
+    <div className="relative h-[calc(80dvh)]">
       <div
         ref={gradientRef}
         style={{
@@ -60,13 +59,13 @@ export default function GradientComponent() {
           pointerEvents: "none",
         }}
       />
-      <main className="container lg:pt-20 sm:pb-5 lg:pl-10 p-22 sm:pt-10 p-4 md:p-0 md:pt-0 text-left md:pl-10 z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-3">
-          <div className="lg:col-span-3">
-            <h1 className="text-[#000] text-3xl md:text-3xl mt-4 lg:text-4xl lg:mt-14 md:text-3xl md:pt-20 md:pl-20 font-light font-poppins">
+      <main className="container px-4 sm:px-8 lg:px-16 py-10 md:py-12 lg:py-20 z-10 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 lg:pt-10">
+          <div className="lg:col-span-3 flex flex-col justify-center  md:pl-10 lg:pl-20 items-start">
+            <h1 className="text-[#000] text-3xl sm:text-4xl lg:text-4xl font-light font-poppins mt-4 lg:mt-14">
               Hello there! I'm
             </h1>
-            <p className="p-roles lg:text-5xl mt-1 md:mt-4lg:mt-4 md:text-3xl md:pl-20 md:text-4xl md:text-3xl">
+            <p className="p-roles lg:text-5xl mt-1 md:mt-4 lg:mt-4 md:text-4xl font-semibold">
               <span className="text-[#000] font-semibold">
                 <Typewriter
                   words={[
@@ -86,7 +85,7 @@ export default function GradientComponent() {
             </p>
           </div>
 
-          <div className="lg:col-span-1 md:pl-20  flex justify-start items-center">
+          <div className="lg:col-span-1 flex justify-center items-center">
             <Image
               src="/images/giphy.gif"
               alt="GIF"
@@ -94,17 +93,17 @@ export default function GradientComponent() {
               height={200}
               className="rounded-lg"
               sizes="(max-width: 768px) 80vw, 40vw"
-              priority unoptimized
+              priority
+              unoptimized
             />
           </div>
 
-          <div className="lg:col-span-2  pl-0 pr-0 lg:pt-20 md:pl-20 md:pr-20 md:pb-20 md:pt-6 lg:pr-0 lg:pt-10 pt-10 flex flex-col items-left">
-            <div className="mb-4 flex justify-center">
-              <EyeIcon className="w-10 h-10 text-black mr-10" />
-            </div>
-            <h2 className="text-xl font-bold font-syne text-[#000] mb-2">With a sharp eye for detail!</h2>
+          <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-10 lg:pl-10 pr-10 lg:pr-0 lg:pt-10 pt-10">
+            <h2 className="text-xl lg:text-2xl font-bold font-syne text-[#000] mb-4">
+              With a sharp eye for detail!
+            </h2>
             <p className="text-md text-left font-poppins font-light text-[#000] mb-4">
-              Bringing creative designs to life, crafting intuitive UX/UI, and building seamless front-end experiences.
+              Bringing creative designs to life, creating user-centered UI/UX, and building seamless front-end experiences.
             </p>
           </div>
         </div>

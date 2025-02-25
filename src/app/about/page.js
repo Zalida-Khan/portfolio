@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function About() {
+    const [menuOpen, setMenuOpen] = useState(false);
     const [hasLoaded, setHasLoaded] = useState(false);
 
     useEffect(() => {
@@ -18,14 +19,14 @@ export default function About() {
 
     return (
         <div className="bg-white text-[#1A428A] min-h-screen font-poppins pt-16">
-            <div className="font-poppins flex flex-col items-center">
-                <Header />
+            <div className="font-poppins flex flex-col items-center justify-center">
+                <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
                 <FadeIn>
                     <main className="w-full max-w-4xl px-6 sm:px-8 md:px-12 flex flex-col items-center mb-20">
-                        <h1 className="text-[#1A428A] text-5xl md:text-6xl font-semibold text-center font-[Syne] my-6">About Me</h1>
+                        <h1 className="text-[#1A428A] text-5xl lg:text-7xl md:text-6xl font-semibold text-center font-[Syne] mt-10">About Me</h1>
 
-                        <section className="text-left py-8 p-10  mb-8">
+                        <section className="text-left  p-10 pt-0  mb-8">
                             <div className="mt-6 flex flex-col items-center">
                                 <img
                                     src="/images/about/me2.png"

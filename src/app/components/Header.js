@@ -2,14 +2,6 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarMenuItem,
-  NavbarContent,
-  NavbarItem,
-  Link,
-} from "@heroui/react";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -19,6 +11,7 @@ export default function Header() {
   const menuItems = [
     { name: "Home", link: "/" },
     { name: "Work", link: "/work" },
+    // { name: "Gallery", link: "/gallery" },
     { name: "About", link: "/about" },
   ];
 
@@ -35,42 +28,42 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <Navbar isBordered className="fixed bg-white/50 backdrop-blur-lg top-0 left-0 w-full z-50">
-      <NavbarContent className="flex items-center justify-between w-full">
-        <NavbarBrand className="pt-5 pb-5 z-20 bg-transparent">
-          <Link href="/" className="focus:outline-none focus:ring-0">
+    <nav className="fixed bg-white/50 backdrop-blur-lg top-0 left-0 w-full z-50">
+      <div className="flex items-center pl-5 pr-5 justify-between w-full">
+        <div className="pt-5 pb-5 z-20 bg-transparent">
+          <a href="/" className="focus:outline-none focus:ring-0">
             <img
               src="/images/Monogram-logo.png"
               alt="a monogram logo with the letters z and k"
               className="h-10"
             />
-          </Link>
-        </NavbarBrand>
+          </a>
+        </div>
 
-        <NavbarContent className="pt-5 pb-5 hidden sm:flex gap-6 justify-end w-full">
+        <div className="pt-5 pb-5 hidden sm:flex gap-6 justify-end w-full">
           {menuItems.map((item, index) => {
             const isActive = pathname === item.link;
             return (
-              <NavbarItem key={index}>
-                <Link
+              <div key={index} className="relative">
+                <a
                   href={item.link}
-                  onPress={() => { }}
-                  className={`relative px-3 py-2 focus:outline-none focus:ring-0 ${isActive
-                    ? "text-[#AAAC24] font-normal"
-                    : "text-gray-800 hover:text-black group"
-                    }`}
+                  className={`relative px-3 py-2 text-md font-syne focus:outline-none focus:ring-0 ${
+                    isActive
+                      ? "text-[#AAAC24] font-normal"
+                      : "text-gray-800 hover:text-black group"
+                  }`}
                 >
                   {item.name}
                   {!isActive && (
                     <span className="absolute bottom-1 left-1/2 w-0 h-1 bg-[#AAAC24] rounded-full transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-3/4"></span>
                   )}
-                </Link>
-              </NavbarItem>
+                </a>
+              </div>
             );
           })}
-        </NavbarContent>
+        </div>
 
-        <NavbarContent className="sm:hidden z-20 " justify="end">
+        <div className="sm:hidden z-20" justify="end">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="hamMenu p-2 rounded-lg focus:outline-none focus:ring-0"
@@ -78,37 +71,35 @@ export default function Header() {
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </NavbarContent>
-      </NavbarContent>
+        </div>
+      </div>
 
       <div
-        className={`pt-20 absolute top-0 left-0 w-full h-screen bg-white z-10 shadow-lg p-6 transition-all duration-300 ease-in-out transform flex flex-col ${isMenuOpen
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-full pointer-events-none hidden"
-          }`}
+        className={`pt-20 absolute top-0 left-0 w-full h-screen bg-white z-10 shadow-lg p-6 transition-all duration-300 ease-in-out transform flex flex-col ${
+          isMenuOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full pointer-events-none hidden"
+        }`}
       >
         {menuItems.map((item, index) => {
           const isActive = pathname === item.link;
           return (
-            <NavbarMenuItem
-              key={index}
-              className="list-none mobile-menu-item"
-            >
-              <Link
+            <div key={index} className="mt-5 list-none mobile-menu-item">
+              <a
                 href={item.link}
-                onPress={() => setIsMenuOpen(false)}
-                className={`block py-6 text-lg focus:outline-none focus:ring-0 ${isActive
-                  ? "text-[#AAAC24] font-regular"
-                  : "text-gray-800 hover:text-[#AAAC24]"
-                  }`}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block py-4 text-xl font-medium font-syne focus:outline-none focus:ring-0 ${
+                  isActive
+                    ? "text-[#AAAC24] text-xl "
+                    : "text-gray-900 hover:text-[#AAAC24]"
+                }`}
               >
                 {item.name}
-              </Link>
-            </NavbarMenuItem>
+              </a>
+            </div>
           );
         })}
       </div>
-
-    </Navbar>
+    </nav>
   );
 }

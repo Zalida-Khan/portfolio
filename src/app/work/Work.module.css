@@ -48,7 +48,7 @@
   transition: all 0.3s ease;
   font-weight: normal;
   color: white;
-  background-color: none;
+  background-color: transparent; 
 }
 
 .filterButton.active {

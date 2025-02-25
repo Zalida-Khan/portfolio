@@ -25,7 +25,7 @@
 }
 
 html {
-  scrollbar-color: #AAAC24 rgb(170, 172, 36, 0.2);
+  scrollbar-color: #AAAC24 rgb(170, 172, 36, 0.5);
   scrollbar-width: 0.5px;
 }
 
@@ -34,6 +34,11 @@ body {
   color: var(--foreground);
   padding-top: 5px !important;
   scroll-behavior: smooth;
+}
+
+.content {
+  margin-top: calc(40px + 10vh); 
+  background-color: white;
 }
 
 img:hover {
@@ -217,13 +222,13 @@ footer {
 
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(-100%);
     opacity: 0;
+    transform: translateY(-30px);
   }
 
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -243,6 +248,10 @@ footer {
 .mobile-menu-item:nth-child(3) {
   animation-delay: 0.5s;
 }
+
+/* .mobile-menu-item:nth-child(4) {
+  animation-delay: 0.5s;
+} */
 
 @media (min-width: 768px) {
   .mobile-menu-item {
