@@ -13,7 +13,7 @@
 .post-card {
   position: relative;
   overflow: hidden;
-  border-radius: 12px; 
+  border-radius: 20px; 
   opacity: 0; 
   animation: growFromCenter 0.5s ease-out forwards;
   transform-origin: center;
@@ -52,17 +52,17 @@
 }
 
 .filterButton.active {
-  background-color: #AAAC24;
+  background-color: var(--button-bg);
   color: white;
 }
 
 .filterButton.inactive {
-  color: #1A428A;
+  color: var(--button-bg-hover);
   background-color: transparent;
 }
 
 .filterButton.inactive:hover {
-  color: #AAAC24;
+  color: var(--button-bg);
 }
 
 .filterButton:hover {

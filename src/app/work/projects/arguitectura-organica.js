@@ -30,31 +30,27 @@ function MagazineDesign({ post }) {
             <p className="text-[#000] text-md mt-2">{post.overview}</p>
 
             <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Design Elements:</h4>
-            <p className="text-[#000] text-md mt-4">{post.logoAndTypography}</p>
+            <p className="text-[#000] text-sm md:text-md lg:text-md mt-4">{post.logoAndTypography}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <img
                     src={post.gallery[0]}
                     alt="image with logos"
-                    className="w-full h-full rounded-3xl shadow-lg object-cover cursor-pointer"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                    title="View image"
+                    style={{
+                        cursor: isLgDevice ? "pointer" : "default",
+                      }}
+                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
                     onClick={() => openModal(0)}
                 />
                 <img
                     src={post.gallery[1]}
                     alt="image with typography usage on magazine"
-                    className="w-full h-auto rounded-3xl shadow-lg object-cover cursor-pointer"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                    title="View image"
+                    style={{
+                        cursor: isLgDevice ? "pointer" : "default",
+                      }}
+                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
                     onClick={() => openModal(1)}
-                />
-            </div>
-
-            <div className="mt-8">
-                <img
-                    src={post.gallery[2]}
-                    alt="Mockup with all pages"
-                    className="w-full h-auto rounded-lg object-cover"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
-                    onClick={() => openModal(2)}
                 />
             </div>
 
@@ -86,15 +82,18 @@ function MagazineDesign({ post }) {
             </div>
 
             <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {post.gallery.slice(3).map((image, index) => (
+                {post.gallery.slice(2).map((image, index) => (
                     <div key={index} className={`relative ${index === 0 ? "lg:col-span-2" : ""}`}>
                         <img
                             src={image}
                             alt={`Gallery image ${index + 2}`}
-                            className="w-full h-auto lg:h-full rounded-lg object-cover"
-                            onClick={() => openModal(index + 3)}
-                            style={{ cursor: isLgDevice ? "pointer" : "default" }}
-                        />
+                            title="View image"
+                            style={{
+                                cursor: isLgDevice ? "pointer" : "default",
+                              }}
+                              className={`w-full h-auto lg:h-full rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
+                            onClick={() => openModal(index + 2)}
+                        />                       
                     </div>
                 ))}
             </div>

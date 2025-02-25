@@ -57,11 +57,14 @@ function PostPage() {
       <Header />
 
       <h1 className="text-4xl text-[#1A428A] lg:text-5xl font-semibold text-center">{post.title}</h1>
-      <p className="text-center text-black p-3 pb-10 pt-2">
+      <p className="text-center text-black p-3 pt-2">
         {Array.isArray(post.category) ? post.category.join(" | ") : post.category}
       </p>
 
-      <main className="max-w-4xl mx-auto p-6 mb-20 bg-[#efefef] rounded-3xl shadow-md">
+      <img src={post.image} alt={post.title} className="w-full h-[40dvh] object-cover md:h-[500px] md:object-cover lg:h-[600px] lg:object-cover  rounded-t-3xl  mt-8 lg:mt-8 md:mt-2 mb-4 lg:mb-8" />
+
+      <main className="max-w-4xl mx-auto p-6 mb-20  rounded-3xl">
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <ul className="space-y-5">
             <li><strong className="text-lg lg:text-xl">Project Type:</strong><br/><span className="text-[#000]">{post.projectType}</span></li>
@@ -94,7 +97,6 @@ function PostPage() {
         </div>
 
         <h3 className="text-[#1A428A] text-2xl lg:text-3xl font-semibold mt-8">{post.subheading}</h3>
-        <img src={post.image} alt={post.title} className="w-full h-auto rounded-3xl shadow-lg mt-8 mb-10" />
 
         {ProjectComponent && <ProjectComponent post={post} />}
 

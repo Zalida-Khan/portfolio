@@ -16,12 +16,12 @@ export default function Work() {
     const [hasLoaded, setHasLoaded] = useState(false);
 
     const posts = [
-        { id: 1, slug: 'arquitectura-organica', title: 'Arquitectura Organica', image: '/images/magazine/feature-magazine.jpg', category: ['Graphic Design', 'Magazine Design'] },
-        { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', video: '/images/magic/sugarmagic-animated.mp4', category: ['Graphic Design', 'Product Design'] },
-        { id: 3, slug: 'the-waterfall', title: 'The Waterfall', image: '/images/waterfall/feature-bi-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
-        { id: 4, slug: 'the-exhibition', title: 'The Exhibition', image: '/images/exhibition/feature-exhibition-poster.jpg', category: ['Graphic Design', 'Poster Design'] },
-        { id: 5, slug: 'aether', title: 'Aether App', image: '/images/aether/feature-aether.jpg', category: ['UI/UX Design', 'Front–end Development', 'Mobile App'] },
-        { id: 6, slug: 'the-yolk', title: 'The Yolk', image: '/images/yolk/menu-cover.jpg', category: ['Graphic Design', 'Menu Design', 'Branding'] },
+        { id: 1, slug: 'arquitectura-organica', title: 'Arquitectura Organica', image: '/images/magazine/feature-magazine.webp', category: ['Magazine Design', 'Graphic Design'] },
+        { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', image: '/images/magic/feature-sugarmagic.webp', category: ['Product Design', 'Graphic Design'] },
+        { id: 3, slug: 'the-waterfall', title: 'The Waterfall Poster', image: '/images/waterfall/hero-waterfall.webp', category: ['Poster Design', 'Vinyl Covers', 'Graphic Design'] },
+        { id: 4, slug: 'the-exhibition', title: 'The Exhibition Poster', image: '/images/exhibition/feature-exhibition-poster.webp', category: ['Poster Design', 'Graphic Design'] },
+        { id: 5, slug: 'aether', title: 'Aether Mobile App', image: '/images/aether/feature-aether.webp', category: ['Case Study', 'UI/UX Design', 'Front–end Development'] },
+        { id: 6, slug: 'the-yolk', title: 'The Yolk Menu', image: '/images/yolk/menu-cover.webp', category: ['Menu Design', 'Branding', 'Graphic Design'] },
     ];
 
     const filteredPosts = filter === 'All' ? posts : posts.filter(post => post.category.includes(filter));
@@ -38,12 +38,12 @@ export default function Work() {
     }, []);
 
     useEffect(() => {
-        window.scrollTo(0, 0); 
+        window.scrollTo(0, 0);
     }, []);
 
     return (
         <div className="bg-white text-[#1A428A] min-h-screen font-poppins pt-16">
-            <div className="font-poppins flex flex-col items-center">
+            <div className="font-poppins flex flex-col items-center justify-center">
                 <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
                 <FadeIn>
@@ -67,8 +67,8 @@ export default function Work() {
                                 visiblePosts.map((post, index) => (
                                     <Link href={`/work/${post.slug}`} key={post.id}>
                                         <motion.div
-                                            className={`${styles['post-card']} relative w-full rounded-3xl overflow-hidden shadow-lg`}
-                                            initial={hasLoaded ? { opacity: 0, scale: 0 } : false} 
+                                            className={`${styles['post-card']} relative w-full overflow-hidden shadow-lg`}
+                                            initial={hasLoaded ? { opacity: 0, scale: 0 } : false}
                                             animate={hasLoaded ? { opacity: 1, scale: 1 } : false}
                                             transition={{
                                                 duration: 0.5,
@@ -77,22 +77,10 @@ export default function Work() {
                                             }}
                                             key={`${post.id}-${animationKey}`}
                                         >
-                                            {post.video ? (
-                                                <video
-                                                    className="w-full h-64 object-cover"
-                                                    autoPlay
-                                                    loop
-                                                    muted
-                                                    controls={false}
-                                                    src={post.video}
-                                                    alt={post.title}
-                                                />
-                                            ) : (
-                                                <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" />
-                                            )}
+                                            <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" quality={80} />
 
                                             <motion.div
-                                                className="absolute inset-0 bg-[#AAAC24] bg-opacity-100 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity post-content"
+                                                className="absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity post-content"
                                                 initial={{ opacity: 0 }}
                                                 whileHover={{ opacity: 1 }}
                                                 transition={{ duration: 0.3 }}

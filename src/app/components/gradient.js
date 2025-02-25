@@ -47,7 +47,7 @@ export default function GradientComponent() {
   }, []);
 
   return (
-    <div className="relative h-[calc(75vh)]">
+    <div className="relative h-[calc(75dvh)]">
       <div
         ref={gradientRef}
         style={{
@@ -70,9 +70,10 @@ export default function GradientComponent() {
               <span className="text-[#000] font-semibold">
                 <Typewriter
                   words={[
-                    "a Graphic Designer!",
-                    "a UI/UX Designer!",
-                    "a Frontend Developer!",
+                    "Zalida Khan.",
+                    "a graphic designer!",
+                    "a UI/UX designer!",
+                    "a front-end developer!",
                   ]}
                   loop
                   cursor
@@ -92,7 +93,7 @@ export default function GradientComponent() {
               width={200}
               height={200}
               className="rounded-lg"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 80vw, 40vw"
               priority unoptimized
             />
           </div>

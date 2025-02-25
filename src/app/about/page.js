@@ -25,7 +25,7 @@ export default function About() {
                     <main className="w-full max-w-4xl px-6 sm:px-8 md:px-12 flex flex-col items-center mb-20">
                         <h1 className="text-[#1A428A] text-5xl md:text-6xl font-semibold text-center font-[Syne] my-6">About Me</h1>
 
-                        <section className=" text-center py-8 p-10  mb-8">
+                        <section className="text-left py-8 p-10  mb-8">
                             <div className="mt-6 flex flex-col items-center">
                                 <img
                                     src="/images/about/me2.png"
@@ -35,15 +35,16 @@ export default function About() {
                                 />
                                 <p className="mt-4 text-lg max-w-3xl mx-auto">
                                     Hi, I'm Zalida, a design student passionate about creating user-centered digital experiences.
-                                    I specialize in Graphic Design, UI/UX design, and Front-end development for improved functionality. In my free time,
-                                    I love experimenting with new design concepts and learning more about emerging technologies. Outside of work I love going to nice cafes, making art, and my fav playing video games. 
+                                    I specialize in Graphic Design, UI/UX Design, and Front-end Development, focusing on making things work smoothly and look great.
+                                    In my free time, I love going to nice cafés, making art, and—my favorite—playing video games.
+                                    I also enjoy learning new things about coding and design to improve my skills and stay up to date and inspired.
                                 </p>
                             </div>
                         </section>
 
-                        <section className="skills-section py-8 w-full max-w-4xl p-10 mb-8">
+                        <section className="skills-section py-8 w-full max-w-4xl p-8 mb-8">
                             <h2 className="text-3xl text-center text-[#1A428A] font-semibold mb-4">Skills & Technologies</h2>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                                 <div className="skill-item text-center">
                                     <img src="/images/about/html.png" alt="HTML" className=" pt-2 w-14 h-15 mx-auto" />
                                     <p className="text-gray-600 mt-1">HTML</p>
@@ -61,7 +62,7 @@ export default function About() {
                                     <p className="text-gray-600 mt-2">Vite</p>
                                 </div>
                                 <div className="skill-item text-center">
-                                    <img src="/images/about/react.webp" alt="React" className=" pt-1 w-20 h-14 mx-auto" />
+                                    <img src="/images/about/react.png" alt="React" className=" pt-1 w-20 h-14 mx-auto" />
                                     <p className="text-gray-600 mt-1">React</p>
                                 </div>
                                 <div className="skill-item text-center">

@@ -14,40 +14,39 @@ const projects = [
     {
         title: "Arquitectura Organica",
         category: "Magazine Design – Product Design",
-        image: "/images/magazine/feature-magazine.jpg",
+        image: "/images/magazine/feature-magazine.webp",
         link: "/work/arquitectura-organica",
     },
     {
         title: "The Exhibition",
         category: "Poster Design – Graphic Design",
-        image: "/images/exhibition/feature-exhibition-poster.jpg",
+        image: "/images/exhibition/feature-exhibition-poster.webp",
         link: "/work/the-exhibition",
     },
     {
         title: "The Yolk",
         category: "Menu Design – Product Design",
-        image: "/images/yolk/menu-cover.jpg",
+        image: "/images/yolk/menu-cover.webp",
         link: "/work/the-yolk",
     },
 ];
 
 export default function ProjectsSection() {
-    const [inViewButtons, setInViewButtons] = useState([]);
+    const [inViewButtons, setInViewButtons] = useState(new Set());
     const lastScrollY = useRef(0);
+    const observerRef = useRef(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
+        observerRef.current = new IntersectionObserver(
             ([entry]) => {
-                const button = entry.target;
-                const buttonIndex = button.dataset.index;
+                if (!entry.isIntersecting) return;
 
+                const buttonIndex = entry.target.dataset.index;
                 const isScrollingDown = window.scrollY > lastScrollY.current;
                 lastScrollY.current = window.scrollY;
 
-                if (entry.isIntersecting && isScrollingDown) {
-                    setInViewButtons((prev) => [...prev, buttonIndex]);
-                } else {
-                    setInViewButtons((prev) => prev.filter((index) => index !== buttonIndex));
+                if (isScrollingDown && !inViewButtons.has(buttonIndex)) {
+                    setInViewButtons((prev) => new Set([...prev, buttonIndex]));
                 }
             },
             { threshold: 0.2 }
@@ -56,16 +55,16 @@ export default function ProjectsSection() {
         const projectButtons = document.querySelectorAll(".project-button");
         projectButtons.forEach((btn, index) => {
             btn.setAttribute("data-index", index);
-            observer.observe(btn);
+            observerRef.current.observe(btn);
         });
 
         return () => {
-            projectButtons.forEach((btn) => observer.unobserve(btn));
+            projectButtons.forEach((btn) => observerRef.current.unobserve(btn));
         };
     }, []);
 
     return (
-        <section className="relative container mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20 mb-20">
+        <section className="relative containerP mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20 mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div className="lg:col-span-1 lg:pr-6 flex flex-col justify-right">
                     <h2 className="mt-4 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
@@ -74,7 +73,7 @@ export default function ProjectsSection() {
                     </p>
                     <div className="mt-4 text-right">
                         <Link href="/work" scroll={false} className="relative text-[#1A428A] text-lg font-semibold">
-                            <span >View All &gt;</span>
+                            <span>View All &gt;</span>
                         </Link>
                     </div>
                 </div>
@@ -88,7 +87,8 @@ export default function ProjectsSection() {
                                         autoPlay
                                         loop
                                         muted
-                                        controls={false}
+                                        playsInline
+                                        preload="auto"
                                         className="w-full h-full object-cover transition-all duration-300 ease-in-out"
                                     >
                                         <source src={project.image} type="video/mp4" />
@@ -110,8 +110,9 @@ export default function ProjectsSection() {
                                 <h3 className="text-3xl font-semibold text-[#1A3A7A]">{project.title}</h3>
                                 <Link href={project.link}>
                                     <button
-                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${inViewButtons.includes(String(index)) ? "animate-fadeIn" : " "
-                                            }`}
+                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${
+                                            inViewButtons.has(String(index)) ? "animate-fadeIn" : ""
+                                        }`}
                                         data-index={index}
                                         style={{
                                             animationDelay: `${index * 0.00}s`,

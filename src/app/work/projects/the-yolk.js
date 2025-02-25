@@ -35,16 +35,22 @@ function MenuDesign({ post }) {
                 <img
                     src={post.gallery[0]}
                     alt="Typography sample for The Yolk menu"
-                    className="w-full h-full rounded-3xl shadow-lg object-cover"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                    style={{
+                        cursor: isLgDevice ? "pointer" : "default",
+                      }}
+                      className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
+                    title="View image"
                     onClick={() => openModal(0)}
 
                 />
                 <img
                     src={post.gallery[1]}
                     alt="Logo design for The Yolk branding"
-                    className="w-full h-full rounded-3xl shadow-lg object-cover"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                    style={{
+                        cursor: isLgDevice ? "pointer" : "default",
+                      }}
+                      className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}                    
+                      title="View image"
                     onClick={() => openModal(1)}
                 />
             </div>
@@ -57,16 +63,22 @@ function MenuDesign({ post }) {
                 <img
                     src={post.gallery[2]}
                     alt="Illustration for The Yolk menu"
-                    className="w-full h-full rounded-3xl shadow-lg object-cover"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                    style={{
+                        cursor: isLgDevice ? "pointer" : "default",
+                      }}
+                      className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}                    
+                      title="View image"
                     onClick={() => openModal(2)}
 
                 />
                 <img
                     src={post.gallery[3]}
                     alt="Assets for The Yolk branding"
-                    className="w-full h-full rounded-3xl shadow-lg object-cover"
-                    style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                    style={{
+                        cursor: isLgDevice ? "pointer" : "default",
+                      }}
+                      className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}                    
+                      title="View image"
                     onClick={() => openModal(3)}
 
                 />
@@ -79,8 +91,11 @@ function MenuDesign({ post }) {
             <img
                 src={post.gallery[4]}
                 alt="Packaging design for The Yolk"
-                className="w-full h-full rounded-3xl shadow-lg object-cover"
-                style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                                style={{
+                    cursor: isLgDevice ? "pointer" : "default",
+                  }}
+                  className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}                
+                  title="View image"
                 onClick={() => openModal(4)}
 
             />
@@ -95,9 +110,12 @@ function MenuDesign({ post }) {
                         key={index + 5}
                         src={image}
                         alt={`Menu page ${index + 1} for The Yolk`}
-                        className="w-full h-full rounded-3xl shadow-lg object-cover"
                         onClick={() => openModal(index + 5)}
-                        style={{ cursor: isLgDevice ? "pointer" : "default" }}
+                        title="View image"
+                        style={{
+                            cursor: isLgDevice ? "pointer" : "default",
+                          }}
+                          className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
                     />
                 ))}
             </div>

@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className=" bg-[#E4E0E5]  text-left p-8 mt-8">
-      <div className="container-footer mx-auto flex justify-center flex flex-col sm:flex-row items-center sm:items-center space-y-8 sm:space-y-0 gap-x-20"> {/* Added gap-x-8 here */}
+    <footer className=" bg-[#E4E0E5] tracking-wide text-left p-8 mt-8">
+      <div className="container-footer mx-auto flex justify-center flex flex-col sm:flex-row items-center sm:items-center space-y-8 sm:space-y-0 gap-x-20">
 
-        <div className="flex flex-col items-start sm:items-start sm:w-5/12 md:w-6/12 lg:w-6/12 "> {/* Adjusted width here */}
+        <div className="flex flex-col items-start sm:items-start sm:w-5/12 md:w-6/12 lg:w-6/12 "> 
           <Link href="/" className="flex flex-col items-start sm:items-start sm:w-3/12 ">
             <img
               src="/images/Monogram-logo.png"
@@ -39,10 +39,10 @@ export default function Footer() {
 
       </div>
 
-      <div className="text-md text-[#6C5B7B] text-center mt-8">
-        <p className="mb-2">💻 Designed & Developed by ME! </p>
-        <p>All rights reserved &copy; 2025 Zalida Khan</p>
-      </div>
+      <div className="text-md text-[#6C5B7B] text-center mt-8 font-normal tracking-wide">
+  <p className="text-md opacity-90 font-syne">Developed & designed by me! &copy; <span className="text-md opacity-90">2025 Zalida Khan </span> </p>
+</div>
+
     </footer>
   );
 }

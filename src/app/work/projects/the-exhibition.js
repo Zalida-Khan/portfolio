@@ -26,7 +26,6 @@ function PosterDesignTE({ post }) {
 
     return (
         <div>
-            <h2 className="mt-8 text-[#1A428A] text-3xl font-semibold">{post.title}</h2>
 
             <div className="mt-8">
                 <h3 className="text-[#1A428A] text-2xl font-bold">Introduction 🌅</h3>
@@ -39,40 +38,51 @@ function PosterDesignTE({ post }) {
             </div>
 
             <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Masonry Layout for images */}
                 <div className="flex flex-col gap-8">
                     <img
                         src={post.gallery[0]}
-                        alt="Gallery Image 1"
-                        className="w-full h-[420px] object-cover rounded-3xl shadow-md"
-                        style={{ cursor: isLgDevice ? "pointer" : "default" }} 
+                        alt="Portrait Poster on a couch"
+                        style={{
+                            cursor: isLgDevice ? "pointer" : "default",
+                          }}
+                          className={`w-full  h-[420px]  rounded-3xl shadow-md object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}  
+                        title="View image"
                         onClick={() => openModal(0)}
                     />
                 </div>
                 <div className="flex flex-col gap-8">
                     <img
                         src={post.gallery[1]}
-                        alt="Gallery Image 2"
-                        className="w-full h-[410px] object-cover rounded-3xl shadow-md"
-                        style={{ cursor: isLgDevice ? "pointer" : "default" }} 
+                        alt="Portrait Poster on a banner outsite gallery"
+                        style={{
+                            cursor: isLgDevice ? "pointer" : "default",
+                          }}
+                          className={`w-full  h-[410px]  rounded-3xl shadow-md object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}  
+                        title="View image"
                         onClick={() => openModal(1)}
                     />
                 </div>
                 <div className="flex flex-col gap-8">
                     <img
                         src={post.gallery[2]}
-                        alt="Gallery Image 3"
-                        className="w-full h-[300px] object-cover rounded-3xl shadow-md"
-                        style={{ cursor: isLgDevice ? "pointer" : "default" }} 
+                        alt="Landscape Poster on a wall"
+                        style={{
+                            cursor: isLgDevice ? "pointer" : "default",
+                          }}
+                          className={`w-full h-[300px] rounded-3xl shadow-md object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}                           
+                          title="View image"
                         onClick={() => openModal(2)}
                     />
                 </div>
                 <div className="flex flex-col gap-8">
                     <img
                         src={post.gallery[3]}
-                        alt="Gallery Image 4"
-                        className="w-full h-[300px] object-cover rounded-3xl shadow-md"
-                        style={{ cursor: isLgDevice ? "pointer" : "default" }} 
+                        alt="Portrait Poster on a Bus stop"
+                        style={{
+                            cursor: isLgDevice ? "pointer" : "default",
+                          }}
+                          className={`w-full h-[300px] rounded-3xl shadow-md object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}  
+                        title="View image"
                         onClick={() => openModal(3)}
                     />
                 </div>

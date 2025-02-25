@@ -35,11 +35,15 @@ function PosterDesign({ post }) {
                         key={index}
                         src={image}
                         alt={`Gallery image ${index + 1}`}
-                        className="w-full h-full rounded-3xl shadow-md cursor-pointer"
                         onClick={() => openModal(index)}
-                        style={{ cursor: isLgDevice ? "pointer" : "default" }} 
-                    />
+                        title="View image"
+                        style={{
+                          cursor: isLgDevice ? "pointer" : "default",
+                        }}
+                        className={`w-full h-full rounded-3xl shadow-md object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}                   
+                         />
                 ))}
+                
             </div>
 
           

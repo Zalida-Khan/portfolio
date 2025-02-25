@@ -73,7 +73,7 @@ export default function Header() {
         <NavbarContent className="sm:hidden z-20 " justify="end">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-lg focus:outline-none focus:ring-0"
+            className="hamMenu p-2 rounded-lg focus:outline-none focus:ring-0"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

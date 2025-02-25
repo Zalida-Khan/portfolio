@@ -16,8 +16,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --button-bg: #1A428A;
-    --button-bg-hover: #AAAC24;
+    --button-bg: #AAAC24;
+    --button-bg-hover: #1A428A;
     --link-hover: #AAAC24;
     --heading-color: #AAAC24;
     --footer-bg: #333333;
@@ -34,6 +34,10 @@ body {
   color: var(--foreground);
   padding-top: 5px !important;
   scroll-behavior: smooth;
+}
+
+img:hover {
+  cursor: url(/images/cursor.png) 5 3,
 }
 
 .custom-rounded {
@@ -85,22 +89,24 @@ h6 {
   padding-top: 20px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1A428A
+  color:  var(--heading-color)
 }
 
-button {
-  background-color: #AAAC24;
+.hamMenu {
+  background-color: var(--button-bg);
   color: white;
-  padding: 10px 20px;
+  padding: 11px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
-  color: #AAAC24;
-  background-color: transparent;
+.hamMenu:hover {
+  color: white;
+  background-color: var(--button-bg-hover);
 }
+
 
 a {
   text-decoration: none;
@@ -113,6 +119,21 @@ a:hover {
 
 .container {
   padding: 45px;
+}
+
+.containerP {
+  padding: 45px;
+}
+
+@media (max-width: 375px) {
+  .containerP {
+    margin-top: 10em;
+
+  }
+
+  .mesh-gradient {
+    min-height: 680px;
+  }
 }
 
 .container-footer {
@@ -142,8 +163,8 @@ header {
   background: radial-gradient(circle at 20% 30%, #1A428A, #AAAC24, #1A428A, #AAAC24, #E4E0E5);
   background-size: 400% 400%;
   z-index: 0;
+  max-height: calc(75dvh);
   animation: gradientAnimation 15s ease-in-out infinite;
-  height: 650px;
   pointer-events: none;
 }
 
