@@ -46,7 +46,7 @@ export default function GradientComponent() {
   }, []);
 
   return (
-    <div className="relative h-[calc(85dvh)] md:h-[calc(60dvh)] lg:h-[calc(60dvh)]">
+    <div className="relative h-[calc(700px)] md:h-[calc(650px)]">
       <div
         ref={gradientRef}
         style={{

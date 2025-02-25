@@ -127,18 +127,12 @@ a:hover {
 }
 
 .containerP {
-  padding: 45px;
-  padding-top: 5px;
+  padding: 20px 45px;
 }
 
-@media (max-width: 375px) {
-  .containerP {
-    margin-top: 10em;
-
-  }
-
+@media (min-width: 375px) {
   .mesh-gradient {
-    min-height: 680px;
+    max-height: 500px;
   }
 }
 
@@ -169,7 +163,7 @@ header {
   background: radial-gradient(circle at 20% 30%, #1A428A, #AAAC24, #1A428A, #AAAC24, #E4E0E5);
   background-size: 400% 400%;
   z-index: 0;
-  max-height: 700px;
+  max-height: 650px;
   animation: gradientAnimation 15s ease-in-out infinite;
   pointer-events: none;
 }
