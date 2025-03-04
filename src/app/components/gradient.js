@@ -98,7 +98,7 @@ export default function GradientComponent() {
             />
           </div>
 
-          <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-10 lg:pl-10 pr-10 lg:pr-0 lg:pt-10 pt-10">
+          <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-10 lg:pl-10 pr-10 lg:pr-0 lg:mt-14 lg:pt-10">
             <h2 className="text-xl lg:text-2xl font-bold font-syne text-[#000] mb-4">
               With a sharp eye for detail!
             </h2>

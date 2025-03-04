@@ -2,198 +2,110 @@ import { useState, useEffect } from "react";
 import Modal from "../../components/Modal";
 
 function ProductDesign({ post }) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalImageIndex, setModalImageIndex] = useState(0);
-    const [isLgDevice, setIsLgDevice] = useState(false);
-  
-    const openModal = (index) => {
-      if (isLgDevice) {
-        setModalImageIndex(index);
-        setIsModalOpen(true);
-      }
-    };
-  
-    const closeModal = () => setIsModalOpen(false);
-    const goToNext = () => setModalImageIndex((prev) => prev + 1);
-    const goToPrevious = () => setModalImageIndex((prev) => prev - 1);
-  
-    useEffect(() => {
-      const handleResize = () => setIsLgDevice(window.innerWidth > 1024);
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [isLgDevice, setIsLgDevice] = useState(window.innerWidth > 1024);
 
-    return (
-        <div>
+  useEffect(() => {
+    const handleResize = () => setIsLgDevice(window.innerWidth > 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-            <h2 className="mt-8 text-[#1A428A] text-2xl font-semibold">{post.heading}</h2>
-            <p className="text-[#000] text-md mt-2">{post.overview}</p>
+  const openModal = (index) => isLgDevice && (setModalImageIndex(index), setIsModalOpen(true));
+  const closeModal = () => setIsModalOpen(false);
+  const goToNext = () => setModalImageIndex((prev) => prev + 1);
+  const goToPrevious = () => setModalImageIndex((prev) => prev - 1);
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <img
-                    src={post.gallery[0]}
-                    alt="Colour Palette"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-full rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(0)}                />
-                <img
-                    src={post.gallery[1]}
-                    alt="Typography"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(1)}                />
-            </div>
+  const renderGalleryImages = (images, startIndex) => {
+    return images.map((image, index) => (
+      <img
+        key={index}
+        src={image}
+        alt={`Gallery Image ${startIndex + index}`}
+        title="View image"
+        className={`w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? 'cursor-pointer hover:opacity-80' : ''}`}
+        onClick={() => openModal(startIndex + index)}
+      />
+    ));
+  };
 
-            <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Design Elements:</h4>
-            <p className="text-[#000] text-md mt-4">{post.logoAndIllustrations}</p>
+  return (
+    <div>
+      <h2 className="mt-8 text-[#1A428A] text-2xl font-semibold">{post.heading}</h2>
+      <p className="text-[#000] text-md mt-2">{post.overview}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <img
-                    src={post.gallery[2]}
-                    alt="Logo Design"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-full rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(2)}                />
-                <img
-                    src={post.gallery[3]}
-                    alt="Symbols and Label"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(3)}                />
-            </div>
+      <h4 className="text-[#1A428A] text-xl font-semibold mt-4">Color Palette & Typography:</h4>
+      <p className="text-[#000] text-md mt-2">
+        The color palette draws inspiration from vibrant fruits: cherry red, lemon yellow, and blueberry’s purplish-blue. The typography uses Sharkbit Display for headings, offering a youthful, energetic vibe, and Nunito for the body text, ensuring readability and consistency with their rounded sans-serif edges.
+      </p>
 
-            <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Illustrations:</h4>
-            <p className="text-[#000] text-md mt-4">The illustrations are bold with soft, rounded features that give them a plump, playful look. Their thick outlines and exaggerated shapes add character, making the visuals stand out in a fun and approachable way.
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {renderGalleryImages(post.gallery.slice(0, 2), 0)}
+      </div>
 
-            </p>
+      <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Logo Design & Symbols:</h4>
+      <p className="text-[#000] text-md mt-2">{post.logoAndIllustrations}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <img
-                    src={post.gallery[4]}
-                    alt="Illustration on front of cans"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(4)}                />
-                <img
-                    src={post.gallery[5]}
-                    alt="Illustration on back of cans"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(5)}                />
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {renderGalleryImages(post.gallery.slice(2, 4), 2)}
+      </div>
 
-            <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Packaging Design & Dielines:</h4>
-            <p className="text-[#000] text-md mt-4">{post.packagingDesign}</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <img
-                    src={post.gallery[6]}
-                    alt="Cherry Dieline"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(6)}
-                />
-                <img
-                    src={post.gallery[7]}
-                    alt="Lemon Dieline"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(7)}
-                />
-                <img
-                    src={post.gallery[8]}
-                    alt="Blueberry Dieline"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(8)}
-                />
-            </div>
-            <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Final Product:</h4>
-            <p className="text-[#000] text-md mt-4">Mockups include all cans (front and back) as well as individual can designs, perfect for advertising and merchandise featuring Sugar Magic. </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <img
-                    src={post.gallery[9]}
-                    alt="Cans Mockup Front"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(9)}
-                />
-                <img
-                    src={post.gallery[10]}
-                    alt="Cans Mockup Back"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(10)}
-                />
-            </div>
+      <div className="mt-8">
+        <h4 className="text-[#1A428A] text-lg font-semibold">Illustrations:</h4>
+        <p className="text-[#000] text-md mt-2">
+          The illustrations feature cherries, lemons, and blueberries on the front, highlighting the key ingredients with the following illustrations. 🍒 Cherry Bliss – Cherry juice, chia seeds & sparkling water. 🍋 Zesty Lemon – Lemon juice, lemon zest & sparkling water. 🫐 Blueberry Breeze – Blueberry juice, lavender & sparkling water.</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {renderGalleryImages(post.gallery.slice(4, 6), 4)}
+      </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 ">
-                <img
-                    src={post.gallery[11]}
-                    alt="Cherry Flavour"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(11)}
-                />
-                <img
-                    src={post.gallery[12]}
-                    alt="Blueberry Flavour"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(12)}
-                />
-                <img
-                    src={post.gallery[13]}
-                    alt="Lemon Flavour"
-                    title="View image"
-                    style={{
-                        cursor: isLgDevice ? "pointer" : "default",
-                      }}
-                      className={`w-full h-auto rounded-3xl object-cover transition-all duration-300 ${isLgDevice ? 'hover:opacity-80' : ''}`}
-                    onClick={() => openModal(13)}
-                />
-            </div>
+      <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Packaging Design & Dielines:</h4>
+      <p className="text-[#000] text-md mt-2">{post.packagingDesign}</p>
 
- {isModalOpen && (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        {renderGalleryImages(post.gallery.slice(6, 9), 6)}
+      </div>
+
+      <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Final Product:</h4>
+      <p className="text-[#000] text-md mt-2">Mockups include all cans (front and back) as well as individual can designs, perfect for advertising and merchandise featuring Sugar Magic.</p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {renderGalleryImages(post.gallery.slice(9, 11), 9)}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        {renderGalleryImages(post.gallery.slice(11, 14), 11)}
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-[#1A428A] text-2xl font-bold">Project Journey 🚙</h3>
+
+        <div className="mt-4">
+          <h4 className="text-[#1A428A] text-lg font-semibold">Challenges Faced:</h4>
+          <ul className="text-[#000] text-md mt-2">
+            <li className="mt-1"><strong>Name choice:</strong> “Sugar Magic” initially sounded unhealthy. The challenge was to balance the fun vibe while marketing it as a healthy drink.</li>
+            <li className="mt-1"><strong>Illustration & layout:</strong> The different shapes of fruits (lemon, cherry, blueberry) posed a challenge in creating a consistent and balanced design across the packaging.</li>
+          </ul>
+        </div>
+
+        <div className="mt-4">
+          <h4 className="text-[#1A428A] text-lg font-semibold">What Went Well:</h4>
+          <ul className="text-[#000] text-md mt-2">
+            <li className="mt-1"><strong>Slogan & messaging:</strong> The slogan “Taste you’ve never tasted before, all without sugar” and the 50-calorie symbol effectively communicated the product’s healthy angle.</li>
+            <li className="mt-1"><strong>Colours & illustrations:</strong> Refining the colours and illustrations ensured they complemented each other and worked harmoniously across all three drink designs.</li>
+          </ul>
+        </div>
+
+        <div className="mt-4">
+          <h4 className="text-[#1A428A] text-lg font-semibold">Thought Process & What Was Learned:</h4>
+          <p className="text-[#000] text-md mt-2">
+            The project aimed to create healthy, appealing drinks with packaging for a young, health-conscious audience. Feedback from my instructor and peers highlighted the need to align the brand name with the product’s message and maintain design consistency. This experience also marked my first time working with dielines, resulting in a cleaner, more professional outcome that will be valuable for future projects.
+          </p>
+        </div>
+      </div>
+
+      {isModalOpen && (
         <Modal
           image={post.gallery[modalImageIndex]}
           onClose={closeModal}
@@ -201,10 +113,12 @@ function ProductDesign({ post }) {
           onPrevious={goToPrevious}
           disableNext={modalImageIndex === post.gallery.length - 1}
           disablePrevious={modalImageIndex === 0}
+          ariaLabel="Modal dialog displaying image"
+          role="dialog"
         />
       )}
-        </div>
-    );
+    </div>
+  );
 }
 
 export default ProductDesign;

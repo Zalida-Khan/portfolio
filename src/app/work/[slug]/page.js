@@ -40,17 +40,35 @@ function PostPage() {
   const ProjectComponent = projectComponents[post.projectType] || null;
 
   const links = [
-    { label: "🔗 Digital Version", url: post.links1 },
+    { label: "🔗 Digital Version", url: post.links, visibleOn: "sm" },
+    { label: "🔗 Digital Version", url: post.links1, visibleOn: "lg" }, 
     { label: "🔗 Blog", url: post.links2 },
     { label: "🔗 Styleguide", url: post.links3 },
     { label: "🔗 Hi-fi Prototype", url: post.links4 },
   ].filter((link) => link.url);
 
   const renderLinks = (links) => (
-    <ul className="text-[#1A428A] cursor-hand flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 lg:col-span-2">
-        {links.length > 0 && renderLinks(links)}
-        </ul>
-        );
+    <ul className="text-[#1A428A] cursor-pointer flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 lg:col-span-2">
+      {links.map((link, index) => (
+        <li key={index} className={`${link.visibleOn === "lg" ? "hidden lg:block" : ""} ${link.visibleOn === "sm" ? "block sm:block lg:hidden" : ""}`}>
+          <a
+            className="text-[#AAAC24] hover:text-[#1A428A] text-md flex items-center"
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Opens in a new tab"
+            aria-label={`Open ${link.label} in a new tab`}
+          >
+            {link.label} <AiOutlineRight />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="content bg-white text-[#1A428A] min-h-screen font-poppins">
@@ -61,38 +79,23 @@ function PostPage() {
         {Array.isArray(post.category) ? post.category.join(" | ") : post.category}
       </p>
 
-      <img src={post.image} alt={post.title} className="w-full h-[40dvh] object-cover md:h-[500px] md:object-cover lg:h-[600px] lg:object-cover  rounded-t-3xl  mt-8 lg:mt-8 md:mt-2 mb-4 lg:mb-8" />
+      <img
+        src={post.image}
+        alt={post.title}
+        className="w-full h-[40dvh] object-cover md:h-[500px] md:object-cover lg:h-[600px] lg:object-cover rounded-t-3xl mt-8 lg:mt-8 md:mt-2 mb-4 lg:mb-8"
+      />
 
-      <main className="max-w-4xl mx-auto p-6 mb-20  rounded-3xl">
-
+      <main className="max-w-4xl mx-auto p-6  mb-20 rounded-3xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <ul className="space-y-5">
-            <li><strong className="text-lg lg:text-xl">Project Type:</strong><br/><span className="text-[#000]">{post.projectType}</span></li>
-            <li><strong className="text-lg lg:text-xl">Timeline:</strong><br/><span className="text-[#000]">{post.timeline}</span></li>
-            <li><strong className="text-lg lg:text-xl">Role(s):</strong><br/><span className="text-[#000]">{post.role}</span></li>
+            <li><strong className="text-lg lg:text-xl">Project Type:</strong><br /><span className="text-[#000]">{post.projectType}</span></li>
+            <li><strong className="text-lg lg:text-xl">Timeline:</strong><br /><span className="text-[#000]">{post.timeline}</span></li>
+            <li><strong className="text-lg lg:text-xl">Role(s):</strong><br /><span className="text-[#000]">{post.role}</span></li>
           </ul>
           <ul className="space-y-5 lg:col-span-2">
-            <li><strong className="text-lg lg:text-xl">Tools Used:</strong><br/><span className="text-[#000]">{post.tools}</span></li>
-            <li><strong className="text-lg lg:text-xl">Mandate:</strong><br/><span className="text-[#000]">{post.mandate}</span></li>
-
-            {links.length > 0 && (
-  <ul className="text-[#1A428A] cursor-hand flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 lg:col-span-2">
-    {links.map((link, index) => (
-      <li key={index}>
-        <a
-          className="text-[#AAAC24] hover:text-[#1A428A] text-md flex items-center"
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Opens in a new tab"
-          aria-label={`Open ${link.label} in a new tab`}
-        >
-          {link.label} <AiOutlineRight />
-        </a>
-      </li>
-    ))}
-  </ul>
-)}
+            <li><strong className="text-lg lg:text-xl">Tools Used:</strong><br /><span className="text-[#000]">{post.tools}</span></li>
+            <li><strong className="text-lg lg:text-xl">Mandate:</strong><br /><span className="text-[#000]">{post.mandate}</span></li>
+            {links.length > 0 && renderLinks(links)}
           </ul>
         </div>
 
@@ -100,9 +103,12 @@ function PostPage() {
 
         {ProjectComponent && <ProjectComponent post={post} />}
 
-        <div className="flex justify-between items-center mt-6">
+        <div className="flex justify-between items-center mt-10">
           <button
-            onClick={() => router.push(`/work/${previousPost?.slug}`)}
+            onClick={() => {
+              router.push(`/work/${previousPost?.slug}`);
+              scrollToTop();
+            }}
             disabled={!previousPost}
             className="text-black hover:text-[#AAAC24] bg-transparent disabled:text-gray-400 flex items-center gap-2"
           >
@@ -110,7 +116,10 @@ function PostPage() {
           </button>
 
           <button
-            onClick={() => router.push(`/work/${nextPost?.slug}`)}
+            onClick={() => {
+              router.push(`/work/${nextPost?.slug}`);
+              scrollToTop();
+            }}
             disabled={!nextPost}
             className="text-black hover:text-[#AAAC24] bg-transparent disabled:text-gray-400 flex items-center gap-2"
           >

@@ -11,7 +11,7 @@ export default function Footer() {
             <img
               src="/images/Monogram-logo.png"
               alt="a monogram logo with the letters z and k"
-              className="h-12"
+              className="h-10"
             />
           </Link>
           <p className="text-align-left mt-4 text-lg lg:text-xl text-[#6C5B7B]">

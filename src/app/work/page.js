@@ -18,7 +18,7 @@ export default function Work() {
     const posts = [
         { id: 1, slug: 'arquitectura-organica', title: 'Arquitectura Organica', image: '/images/magazine/feature-magazine.webp', category: ['Magazine Design', 'Graphic Design'] },
         { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', image: '/images/magic/feature-sugarmagic.webp', category: ['Product Design', 'Graphic Design'] },
-        { id: 3, slug: 'the-waterfall', title: 'The Waterfall Poster', image: '/images/waterfall/hero-waterfall.webp', category: ['Poster Design', 'Vinyl Covers', 'Graphic Design'] },
+        { id: 3, slug: 'the-waterfall', title: 'The Waterfall Poster', image: '/images/waterfall/feature-waterfall-2.webp', category: ['Poster Design', 'Vinyl Covers', 'Graphic Design'] },
         { id: 4, slug: 'the-exhibition', title: 'The Exhibition Poster', image: '/images/exhibition/feature-exhibition-poster.webp', category: ['Poster Design', 'Graphic Design'] },
         { id: 5, slug: 'aether', title: 'Aether Mobile App', image: '/images/aether/feature-aether.webp', category: ['Case Study', 'UI/UX Design', 'Front–end Development'] },
         { id: 6, slug: 'the-yolk', title: 'The Yolk Menu', image: '/images/yolk/menu-cover.webp', category: ['Menu Design', 'Branding', 'Graphic Design'] },
@@ -39,7 +39,7 @@ export default function Work() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [])
 
     return (
         <div className="bg-white text-[#1A428A] min-h-screen font-poppins pt-16">
@@ -50,7 +50,7 @@ export default function Work() {
                     <main className="w-full max-w-4xl p-4 flex flex-col items-center">
                         <h1 className="text-[#1A428A] text-6xl lg:text-7xl md:text-6xl font-semibold text-center font-[Syne] my-6">Work</h1>
 
-                        <div className="container-cat flex flex-wrap justify-center gap-2 mt-4 p-3 bg-gray-200 rounded-3xl">
+                        <div className="bg-[#E4E0E5] flex flex-wrap justify-center gap-2 mt-4 p-3 rounded-3xl">
                             {['All', 'Graphic Design', 'UI/UX Design', 'Front–end Development'].map((category) => (
                                 <button
                                     key={category}
@@ -80,7 +80,7 @@ export default function Work() {
                                             <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" quality={80} />
 
                                             <motion.div
-                                                className="absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity post-content"
+                                                className="absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 sm:opacity-100 transition-opacity post-content"
                                                 initial={{ opacity: 0 }}
                                                 whileHover={{ opacity: 1 }}
                                                 transition={{ duration: 0.3 }}
@@ -99,7 +99,15 @@ export default function Work() {
                                                     }
                                                 </div>
                                             </motion.div>
+
                                         </motion.div>
+
+                                        <div className="post-text-container sm:hidden p-4">
+                                            <h2 className="text-[#1A428A] text-2xl font-semibold">{post.title}</h2>
+                                            <div className="text-[#1A428A] text-md ">
+                                                {post.category.join(' | ')}
+                                            </div>
+                                        </div>
                                     </Link>
                                 ))
                             ) : (

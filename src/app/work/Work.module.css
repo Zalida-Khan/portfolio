@@ -1,15 +1,3 @@
-@keyframes growFromCenter {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .post-card {
   position: relative;
   overflow: hidden;
@@ -24,7 +12,9 @@
   animation: growFromCenter 0.5s ease-out forwards;
 }
 
-.post-card:hover .post-content {
+.post-card:hover .post-content,
+.post-card:focus-within .post-content,
+.post-card:active .post-content {
   transform: translateY(-5px);
   opacity: 1;
 }
@@ -40,6 +30,50 @@
   transform: translateX(-100%);
   opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .post-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .post-text-container h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .post-text-container div {
+    font-size: 0.85rem;
+  }
+
+  .post-card {
+    border-radius: 0; 
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+.post-card img {
+  border-radius: 15px;
+
+}
+
+.post-card:hover .post-content,
+.post-card:focus-within .post-content,
+.post-card:active .post-content {
+  opacity: 0;
+ 
+}
+
+
+  .post-content {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 0.85rem;
+  }
 }
 
 .filterButton {
@@ -67,4 +101,15 @@
 
 .filterButton:hover {
   color: white;
+}
+
+@keyframes growFromCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

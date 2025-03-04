@@ -13,7 +13,7 @@ const projects = [
     },
     {
         title: "Arquitectura Organica",
-        category: "Magazine Design – Product Design",
+        category: "Magazine Design – Graphic Design",
         image: "/images/magazine/feature-magazine.webp",
         link: "/work/arquitectura-organica",
     },
@@ -25,7 +25,7 @@ const projects = [
     },
     {
         title: "The Yolk",
-        category: "Menu Design – Product Design",
+        category: "Menu Design – Branding – Graphic Design",
         image: "/images/yolk/menu-cover.webp",
         link: "/work/the-yolk",
     },
