@@ -52,7 +52,7 @@ export default function ProjectsSection() {
             { threshold: 0.2 }
         );
 
-        const projectButtons = document.querySelectorAll(".project-button");
+        const projectButtons = document.querySelectorAll(".projectButton");
         projectButtons.forEach((btn, index) => {
             btn.setAttribute("data-index", index);
             observerRef.current.observe(btn);
@@ -64,7 +64,7 @@ export default function ProjectsSection() {
     }, []);
 
     return (
-        <section className="relative containerP mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20 mb-20">
+        <section className="relative containerProjects mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20 mb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div className="lg:col-span-1 lg:pr-6 flex flex-col justify-right">
                     <h2 className="mt-4 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
@@ -110,8 +110,8 @@ export default function ProjectsSection() {
                                 <h3 className="text-3xl font-semibold text-[#1A3A7A]">{project.title}</h3>
                                 <Link href={project.link}>
                                     <button
-                                        className={`project-button px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${
-                                            inViewButtons.has(String(index)) ? "animate-fadeIn" : ""
+                                        className={`projectButton px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${
+                                            inViewButtons.has(String(index)) ? "animateFadeIn" : ""
                                         }`}
                                         data-index={index}
                                         style={{

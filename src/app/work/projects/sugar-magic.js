@@ -35,9 +35,9 @@ function ProductDesign({ post }) {
       <h2 className="mt-8 text-[#1A428A] text-2xl font-semibold">{post.heading}</h2>
       <p className="text-[#000] text-md mt-2">{post.overview}</p>
 
-      <h4 className="text-[#1A428A] text-xl font-semibold mt-4">Color Palette & Typography:</h4>
+      <h4 className="text-[#1A428A] text-xl font-semibold mt-4">Colour Palette & Typography:</h4>
       <p className="text-[#000] text-md mt-2">
-        The color palette draws inspiration from vibrant fruits: cherry red, lemon yellow, and blueberry’s purplish-blue. The typography uses Sharkbit Display for headings, offering a youthful, energetic vibe, and Nunito for the body text, ensuring readability and consistency with their rounded sans-serif edges.
+        The colour palette draws inspiration from vibrant fruits: cherry red, lemon yellow, and blueberry’s purplish-blue. The typography uses Sharkbit Display for headings, offering a youthful, energetic vibe, and Nunito for the body text, ensuring readability and consistency with their rounded sans-serif edges.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">

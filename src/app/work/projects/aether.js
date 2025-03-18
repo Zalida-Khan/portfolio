@@ -119,7 +119,7 @@ function CaseStudy({ post }) {
           | Aether Blog
         </h4>
         <p className="text-md text-black mb-6">
-          This blog was built using HTML for structure, CSS for styling, and JavaScript for interactivity, such as modals and responsive layouts. The combination of Flexbox and Grid ensures a responsive design across devices, while JavaScript handles dynamic content like image viewing and tab switching.
+          This blog was built using HTML for structure, CSS for styling, and JavaScript for interactivity, such as modals and responsive layouts. The combination of Flexbox and Grid ensures a responsive design across devices, while JavaScript handles dynamic content like image viewing, dark and light mode and tab switching.
         </p>
         <iframe
           src="https://aether-blog.vercel.app/"

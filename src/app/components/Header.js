@@ -66,7 +66,7 @@ export default function Header() {
         <div className="sm:hidden z-20" justify="end">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="hamMenu p-2 rounded-lg focus:outline-none focus:ring-0"
+            className="p-2 rounded-lg focus:outline-none focus:ring-0 hamMenu"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,7 +84,7 @@ export default function Header() {
         {menuItems.map((item, index) => {
           const isActive = pathname === item.link;
           return (
-            <div key={index} className="mt-5 list-none mobile-menu-item">
+            <div key={index} className="mt-5 list-none mobileMenuItem">
               <a
                 href={item.link}
                 onClick={() => setIsMenuOpen(false)}

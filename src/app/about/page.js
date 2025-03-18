@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import FadeIn from "../components/fadeIn";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import LoadingSpinner from "../components/Loading";
 
 const SkillItem = ({ imgSrc, altText, skillName }) => (
-    <div className="skill-item text-center">
-        <img src={imgSrc} alt={altText} className=" w-15 h-14 mx-auto" />
+    <div className="skillItem text-center">
+        <img src={imgSrc} alt={altText} className="w-15 h-14 mx-auto" />
         <p className="text-gray-600">{skillName}</p>
     </div>
 );
@@ -15,14 +16,30 @@ const SkillItem = ({ imgSrc, altText, skillName }) => (
 export default function About() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [hasLoaded, setHasLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => setHasLoaded(true), 800);
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 400);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setHasLoaded(true);
+        }, 250);
     }, []);
 
     return (
         <div className="bg-white text-[#1A428A] min-h-screen font-poppins pt-16">
             <div className="font-poppins flex flex-col items-center justify-center">
+                {!hasLoaded && (
+                    <div className="loadingOverlay">
+                        <LoadingSpinner />
+                    </div>
+                )}
                 <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
                 <FadeIn>
@@ -65,7 +82,7 @@ export default function About() {
                             </div>
                         </section>
 
-                        <section className="skills-section py-8 w-full max-w-5xl pt-4 p-6 mb-6">
+                        <section className="skillSection py-8 w-full max-w-5xl pt-4 p-6 mb-6">
                             <h2 className="text-3xl text-center text-[#1A428A] font-semibold mb-6">
                                 My Skills & Technologies
                             </h2>
@@ -96,6 +113,8 @@ export default function About() {
                         <section className="text-center py-8 max-w-5xl mx-auto pt-4 p-6 mb-8">
                             <p className="text-2xl mb-6 lg:text-3xl">Got a project in mind? Or just want to say hello? Let’s connect!</p>
                             <a
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 href="https://www.linkedin.com/in/zalida-khan"
                                 className="px-6 py-4 text-md rounded-full mt-4 inline-block bg-[#AAAC24] text-white font-normal hover:bg-[#1A428A] hover:text-[#ffffff] transition-all duration-300 ease-in-out"
                             >

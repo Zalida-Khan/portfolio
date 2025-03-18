@@ -72,9 +72,9 @@ function MagazineDesign({ post }) {
                 <div className="mt-4">
                     <h4 className="text-[#1A428A] text-lg font-semibold">Challenges Faced:</h4>
                     <ul className="text-[#000] mt-2 text-md">
-                        <li className="mt-1"><strong>Font Selection:</strong> Selecting a font that worked effectively for both print and digital formats while ensuring readability posed a challenge.</li>
+                        <li className="mt-1"><strong>Font Selection:</strong> Selecting a font that worked effectively for both print and digital formats while ensuring readability caused a challenge.</li>
                         <li className="mt-1"><strong>Font Size for Print:</strong> Determining the optimal font size for body copy was essential for clarity and readability in the print version.</li>
-                        <li className="mt-1"><strong>Image Placement:</strong> Striking a balance between text and image placement, particularly with numerous visuals, was difficult.</li>
+                        <li className="mt-1"><strong>Image Placement:</strong> Keeping a balance between text and image placement, particularly with numerous visuals, was difficult.</li>
                         <li className="mt-1"><strong>Layout Consistency:</strong> Ensuring the layout maintained consistency across both print and digital formats, especially with orientation changes, was a challenge.</li>
                     </ul>
                 </div>
@@ -83,6 +83,8 @@ function MagazineDesign({ post }) {
                     <h4 className="text-[#1A428A] text-lg font-semibold">What Went Well:</h4>
                     <ul className="text-[#000] mt-2 text-md">
                         <li className="mt-1"><strong>Good Use of Colour and Images:</strong> The colour palette complemented the images, enhancing the overall design.</li>
+                        <li className="mt-1"><strong>Image Conversions:</strong>In both print and digital formats, There needed to be sme changes made to the images. Using Photoshop to convert images to cymk for print version and fixing the ppi  </li>
+
                         <li className="mt-1"><strong>Print Accuracy:</strong> The final printed magazine accurately reflected the digital design, with consistent colours, fonts, and layout.</li>
                     </ul>
                 </div>
@@ -91,6 +93,7 @@ function MagazineDesign({ post }) {
                     <h4 className="text-[#1A428A] text-lg font-semibold">Thought Process & What Was Learned:</h4>
                     <p className="text-[#000] mt-1 text-md">
                         This project explored the intersection of architecture and sustainability, drawing inspiration from Javier Senosiain's organic architecture. Key lessons included balancing design elements for both print and digital formats, selecting legible fonts, and maintaining layout consistency across various mediums. Additionally, a deeper understanding of sustainable design principles was gained, which can be benefifical for future projects.
+                        {/* Working with Photoshop to convert colour settings/image mode to cymk for print version so it could be printed. As well as using Image size in Photoshop to better meet the requirements of printing.   */}
                     </p>
                 </div>
             </div>

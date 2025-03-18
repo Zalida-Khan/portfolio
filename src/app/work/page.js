@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import styles from './Work.module.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import LoadingSpinner from "../components/Loading";
 
 export default function Work() {
     const [filter, setFilter] = useState('All');
@@ -14,6 +15,7 @@ export default function Work() {
     const [visiblePosts, setVisiblePosts] = useState([]);
     const [animationKey, setAnimationKey] = useState(0);
     const [hasLoaded, setHasLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const posts = [
         { id: 1, slug: 'arquitectura-organica', title: 'Arquitectura Organica', image: '/images/magazine/feature-magazine.webp', category: ['Magazine Design', 'Graphic Design'] },
@@ -26,6 +28,15 @@ export default function Work() {
 
     const filteredPosts = filter === 'All' ? posts : posts.filter(post => post.category.includes(filter));
 
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setIsLoaded(true);
+        }, 200); 
+    
+        return () => clearTimeout(timer); 
+      }, []);  
+
     useEffect(() => {
         setAnimationKey(prevKey => prevKey + 1);
         setVisiblePosts(filteredPosts);
@@ -34,7 +45,7 @@ export default function Work() {
     useEffect(() => {
         setTimeout(() => {
             setHasLoaded(true);
-        }, 800);
+        }, 250);
     }, []);
 
     useEffect(() => {
@@ -44,6 +55,11 @@ export default function Work() {
     return (
         <div className="bg-white text-[#1A428A] min-h-screen font-poppins pt-16">
             <div className="font-poppins flex flex-col items-center justify-center">
+            {!hasLoaded && (
+                    <div className="loadingOverlay">
+                        <LoadingSpinner />
+                    </div>
+                )}
                 <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
                 <FadeIn>
@@ -67,7 +83,7 @@ export default function Work() {
                                 visiblePosts.map((post, index) => (
                                     <Link href={`/work/${post.slug}`} key={post.id}>
                                         <motion.div
-                                            className={`${styles['post-card']} relative w-full overflow-hidden shadow-lg`}
+                                            className={`${styles['postCard']} relative w-full overflow-hidden shadow-lg`}
                                             initial={hasLoaded ? { opacity: 0, scale: 0 } : false}
                                             animate={hasLoaded ? { opacity: 1, scale: 1 } : false}
                                             transition={{
@@ -80,14 +96,14 @@ export default function Work() {
                                             <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" quality={80} />
 
                                             <motion.div
-                                                className="absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 sm:opacity-100 transition-opacity post-content"
+                                                className="postContent absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 sm:opacity-100 transition-opacity"
                                                 initial={{ opacity: 0 }}
                                                 whileHover={{ opacity: 1 }}
                                                 transition={{ duration: 0.3 }}
                                             >
                                                 <span className="font-[Syne] text-white text-2xl font-bold post-title">{post.title}</span>
 
-                                                <div className="text-white text-md post-category p-12 pt-0 text-center">
+                                                <div className="text-white text-md postCategory p-12 pt-0 text-center">
                                                     {Array.isArray(post.category)
                                                         ? post.category.map((category, idx) => (
                                                             <span key={idx}>
@@ -102,7 +118,7 @@ export default function Work() {
 
                                         </motion.div>
 
-                                        <div className="post-text-container sm:hidden p-4">
+                                        <div className="postTextContainer sm:hidden p-4">
                                             <h2 className="text-[#1A428A] text-2xl font-semibold">{post.title}</h2>
                                             <div className="text-[#1A428A] text-md ">
                                                 {post.category.join(' | ')}

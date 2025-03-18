@@ -9,7 +9,7 @@ const TabsSwitcher = ({ tabs }) => {
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`py-1 px-4 custom-rounded ${
+            className={`py-1 px-4 customRounded ${
               activeTab === index
                 ? "bg-[#AAAC24] outline outline-1 outline-[#AAAC24] text-white cursor-default" 
                 : "bg-transparent text-[#AAAC24] outline outline-1 outline-[#AAAC24] hover:text-[#1A428A] hover:outline hover:outline-[#1A428A] cursor-pointer"

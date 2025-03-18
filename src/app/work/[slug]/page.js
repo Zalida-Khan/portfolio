@@ -71,7 +71,7 @@ function PostPage() {
   };
 
   return (
-    <div className="content bg-white text-[#1A428A] min-h-screen font-poppins">
+    <div className="containerWork bg-white text-[#1A428A] min-h-screen font-poppins">
       <Header />
 
       <h1 className="text-4xl text-[#1A428A] lg:text-5xl font-semibold text-center">{post.title}</h1>

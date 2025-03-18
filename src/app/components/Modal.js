@@ -1,10 +1,16 @@
 import React from 'react';
 
 function Modal({ image, onClose, onNext, onPrevious, disableNext, disablePrevious }) {
-    
+  const handleBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-trabsparent p-6 pr-16 pl-16 rounded-3xl mr-10 ml-10 w-full max-w-6xl relative">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    onClick={handleBackgroundClick}>
+      <div className="bg-transparent p-6 pr-16 pl-16 rounded-3xl mr-10 ml-10 w-full max-w-6xl relative">
         <button
           onClick={onClose}
           className="absolute top-0 right-4 text-white bg-[#AAAC24] pt-2 pb-2 pr-4 pl-4 rounded-3xl hover:bg-[#1A428A] hover:text-white transition-all duration-300"

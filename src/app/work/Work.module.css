@@ -1,25 +1,25 @@
-.post-card {
+.postCard {
   position: relative;
   overflow: hidden;
-  border-radius: 20px; 
-  opacity: 0; 
+  border-radius: 20px;
+  opacity: 0;
   animation: growFromCenter 0.5s ease-out forwards;
   transform-origin: center;
 }
 
-.post-card.visible {
+.postCard.visible {
   opacity: 1;
   animation: growFromCenter 0.5s ease-out forwards;
 }
 
-.post-card:hover .post-content,
-.post-card:focus-within .post-content,
-.post-card:active .post-content {
+.postCard:hover .postContent,
+.postCard:focus-within .postContent,
+.postCard:active .postContent {
   transform: translateY(-5px);
   opacity: 1;
 }
 
-.post-content {
+.postContent {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -33,42 +33,39 @@
 }
 
 @media (max-width: 768px) {
-  .post-text-container {
+  .postTextContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
   }
 
-  .post-text-container h2 {
+  .postTextContainer h2 {
     font-size: 1rem;
     font-weight: bold;
   }
 
-  .post-text-container div {
+  .postTextContainer div {
     font-size: 0.85rem;
   }
 
-  .post-card {
-    border-radius: 0; 
+  .postCard {
+    border-radius: 0;
     box-shadow: none;
     margin-bottom: 10px;
-}
+  }
 
-.post-card img {
-  border-radius: 15px;
+  .postCard img {
+    border-radius: 15px;
+  }
 
-}
+  .postCard:hover .postContent,
+  .postCard:focus-within .postContent,
+  .postCard:active .postContent {
+    opacity: 0;
+  }
 
-.post-card:hover .post-content,
-.post-card:focus-within .post-content,
-.post-card:active .post-content {
-  opacity: 0;
- 
-}
-
-
-  .post-content {
+  .postContent {
     position: absolute;
     bottom: 5px;
     left: 5px;
@@ -82,7 +79,7 @@
   transition: all 0.3s ease;
   font-weight: normal;
   color: white;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .filterButton.active {

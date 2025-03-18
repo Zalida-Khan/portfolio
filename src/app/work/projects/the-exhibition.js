@@ -47,7 +47,7 @@ function PosterDesignTE({ post }) {
             </div>
             <h4 className="text-[#1A428A] text-xl font-semibold mt-4">Colour Palette & Typography:</h4>
             <p className="text-[#000] text-md mt-2">
-                The design uses two shades of burnt orange, deep henna, and a light stone background, with a green circle for contrast and white text for readability. The typography includes Wausau for titles, Kiln Serif Regular for event dates, and Kiln Sans Spiked for body text, with a drop cap in Kiln Serif Spiked.
+                The design uses two shades of burnt orange, deep henna, and a light stone background, with a green circle for contrast and white text for readability. The typography includes Western American Cowbay fonts such as Wausau for titles, Kiln Serif Regular for event dates, and Kiln Sans Spiked for body text, with a drop cap in Kiln Serif Spiked.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                 {post.gallery.slice(0, 2).map((image, index) => (
@@ -72,13 +72,14 @@ function PosterDesignTE({ post }) {
                         <img
                             key={index}
                             src={image}
-                            alt={index === 0 ? "Colours for poster" : "Typography for poster"}
+                            alt="Portfolio and Landscape Design"
                             className={imageStyle}
                             title="View image"
-                            onClick={() => openModal(index)}
+                            onClick={() => openModal(index + 2)} 
                         />
                     ))}
-                </div>            </div>
+                </div>
+            </div>
 
             <div className="mt-8">
                 <h3 className="text-[#1A428A] text-xl font-bold">Final Product:</h3>
@@ -104,7 +105,7 @@ function PosterDesignTE({ post }) {
             <div className="mt-4">
                 <h4 className="text-[#1A428A] text-lg font-semibold">What Worked Well:</h4>
                 <ul className="text-[#000] mt-2 text-md">
-                    <li className="mt-1"><strong>Typography:</strong> The fonts used reinforced the Western style while still being easy to read.</li>
+                    <li className="mt-1"><strong>Typography:</strong> The fonts used reinforced the Western American style while still being easy to read.</li>
                     <li className="mt-1"><strong>Visual Clarity:</strong> The contrast between the background and text made the design clear and impactful.</li>
                 </ul>
             </div>
