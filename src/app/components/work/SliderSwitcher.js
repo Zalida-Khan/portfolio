@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const SliderSwitcher = () => {
   const items = [
@@ -22,19 +21,19 @@ const SliderSwitcher = () => {
       <img
         src={items[currentIndex].image}
         alt={items[currentIndex].alt}
-        className="w-full h-[360px] rounded-2xl object-cover mb-6"
+        className="w-full h-auto rounded-2xl object-cover"
       />
       <button
         onClick={goToPrevious}
         className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-[#AAAC24] text-white p-2 rounded-full"
       >
-        <ChevronLeftIcon className="h-6 w-6" />
+        &lt;
       </button>
       <button
         onClick={goToNext}
         className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#AAAC24] text-white p-2 rounded-full"
       >
-        <ChevronRightIcon className="h-6 w-6" />
+        &gt;
       </button>
     </div>
   );

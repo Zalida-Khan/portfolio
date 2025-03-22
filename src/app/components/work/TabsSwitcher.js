@@ -20,7 +20,7 @@ const TabsSwitcher = ({ tabs }) => {
         ))}
       </div>
 
-      <div className="w-full">
+      <div className="w-full pb-4">
         {tabs[activeTab].content}
       </div>
     </div>

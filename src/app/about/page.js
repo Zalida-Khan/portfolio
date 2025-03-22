@@ -44,12 +44,12 @@ export default function About() {
                 <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
                 <FadeIn>
-                    <main className="w-full max-w-5xl px-6 sm:px-8 md:px-6 lg:px-14 flex flex-col items-center mb-20">
+                 <main className="w-full max-w-5xl px-6 sm:px-8 md:px-6 lg:px-14 flex flex-col items-center mb-20">
                         <h1 className="text-[#1A428A] text-3xl lg:text-5xl md:text-4xl font-semibold text-center font-[Syne] mt-10">
                             Get to Know Me Better!
                         </h1>
 
-                        <section className="text-left sm:p-5 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10 pt-0">
+                    <section className="text-left sm:p-5 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10 pt-0">
                             <div className="flex mt-4 md:mt-2 lg:mt-2 flex-col items-center">
                                 <img
                                     src="/images/about/me2.png"
@@ -59,14 +59,14 @@ export default function About() {
                             </div>
 
                             <div className="flex flex-col items-start max-w-5xl mx-auto">
-                                <div className="mt-4 flex flex-col items-start max-w-5xl mx-auto sm:p-5 md:pt-6 md:p-0 lg:p-6 lg:pt-0 rounded-2xl">
+                             <div className="mt-4 flex flex-col items-start max-w-5xl mx-auto sm:p-5 md:pt-6 md:p-0 lg:p-6 lg:pt-0 rounded-2xl">
                                     <h3 className="text-2xl md:text-3xl text-left text-[#1A428A] font-semibold">
                                         Hey there, I'm Zalida! 👋
                                     </h3>
                                     <p className="mt-3 text-md md:text-lg leading-relaxed text-gray-800">
                                         I’m a design student at the British Columbia Institute of Technology, with a passion for creating user-focused digital experiences. My areas of expertise include <strong>graphic design, UI/UX design, and front-end development</strong>.
                                     </p>
-                                </div>
+                            </div>
                             </div>
                         </section>
                         {/* <section className='flex flex-col mt-2 mb-5 lg:mt-0 md:mt-0 sm:mt-2'> */}
