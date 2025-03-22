@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import FadeIn from "./components/fadeIn";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import GradientComponent from "./components/gradient";
-import ProjectsSection from "./components/projects";
-import LoadingSpinner from "./components/Loading";
+import FadeIn from "./components/all-pages/fadeIn";
+import Header from "./components/all-pages/Header";
+import Footer from "./components/all-pages/Footer";
+import Gradient from "./components/home/Gradient";
+import ProjectsSection from "./components/home/Projects";
+import LoadingAnimation from "./components/all-pages/Loading";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,9 +14,9 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 600); 
+    }, 600);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         <Header />
         <div className="meshGradient absolute left-0 right-0 bottom-0 z-0"></div>
 
-        <GradientComponent />
+        <Gradient />
         <FadeIn>
           <ProjectsSection />
         </FadeIn>
@@ -34,7 +34,7 @@ export default function Home() {
 
         {!isLoaded && (
           <div className="loadingOverlay">
-            <LoadingSpinner />
+            <LoadingAnimation />
           </div>
         )}
       </div>

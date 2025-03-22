@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import FadeIn from '../components/fadeIn';
+import FadeIn from '../components/all-pages/fadeIn';
 import { motion } from 'framer-motion';
 import styles from './Work.module.css';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import LoadingSpinner from "../components/Loading";
+import Header from "../components/all-pages/Header";
+import Footer from "../components/all-pages/Footer";
+import LoadingAnimation from "../components/all-pages/Loading";
 
 export default function Work() {
     const [filter, setFilter] = useState('All');
@@ -28,14 +28,13 @@ export default function Work() {
 
     const filteredPosts = filter === 'All' ? posts : posts.filter(post => post.category.includes(filter));
 
-
     useEffect(() => {
         const timer = setTimeout(() => {
-          setIsLoaded(true);
-        }, 200); 
-    
-        return () => clearTimeout(timer); 
-      }, []);  
+            setIsLoaded(true);
+        }, 200);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         setAnimationKey(prevKey => prevKey + 1);
@@ -55,9 +54,9 @@ export default function Work() {
     return (
         <div className="bg-white text-[#1A428A] min-h-screen font-poppins pt-16">
             <div className="font-poppins flex flex-col items-center justify-center">
-            {!hasLoaded && (
+                {!hasLoaded && (
                     <div className="loadingOverlay">
-                        <LoadingSpinner />
+                        <LoadingAnimation />
                     </div>
                 )}
                 <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -96,7 +95,7 @@ export default function Work() {
                                             <img src={post.image} alt={post.title} className="w-full h-64 object-cover" loading="lazy" quality={80} />
 
                                             <motion.div
-                                                className="postContent absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 sm:opacity-100 transition-opacity"
+                                                className="postContent absolute inset-0 bg-[#AAAC24] bg-opacity-100 pt-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 sm:opacity-0 sm:display-none transition-opacity"
                                                 initial={{ opacity: 0 }}
                                                 whileHover={{ opacity: 1 }}
                                                 transition={{ duration: 0.3 }}
@@ -115,7 +114,6 @@ export default function Work() {
                                                     }
                                                 </div>
                                             </motion.div>
-
                                         </motion.div>
 
                                         <div className="postTextContainer sm:hidden p-4">

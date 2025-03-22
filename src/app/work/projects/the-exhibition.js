@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Modal from "../../components/Modal.js";
+import Modal from "../../components/work/Modal";
 
 function PosterDesignTE({ post }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,7 +75,7 @@ function PosterDesignTE({ post }) {
                             alt="Portfolio and Landscape Design"
                             className={imageStyle}
                             title="View image"
-                            onClick={() => openModal(index + 2)} 
+                            onClick={() => openModal(index + 2)}
                         />
                     ))}
                 </div>

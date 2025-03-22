@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 const NeatGradient = dynamic(() => import("@firecms/neat").then(mod => mod.NeatGradient), { ssr: false });
 
-const GradientComponent = () => {
+export default function Gradient() {
   const gradientRef = useRef(null);
   const [animationData, setAnimationData] = useState(null);
 
@@ -88,5 +88,3 @@ const GradientComponent = () => {
     </div>
   );
 };
-
-export default GradientComponent;

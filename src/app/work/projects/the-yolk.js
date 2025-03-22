@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Modal from "../../components/Modal.js";
+import Modal from "../../components/work/Modal";
 
 function MenuDesign({ post }) {
     const [isModalOpen, setIsModalOpen] = useState(false);

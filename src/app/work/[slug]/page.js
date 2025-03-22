@@ -2,8 +2,8 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/all-pages/Header";
+import Footer from "../../components/all-pages/Footer";
 import MagazineDesign from "../projects/arguitectura-organica";
 import ProductDesign from "../projects/sugar-magic";
 import PosterDesign from "../projects/the-waterfall";
@@ -12,6 +12,7 @@ import CaseStudy from "../projects/aether";
 import MenuDesign from "../projects/the-yolk";
 import posts from "./posts";
 import { AiOutlineRight } from "react-icons/ai";
+import FadeIn from "../../components/all-pages/fadeIn";
 
 const projectComponents = {
   "Magazine Design": MagazineDesign,
@@ -22,7 +23,7 @@ const projectComponents = {
   "Branding & Menu Design": MenuDesign,
 };
 
-function PostPage() {
+export default function PostPage() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const router = useRouter();
@@ -41,7 +42,7 @@ function PostPage() {
 
   const links = [
     { label: "🔗 Digital Version", url: post.links, visibleOn: "sm" },
-    { label: "🔗 Digital Version", url: post.links1, visibleOn: "lg" }, 
+    { label: "🔗 Digital Version", url: post.links1, visibleOn: "lg" },
     { label: "🔗 Blog", url: post.links2 },
     { label: "🔗 Styleguide", url: post.links3 },
     { label: "🔗 Hi-fi Prototype", url: post.links4 },
@@ -73,12 +74,10 @@ function PostPage() {
   return (
     <div className="containerWork bg-white text-[#1A428A] min-h-screen font-poppins">
       <Header />
-
       <h1 className="text-4xl text-[#1A428A] lg:text-5xl font-semibold text-center">{post.title}</h1>
       <p className="text-center text-black p-3 pt-2">
         {Array.isArray(post.category) ? post.category.join(" | ") : post.category}
       </p>
-
       <img
         src={post.image}
         alt={post.title}
@@ -100,9 +99,7 @@ function PostPage() {
         </div>
 
         <h3 className="text-[#1A428A] text-2xl lg:text-3xl font-semibold mt-8">{post.subheading}</h3>
-
         {ProjectComponent && <ProjectComponent post={post} />}
-
         <div className="flex justify-between items-center mt-10">
           <button
             onClick={() => {
@@ -114,7 +111,6 @@ function PostPage() {
           >
             &#8592; {previousPost?.title || "Back"}
           </button>
-
           <button
             onClick={() => {
               router.push(`/work/${nextPost?.slug}`);
@@ -128,9 +124,9 @@ function PostPage() {
         </div>
       </main>
 
-      <Footer />
+      <FadeIn>
+        <Footer />
+      </FadeIn>
     </div>
   );
 }
-
-export default PostPage;

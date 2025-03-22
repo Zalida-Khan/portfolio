@@ -9,11 +9,10 @@ const TabsSwitcher = ({ tabs }) => {
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`py-1 px-4 customRounded ${
-              activeTab === index
-                ? "bg-[#AAAC24] outline outline-1 outline-[#AAAC24] text-white cursor-default" 
+            className={`py-1 px-4 customRounded ${activeTab === index
+                ? "bg-[#AAAC24] outline outline-1 outline-[#AAAC24] text-white cursor-default"
                 : "bg-transparent text-[#AAAC24] outline outline-1 outline-[#AAAC24] hover:text-[#1A428A] hover:outline hover:outline-[#1A428A] cursor-pointer"
-            } transition-all duration-300`}
+              } transition-all duration-300`}
             onClick={() => setActiveTab(index)}
           >
             {tab.title}
@@ -21,7 +20,7 @@ const TabsSwitcher = ({ tabs }) => {
         ))}
       </div>
 
-      <div className="w-full pb-4">
+      <div className="w-full">
         {tabs[activeTab].content}
       </div>
     </div>
@@ -29,8 +28,3 @@ const TabsSwitcher = ({ tabs }) => {
 };
 
 export default TabsSwitcher;
-
-
-
-
-// 1A428A

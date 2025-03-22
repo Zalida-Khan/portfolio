@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-const LoadingSpinner = () => {
+export default function LoadingAnimation() {
   return (
-    <div className="loadingSpinner">
+    <div className="loadingSquares">
       <div className="squaresContainer">
         <motion.div
           className="square"
@@ -49,5 +49,3 @@ const LoadingSpinner = () => {
     </div>
   );
 };
-
-export default LoadingSpinner;
