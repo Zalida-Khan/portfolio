@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "../../components/work/Modal";
 import TabsSwitcher from "../../components/work/TabsSwitcher";
 import SliderSwitcher from "../../components/work/SliderSwitcher";
-
+import posts from "../[slug]/posts";
 
 function CaseStudy({ post }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -86,7 +86,7 @@ function CaseStudy({ post }) {
       </section>
 
       <section>
-        <h3 className="text-2xl font-semibold mt-8  mb-2" style={{ color: "#1A428A" }}>
+        <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
           Design Process
         </h3>
         <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
@@ -99,29 +99,17 @@ function CaseStudy({ post }) {
           className="shadow-lg mb-6 w-full h-[400px] sm:w-full flex justify-center lg:w-full md:w-full md:h-[600px] lg:h-[600px] rounded-3xl"
           src="https://embed.figma.com/design/7uFLSzWU4gw74WYdgnm9cW/Aether?node-id=49-10&embed-host=share"
           title="Aether Low Fidelity Prototype"
+          allowFullScreen
         ></iframe>
         <h4 className="text-xl font-semibold" style={{ color: "#AAAC24" }}>
           Iterations | Usability Testing
         </h4>
-        <SliderSwitcher />
-      </section>
+        <SliderSwitcher openModal={openModal} post={posts[4]}             
+        className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer" : ""}`} />
+        </section>
 
       <section>
-        <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
-          | Hi-fi Prototype Version 1
-        </h4>
-        <p className="text-md text-black mb-6">
-          Created detailed prototypes to demonstrate the final layout and functionality, ensuring a seamless experience for caregivers.
-        </p>
-        <iframe
-          className="shadow-lg mb-6 w-full h-[400px] sm:w-full flex justify-center lg:w-full md:w-full md:h-[600px] lg:h-[600px] rounded-3xl"
-          src="https://embed.figma.com/design/7uFLSzWU4gw74WYdgnm9cW/Aether-Mobile-App?node-id=1379-4323&embed-host=share"
-          title="Aether Mobile App"
-        ></iframe>
-      </section>
-
-      <section>
-        <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
+        <h3 className="text-2xl font-semibold mt-6 mb-2" style={{ color: "#1A428A" }}>
           Development
         </h3>
         <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
@@ -134,10 +122,11 @@ function CaseStudy({ post }) {
           src="https://aether-blog.vercel.app/"
           className="shadow-lg mb-6 w-full h-[400px] sm:w-full flex justify-center lg:w-full md:w-full md:h-[600px] lg:h-[600px] rounded-3xl"
           style={{ border: 1 }}
-          title="Vercel App"
+          title="Aether Blog Website"
         >
         </iframe>
       </section>
+
       <section>
         <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
           | Marketing Materials
@@ -146,13 +135,20 @@ function CaseStudy({ post }) {
           Brochure | Business Cards | Tote Designs/ Stickers
         </h4>
         <p className="text-md text-black mb-6">
-          This blog was built using HTML for structure, CSS for styling, and JavaScript for interactivity, such as modals and responsive layouts. The combination of Flexbox and Grid ensures a responsive design across devices, while JavaScript handles dynamic content like image viewing, dark and light mode and tab switching.
-        </p>
+  These marketing materials were created to promote our app. The tote bags and stickers were especially effective in catching people's attention and encouraging them to check out our app demo.
+</p>
+        <img
+          src={post.gallery[5]}
+          alt="Marketing Materials"
+          onClick={() => openModal(5)}
+          title="View image"
+          className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer " : ""}`}
+        />
       </section>
 
       <section>
         <h3 className="text-2xl font-semibold mt-6 mb-4" style={{ color: "#1A428A" }}>
-         | Key Takeaways
+          | Key Takeaways
         </h3>
         <p className="text-md text-black mb-6">{post.outcomes}</p>
       </section>
@@ -177,6 +173,7 @@ function CaseStudy({ post }) {
         className="shadow-lg w-full h-[400px] sm:w-full flex justify-center lg:w-full md:w-full md:h-[600px] lg:h-[600px] rounded-3xl"
         src="https://embed.figma.com/proto/nzhtkPCGzn1CFTVlAsZSFQ/Aether-App?node-id=2750-7065&scaling=scale-down&content-scaling=fixed&page-id=2750%3A6683&starting-point-node-id=2750%3A7345&embed-host=share"
         title="Aether High Fidelity Prototype"
+        allowFullScreen
       ></iframe>
     </div>
   );

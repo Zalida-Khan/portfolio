@@ -41,9 +41,8 @@ body {
   background-color: white;
 }
 
-/* 
-img:hover {
-  cursor: url(/images/cursor.png) 5 3;
+/* html, * {
+  cursor: url('/images/frog0.png') 2 2, auto;
 } */
 
 .customRounded {

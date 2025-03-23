@@ -73,7 +73,7 @@ export default function Gradient() {
             </p>
           </div>
 
-          <div className="lg:col-span-1 flex justify-center items-center lg:mt-10 lg:pt-14 mb-4">
+          <div className="lg:col-span-1 flex justify-center items-center lg:mt-10 lg:pt-14 mb-4 pointer-events-none cursor-default">
             <Lottie options={{ animationData, loop: true, autoplay: true, rendererSettings: { preserveAspectRatio: "xMidYMid slice" } }} style={{ width: 200, height: 150 }} />
           </div>
 

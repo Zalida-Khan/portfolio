@@ -45,7 +45,7 @@ const posts = [
     tools: 'Illustrator – Photoshop – Spline',
     mandate: 'Create bold, playful cans for Sugar Magic’s Cherry, Lemon, and Blueberry flavours with vibrant tones and whimsical logo font. Highlight a fun, youthful, and refreshing brand vibe within each element.',
     logoAndIllustrations: 'The "Sugar Magic" logo features star-dotted "i"s for a magical touch, along with organic, rounded-edge symbols and label. The calories symbol features a heart pierced by an arrow, topped with stars.',
-    packagingDesign: 'The Flavour-specific designs with colour distinctions but same layout ensure brand consistency. Bilingual (English/French) labels are used for accessibility and designed with dieline templates since the brand is Canadian.',
+    packagingDesign: 'The Flavour-specific designs with colour distinctions but same layout ensure brand consistency. Bilingual (English/French) labels are used for accessibility and since the brand is Canadian. Used dieline templates for all cans to ensure consistency.',
     overview: 'Sugar Magic offers a fun, refreshing experience with its 50-calorie sparkling water in Cherry, Lemon, and Blueberry flavours. The design focuses on vibrant, playful cans that embody the youthful, lighthearted personality of the brand. The whimsical illustrations complement the lively design, creating an engaging and visually appealing product that stands out on shelves. Illustrator was used for everything from dielines to illustrations and logos, ensuring cohesive and precise design elements throughout the project.',
     gallery: [
       '/images/magic/SM-COLOURS.webp',
@@ -202,12 +202,10 @@ const posts = [
     "gallery": [
       "/images/aether/primary-persona.webp",
       "/images/aether/secondary-persona.webp",
-      "/images/aether/research-phase.jpg",
-      "/images/aether/wireframe.webp",
-      "/images/aether/research-phase.jpg",
-      "/images/aether/wireframe.webp",
+      "/images/aether/low-fi-frames.jpg",
+      "/images/aether/mid-fi-frames.jpg",
+      "/images/aether/hi-fi-frames.jpg",
       "/images/aether/marketing-mat.webp",
-      "/images/aether/wireframe.webp"
     ],
     "links2": "https://aether-blog.vercel.app/",
     "links3": "https://www.figma.com/proto/7uFLSzWU4gw74WYdgnm9cW/Aether?node-id=366-368&t=HTLk6hNvAYIi1YWF-1&scaling=scale-down&content-scaling=fixed&page-id=366%3A367&starting-point-node-id=366%3A368",
