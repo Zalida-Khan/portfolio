@@ -284,11 +284,11 @@ footer {
   }
 }
 
+/*Flipping stylying*/
 .flipbookContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px 15px 15px 5px;
   transition: transform 1s ease;
   overflow: hidden;
 }
@@ -320,31 +320,138 @@ input[type="checkbox"] {
   display: none;
 }
 
-.cover {
+.cover,
+.backCover {
   background-color: #1a428a;
   width: 100%;
   height: 100%;
   border-radius: 5px 15px 15px 5px;
-  box-shadow: 0 0 2px rgba(41, 41, 41, 0.5);
+  box-shadow: 0 0 2px rgb(41, 41, 41, 0.5);
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   transform-origin: center left;
   transition: transform 1s;
+}
+
+.cover {
   z-index: 10;
 }
 
-.cover label {
+.cover label,
+.page label {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
-#checkboxCover:checked ~ .book .cover {
+#checkboxCover:checked~.book .cover {
   transform: rotateY(-180deg);
 }
 
 .cover.flipped {
   z-index: 0;
+}
+
+.page {
+  position: absolute;
+  background-color: white;
+  width: 330px;
+  height: 450px;
+  border-radius: 0 15px 15px 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+  z-index: 1;
+}
+
+.page:nth-child(1) {
+  z-index: 12;
+}
+
+.page:nth-child(2) {
+  z-index: 6;
+}
+
+.page:nth-child(3) {
+  z-index: 5;
+}
+
+.page:nth-child(4) {
+  z-index: 4;
+}
+
+.page:nth-child(5) {
+  z-index: 3;
+}
+
+.page:nth-child(6) {
+  z-index: 2;
+}
+
+.frontPage {
+  z-index: 2;
+  backface-visibility: hidden;
+  border-radius: 15px 0 0 15px;
+  box-shadow: -2px 0 0 rgba(41, 41, 41, 0.2);
+}
+
+.backPage {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  box-shadow: 0 0 3px rgba(41, 41, 41, 0.2);
+  border-radius: 0 15px 15px 0;
+  z-index: 1;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.page .left {
+  border-radius: 15px 0 0 15px;
+}
+
+.page .right {
+  border-radius: 0 15px 15px 0;
+}
+
+#checkboxPage1:checked~.book #page1 {
+  transform: rotateY(-180deg);
+  z-index: 8;
+}
+
+#checkboxPage2:checked~.book #page2 {
+  transform: rotateY(-180deg);
+  z-index: 9;
+}
+
+#checkboxPage3:checked~.book #page3 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+
+#checkboxPage4:checked~.book #page4 {
+  transform: rotateY(-180deg);
+  z-index: 11;
+}
+
+#checkboxPage5:checked~.book #page5 {
+  transform: rotateY(-180deg);
+  z-index: 12;
+}
+
+#checkboxPage6:checked~.book #page6 {
+  transform: rotateY(-180deg);
+  z-index: 13;
+}
+
+@media (min-width: 768px) {
+  .flipbookContainer.opened {
+    transform: translateX(180px);
+    overflow: visible;
+  }
 }
