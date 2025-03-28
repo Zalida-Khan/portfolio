@@ -5,7 +5,7 @@ import FadeIn from "../components/all-pages/fadeIn";
 import Header from "../components/all-pages/Header";
 import Footer from "../components/all-pages/Footer";
 import LoadingAnimation from "../components/all-pages/Loading";
-// import Journal from "../components/flipBook";
+import Journal from "./flipBook";
 
 const SkillItem = ({ imgSrc, altText, skillName }) => (
     <div className="skillItem text-center">
@@ -69,10 +69,10 @@ export default function About() {
                             </div>
                             </div>
                         </section>
-                        {/* <section className='flex flex-col mt-2 mb-5 lg:mt-0 md:mt-0 sm:mt-2'> */}
-                            {/* <h3 className="text-2xl text-center md:text-3xl font-semibold text-[#1A428A] flex flex-col mb-6">Learn More About Me!</h3> */}
-                            {/* <Journal /> */}
-                        {/* </section> */}
+                        <section className='flex flex-col mt-2 mb-5 lg:mt-0 md:mt-0 sm:mt-2'>
+                            <h3 className="text-2xl text-center md:text-3xl font-semibold text-[#1A428A] flex flex-col mb-6">Learn More About Me!</h3>
+                            <Journal />
+                        </section>
 
                         <section className="skillSection py-8 w-full max-w-5xl pt-4 p-6 mb-6">
                             <h2 className="text-3xl text-center text-[#1A428A] font-semibold mb-6">
