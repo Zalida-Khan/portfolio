@@ -261,7 +261,7 @@ footer {
 
 .book {
   width: 180px;
-  height: 260px;
+  height: 280px;
   position: relative;
   border-radius: 5px 15px 15px 5px;
   perspective: 1500px;
@@ -367,7 +367,7 @@ input[type="checkbox"] {
   border-radius: inherit;
 }
 
-.page .left {
+.page .left{
   border-radius: 15px 0 0 15px;
 }
 
