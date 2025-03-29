@@ -54,7 +54,7 @@ export default function Gradient() {
       <div ref={gradientRef} className="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none" />
       <main className="containerGradients px-4 sm:px-8 lg:px-16 py-10 md:py-12 lg:py-20 z-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 lg:pt-12">
-          <div className="lg:col-span-3 flex flex-col justify-center md:pl-10 lg:pl-20 items-start">
+          <div className="lg:col-span-3 flex flex-col justify-center md:pl-0 lg:pl-10 items-start">
             <h1 className="text-[#000] text-3xl sm:text-4xl lg:text-[2.4rem] font-light font-poppins mt-4 lg:mt-20">
               Hello there! I'm
             </h1>
@@ -77,7 +77,7 @@ export default function Gradient() {
             <Lottie options={{ animationData, loop: true, autoplay: true, rendererSettings: { preserveAspectRatio: "xMidYMid slice" } }} style={{ width: 200, height: 150 }} />
           </div>
 
-          <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-10 lg:pl-10 pr-10 lg:pr-10 lg:mt-12 lg:pt-10">
+          <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-0 lg:pl-10 pr-10 lg:pr-10 lg:mt-12 lg:pt-10">
             <h2 className="text-xl lg:text-2xl font-bold font-syne text-[#000] mb-4">With a sharp eye for detail!</h2>
             <p className="text-md text-left font-poppins font-light text-[#000] mb-4">
               Bringing creative designs to life, creating user-centered UI/UX, and building seamless front-end experiences.

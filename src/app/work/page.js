@@ -116,7 +116,7 @@ export default function Work() {
                                             </motion.div>
                                         </motion.div>
 
-                                        <div className="postTextContainer sm:hidden p-4">
+                                        <div className="postTextContainer sm:hidden p-0 pb-4">
                                             <h2 className="text-[#1A428A] text-2xl font-semibold">{post.title}</h2>
                                             <div className="text-[#1A428A] text-md ">
                                                 {post.category.join(' | ')}

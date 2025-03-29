@@ -45,7 +45,7 @@ export default function Header() {
             <img
               src="/images/Monogram-logo.png"
               alt="a monogram logo with the letters z and k"
-              className="h-10 lg:h-11"
+              className="h-10 sm:h-10 md:h-10 lg:h-11"
             />
           </a>
         </div>

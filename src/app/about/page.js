@@ -55,12 +55,12 @@ export default function About() {
                                 <img
                                     src="/images/about/me2.png"
                                     alt="A photo of me"
-                                    className="object-cover mb-4 rounded-3xl"
+                                    className="object-cover mb-4 w-[800px] h-[300px] md:h-[550px] rounded-3xl"
                                 />
                             </div>
 
-                            <div className="flex flex-col items-start max-w-5xl mx-auto">
-                                <div className="mt-4 flex flex-col items-start max-w-5xl mx-auto sm:p-5 md:pt-6 md:p-0 lg:p-6 lg:pt-0 rounded-2xl">
+                            <div className="flex flex-col items-start max-w-5xl mx-auto ">
+                                <div className="mt-4 flex flex-col items-start max-w-5xl mx-auto lg:p-6 lg:pt-0 rounded-2xl">
                                     <h3 className="text-2xl md:text-3xl text-left text-[#1A428A] font-semibold">
                                         Hey there, I'm Zalida! 👋
                                     </h3>
@@ -71,12 +71,12 @@ export default function About() {
                             </div>
                         </section>
                         <section className='flex flex-col mt-2 mb-5 lg:mt-0 md:mt-0 sm:mt-2'>
-                            <h3 className="text-2xl text-center md:text-3xl font-semibold text-[#1A428A] flex flex-col mb-6">Learn More About Me!</h3>
+                            <h3 className="text-2xl text-center md:text-3xl font-semibold text-[#1A428A] flex flex-col mb-4 mt-0 md:mt-6 lg:mt-2">Learn More About Me!</h3>
                             <Journal />
                         </section>
 
-                        <section className="skillSection py-8 w-full max-w-5xl pt-4 lg:p-10 p-6 mb-6">
-                            <h2 className="text-3xl text-center text-[#1A428A] font-semibold mb-6">
+                        <section className="skillSection py-8 w-full max-w-5xl sm:p-5 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10 pt-0lg:p-6 lg:pt-0 mb-6">
+                            <h2 className="text-3xl lg:text-5xl md:text-4xl text-center text-[#1A428A] font-semibold mb-6">
                                 My Skills & Familiar Technology:
                             </h2>
                             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

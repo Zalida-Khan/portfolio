@@ -64,7 +64,7 @@ export default function ProjectsSection() {
     }, []);
 
     return (
-        <section className="relative containerProjects mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20 mb-20">
+        <section className="relative containerProjects mx-auto py-4 px-0 sm:px-6 md:px-6 md:pl-8 lg:pl-20 lg:pr-20 md:pr-8 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                 <div className="lg:col-span-1 lg:pr-6 flex flex-col justify-right">
                     <h2 className="mt-4 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
@@ -78,7 +78,7 @@ export default function ProjectsSection() {
                     </div>
                 </div>
 
-                <div className="lg:col-span-1 grid grid-cols-1 gap-14 lg:gap-6 md:gap-10">
+                <div className="lg:col-span-1 grid grid-cols-1 gap-8 lg:gap-10 md:gap-10">
                     {projects.map((project, index) => (
                         <div key={index} className="p-0 pb-10 lg:pb-10 relative rounded-3xl overflow-hidden">
                             <div className="relative w-full h-72 lg:h-96 rounded-3xl overflow-hidden">
