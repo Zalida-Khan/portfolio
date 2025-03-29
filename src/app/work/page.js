@@ -22,7 +22,7 @@ export default function Work() {
         { id: 2, slug: 'sugar-magic', title: 'Sugar Magic', image: '/images/magic/feature-sugarmagic.webp', category: ['Product Design', 'Graphic Design'] },
         { id: 3, slug: 'the-waterfall', title: 'The Waterfall Poster', image: '/images/waterfall/feature-waterfall-2.webp', category: ['Poster Design', 'Vinyl Covers', 'Graphic Design'] },
         { id: 4, slug: 'the-exhibition', title: 'The Exhibition Poster', image: '/images/exhibition/feature-exhibition-poster.webp', category: ['Poster Design', 'Graphic Design'] },
-        { id: 5, slug: 'aether', title: 'Aether Mobile App', image: '/images/aether/feature-aether.webp', category: ['Case Study', 'UI/UX Design', 'Front–end Development'] },
+        { id: 5, slug: 'aether', title: 'Aether Mobile App', image: '/images/aether/feature-aether.jpg', category: ['Case Study', 'UI/UX Design', 'Front–end Development'] },
         { id: 6, slug: 'the-yolk', title: 'The Yolk Menu', image: '/images/yolk/menu-cover.webp', category: ['Menu Design', 'Branding', 'Graphic Design'] },
     ];
 

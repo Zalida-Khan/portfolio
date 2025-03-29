@@ -27,23 +27,19 @@
 html {
   scrollbar-color: #aaac24 rgb(170, 172, 36, 0.5);
   scrollbar-width: 0.5px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   color: var(--foreground);
   padding-top: 5px !important;
-  scroll-behavior: smooth;
 }
 
 .content {
   margin-top: calc(40px + 10vh);
   background-color: white;
 }
-
-/* html, * {
-  cursor: url('/images/frog0.png') 2 2, auto;
-} */
 
 .customRounded {
   border-radius: 60px;
@@ -91,7 +87,7 @@ h6 {
 .hamMenu {
   background-color: var(--button-bg);
   color: white;
-  padding: 11px 20px;
+  padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -249,57 +245,27 @@ footer {
   animation: slideInFromLeft 0.5s ease-out forwards;
 }
 
-@keyframes slideInFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.mobileMenuItem {
-  opacity: 0;
-  animation: slideInFromTop 0.6s ease-out forwards;
-}
-
-.mobileMenuItem:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.mobileMenuItem:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.mobileMenuItem:nth-child(3) {
-  animation-delay: 0.5s;
-}
-
-@media (min-width: 768px) {
-  .mobileMenuItem {
-    animation: none;
-  }
-}
-
-/*Flipping stylying*/
+/* Flipbook styling */
 .flipbookContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 1s ease;
-  overflow: hidden;
+  overflow: visible;
+  width: 100%;
 }
 
 .flipbookContainer.opened {
-  transform: translateX(0);
+  transform: translateX(50%);
+}
+
+.flipbookContainer, .book {
+  transition: transform 0.8s ease;
 }
 
 .book {
-  width: 360px;
-  height: 480px;
+  width: 230px;
+  height: 350px;
   position: relative;
   border-radius: 5px 15px 15px 5px;
   perspective: 1500px;
@@ -322,52 +288,38 @@ input[type="checkbox"] {
 
 .cover,
 .backCover {
-  background-color: #1a428a;
   width: 100%;
   height: 100%;
   border-radius: 5px 15px 15px 5px;
-  box-shadow: 0 0 2px rgb(41, 41, 41, 0.5);
   position: absolute;
   display: flex;
-  align-items: center;
   justify-content: center;
   transform-origin: center left;
   transition: transform 1s;
 }
 
-.cover {
-  z-index: 10;
-}
-
-.cover label,
-.page label {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-
-#checkboxCover:checked~.book .cover {
-  transform: rotateY(-180deg);
+.cover img {
+  z-index: 13;
+  border-radius: 5px 15px 15px 5px;
 }
 
 .cover.flipped {
-  z-index: 0;
+  z-index: 13;
 }
 
 .page {
   position: absolute;
   background-color: white;
-  width: 330px;
-  height: 450px;
+  width: 210px;
+  height: 330px;
   border-radius: 0 15px 15px 0;
   transform-origin: left;
   transform-style: preserve-3d;
   transition: transform 1.5s;
-  z-index: 1;
 }
 
 .page:nth-child(1) {
-  z-index: 12;
+  z-index: 7;
 }
 
 .page:nth-child(2) {
@@ -394,15 +346,18 @@ input[type="checkbox"] {
   z-index: 2;
   backface-visibility: hidden;
   border-radius: 15px 0 0 15px;
-  box-shadow: -2px 0 0 rgba(41, 41, 41, 0.2);
 }
 
 .backPage {
   transform: rotateY(180deg);
   backface-visibility: hidden;
-  box-shadow: 0 0 3px rgba(41, 41, 41, 0.2);
+  box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
   border-radius: 0 15px 15px 0;
   z-index: 1;
+}
+
+.backCover img {
+  border-radius: 5px 15px 15px 5px;
 }
 
 .page img {
@@ -419,39 +374,54 @@ input[type="checkbox"] {
   border-radius: 0 15px 15px 0;
 }
 
-#checkboxPage1:checked~.book #page1 {
+#checkboxCover:checked ~ .book .cover {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+#checkboxPage1:checked ~ .book #page1 {
+  transform: rotateY(-180deg);
+  z-index: 7;
+}
+
+#checkboxPage2:checked ~ .book #page2 {
   transform: rotateY(-180deg);
   z-index: 8;
 }
 
-#checkboxPage2:checked~.book #page2 {
+#checkboxPage3:checked ~ .book #page3 {
   transform: rotateY(-180deg);
   z-index: 9;
 }
 
-#checkboxPage3:checked~.book #page3 {
+#checkboxPage4:checked ~ .book #page4 {
   transform: rotateY(-180deg);
   z-index: 10;
 }
 
-#checkboxPage4:checked~.book #page4 {
+#checkboxPage5:checked ~ .book #page5 {
   transform: rotateY(-180deg);
   z-index: 11;
 }
 
-#checkboxPage5:checked~.book #page5 {
+#checkboxPage6:checked ~ .book #page6 {
   transform: rotateY(-180deg);
   z-index: 12;
 }
 
-#checkboxPage6:checked~.book #page6 {
-  transform: rotateY(-180deg);
-  z-index: 13;
-}
-
 @media (min-width: 768px) {
   .flipbookContainer.opened {
-    transform: translateX(180px);
-    overflow: visible;
+     max-width: 0 auto;
+     transition: transform 1s;
+  }
+
+  .page {
+     width: 330px;
+     height: 450px;
+  }
+
+  .book {
+     width: 360px;
+     height: 480px;
   }
 }

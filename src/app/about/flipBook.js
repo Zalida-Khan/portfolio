@@ -7,7 +7,9 @@ export default function Flipbook() {
 
     const handleTransitionEnd = () => {
         const coverElement = document.querySelector('.cover');
-        coverElement.classList.add('flipped');
+        if (!coverElement.classList.contains('flipped')) {
+            coverElement.classList.add('flipped');
+        }
     };
 
     const orderedPages = [
@@ -28,7 +30,14 @@ export default function Flipbook() {
 
             <div className="book">
                 <div className="cover" onTransitionEnd={handleTransitionEnd}>
-                    <label htmlFor="checkboxCover"></label>
+                    <label className="flex w-full h-full" htmlFor="checkboxCover" aria-label="Flip the cover">
+                        <Image
+                            src={"/images/about/cover-front.jpg"}
+                            alt={"cover"}
+                            width={500}
+                            height={500}
+                        />
+                    </label>
                 </div>
 
                 {orderedPages.map((page, index) => (
@@ -63,7 +72,14 @@ export default function Flipbook() {
                     </div>
                 ))}
 
-                <div className="backCover"></div>
+                <div className="backCover">
+                <Image
+                            src={"/images/about/backcover-inside.jpg"}
+                            alt={"cover"}
+                            width={500}
+                            height={500}
+                        />
+                </div>
             </div>
         </div>
     );
