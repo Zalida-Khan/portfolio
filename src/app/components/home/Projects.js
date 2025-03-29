@@ -65,7 +65,7 @@ export default function ProjectsSection() {
 
     return (
         <section className="relative containerProjects mx-auto py-4 px-0 sm:px-6 md:px-6 lg:pl-20 lg:pr-20 mb-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                 <div className="lg:col-span-1 lg:pr-6 flex flex-col justify-right">
                     <h2 className="mt-4 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-2xl">
