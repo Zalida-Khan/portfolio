@@ -260,8 +260,8 @@ footer {
 }
 
 .book {
-  width: 170px;
-  height: 220px;
+  width: 180px;
+  height: 260px;
   position: relative;
   border-radius: 5px 15px 15px 5px;
   perspective: 1500px;
@@ -311,8 +311,8 @@ input[type="checkbox"] {
 .page {
   position: absolute;
   background-color: white;
-  width: 160px;
-  height: 200px;
+  width: 170px;
+  height: 240px;
   border-radius: 0 15px 15px 0;
   transform-origin: left;
   transform-style: preserve-3d;
@@ -412,11 +412,11 @@ input[type="checkbox"] {
 
 @media (max-width: 768px) {
   .flipbookContainer.opened {
-    transform: translateX(35%);
+    transform: translateX(38%); 
     max-width: 0 auto;
   }
-  
 }
+
 @media (min-width: 768px) {
   .flipbookContainer.opened {
      max-width: 0 auto;
