@@ -1,6 +1,6 @@
-# Zalida's [Porfolio](https://zalidakhan.com).
+# Zalida's [Portfolio](https://zalidakhan.com).
 
-Welcome to my design and development portfolio, showcasing my work in graphic design, UI/UX design, and front-end development. My focus is on simple yet user-centered designs with minimalist aesthetics and seamless experiences.
+Welcome to my design and development portfolio, showcasing my work in graphic design, UI/UX design, and front-end development. My focus is on simple yet user-centered designs with seamless experiences.
 
 ## Featured Projects:
 

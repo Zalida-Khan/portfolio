@@ -128,38 +128,37 @@ function CaseStudy({ post }) {
       </section>
 
       <section>
-        <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
-          | Marketing Materials
-        </h3>
-        <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
-          Brochure | Business Cards | Tote Designs/ Stickers
-        </h4>
-        <p className="text-md text-black mb-6">
-          These marketing materials were created to promote our app. The tote bags and stickers were especially effective in catching people's attention and encouraging them to check out our app demo.
-        </p>
-        <img
-          src={post.gallery[5]}
-          alt="Marketing Materials"
-          onClick={() => openModal(5)}
-          title="View image"
-          className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer " : ""}`}
-        />
-      </section>
-
-      <section>
         <h3 className="text-2xl font-semibold mt-6 mb-4" style={{ color: "#1A428A" }}>
           | Key Takeaways
         </h3>
-        <h2 className="text-lg font-semibold mt-4">| Great User Experience</h2>
-        <p className="text-md text-black text-base">Aether offers a smooth and engaging experience with easy-to-use design and powerful features.</p>
-        <h2 className="text-lg font-semibold mt-4">| Simple and Easy Design</h2>
-        <p className="text-md text-black text-base">The app is simple to navigate while still offering advanced features for a great user experience.</p>
-        <h2 className="text-lg font-semibold mt-4">| Customizable</h2>
-        <p className="text-md text-black text-base">Aether lets users adjust settings to fit their personal preferences for a more relevant experience.</p>
-        <h2 className="text-lg font-semibold mt-4">| Advanced Features</h2>
-        <p className="text-md text-black text-base">The app uses modern technology to make sure tasks are done quickly and efficiently.</p>
-        <h2 className="text-lg font-semibold mt-4">| Made for Mobile</h2>
-        <p className="text-md text-black text-base">Aether works well on all devices, so users can access it wherever they are.</p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">Team Collaboration: </span>
+          <span className="block sm:inline">Worked well with the team, shared ideas, and helped improve the work process.</span>
+        </p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">Time Management: </span>
+          <span className="block sm:inline">Learned to plan better and keep track of deadlines to stay on top of tasks.</span>
+        </p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">Marketing Strategy: </span>
+          <span className="block sm:inline">Gained hands-on experience in creating marketing templates that saved time and ensured consistency.</span>
+        </p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">User-Centered Design: </span>
+          <span className="block sm:inline">Applied simple design principles to make the app easy to use and enjoyable for everyone.</span>
+        </p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">Customization & Personalization: </span>
+          <span className="block sm:inline">Used design flexibility to help users make the app more personal and meet their needs.</span>
+        </p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">Technical Problem-Solving: </span>
+          <span className="block sm:inline">Used modern tools to fix issues and make the app faster and more efficient.</span>
+        </p>
+        <p className="text-md text-black text-base mt-4">
+          <span className="font-semibold">Mobile-First Approach: </span>
+          <span className="block sm:inline">Designed with mobile in mind first, ensuring smooth performance on all devices.</span>
+        </p>
       </section>
 
       {isModalOpen && (
