@@ -390,7 +390,7 @@ input[type="checkbox"] {
 }
 
 .flipbookContainer.opened {
-  transform: translateX(35%);
+  transform: translateX(40%);
   max-width: 0 auto;
 }
 

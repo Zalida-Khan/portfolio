@@ -1,17 +1,34 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 
 export default function Flipbook() {
     const [isOpened, setIsOpened] = useState(false);
+    const [currentPage, setCurrentPage] = useState(0);
+    const totalPages = 5;
 
     const handleCheckboxChange = () => setIsOpened(!isOpened);
 
     const resetBook = () => {
         setIsOpened(false);
+        setCurrentPage(0);
         document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
             checkbox.checked = false;
         });
     };
+
+    const swipeHandlers = useSwipeable({
+        onSwiped: (eventData) => {
+            if (eventData.dir === "Left" && currentPage < totalPages) {
+                document.getElementById(`checkboxPage${currentPage + 1}`)?.click();
+                setCurrentPage(currentPage + 1);
+            } else if (eventData.dir === "Right" && currentPage > 0) {
+                document.getElementById(`checkboxPage${currentPage}`)?.click();
+                setCurrentPage(currentPage - 1);
+            }
+        },
+        trackMouse: true,
+    });
 
     const orderedPages = [
         { leftImage: "second-left.jpg", rightImage: "first-right.jpg" },
@@ -22,7 +39,7 @@ export default function Flipbook() {
     ];
 
     return (
-        <div className={`flipbookContainer ${isOpened ? "opened" : ""}`}>
+        <div {...swipeHandlers} className={`flipbookContainer ${isOpened ? "opened" : ""}`}>
             <input type="checkbox" id="checkboxCover" onChange={handleCheckboxChange} />
             {orderedPages.map((_, index) => (
                 <input type="checkbox" id={`checkboxPage${index + 1}`} key={`checkbox${index}`} />
