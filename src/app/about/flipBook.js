@@ -39,7 +39,7 @@ export default function Flipbook() {
                 {orderedPages.map((page, index) => (
                     <div className="page" id={`page${index + 1}`} key={index}>
                         {page.rightImage && (
-                            <div className="frontPage absolute flex items-center justify-center w-full h-full rounded-l-[15px]">
+                            <div className="frontPage w-full h-full rounded-l-[15px]">
                                 <label htmlFor={`checkboxPage${index + 1}`}>
                                     <Image className="right" src={`/images/about/${page.rightImage}`} alt={`Page ${index + 1} Right`} width={500} height={600} />
                                 </label>
@@ -47,7 +47,7 @@ export default function Flipbook() {
                         )}
 
                         {page.leftImage && (
-                            <div className="backPage absolute flex items-center justify-center w-full h-full rounded-l-[15px]">
+                            <div className="backPage absolute w-full h-full rounded-l-[15px]">
                                 <label htmlFor={`checkboxPage${index + 1}`}>
                                     <Image className="left" src={`/images/about/${page.leftImage}`} alt={`Page ${index + 1} Left`} width={500} height={600} />
                                 </label>
