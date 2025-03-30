@@ -314,7 +314,9 @@ input[type="checkbox"] {
   position: absolute;
   background-color: white;
   border-radius: 0 15px 15px 0;
-  transform-origin: left;
+  display: flex;
+  justify-content: center;
+  transform-origin: center left;
   transform-style: preserve-3d;
   transition: transform 1s;
 }
@@ -432,13 +434,13 @@ input[type="checkbox"] {
   }
 
   .book {
-    width: 170px;
-    height: 250px; 
+    width: 180px;
+    height: 280px; 
   }
 
   .page {
-    width: 150px;
-    height: 220px;
+    width: 160px;
+    height: 240px;
   }
 }
 
