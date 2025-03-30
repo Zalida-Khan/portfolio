@@ -65,7 +65,7 @@ export default function Work() {
                     <main className="w-full max-w-4xl p-4 flex flex-col items-center">
                         <h1 className="text-[#1A428A] text-6xl lg:text-7xl md:text-6xl font-semibold text-center font-[Syne] my-6">Work</h1>
 
-                        <div className="bg-[#E4E0E5] flex flex-wrap justify-center gap-2 mt-4 p-3 rounded-3xl">
+                        <div className="bg-[#E4E0E5] text-lg flex flex-wrap justify-center gap-2 mt-4 p-3 rounded-3xl">
                             {['All', 'Graphic Design', 'UI/UX Design', 'Front–end Development'].map((category) => (
                                 <button
                                     key={category}

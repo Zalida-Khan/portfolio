@@ -7,13 +7,18 @@ import Footer from "../components/all-pages/Footer";
 import LoadingAnimation from "../components/all-pages/Loading";
 import Journal from "./flipBook";
 
-const SkillItem = ({ imgSrc, altText, skillName, width, height }) => (
-    <div className="skillItem text-center">
-        <img src={imgSrc} alt={altText} width={width} height={height} className="w-15 h-14 mx-auto" />
-        <p className="text-gray-600">{skillName}</p>
-    </div>
-);
-
+const SkillItem = ({ imgSrc, altText, skillName }) => {
+    return (
+        <div className="flex flex-col items-center">
+            <img
+                src={imgSrc}
+                alt={altText}
+                className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] aspect-square object-contain"
+            />
+            <p className="text-center mt-2 text-md font-medium">{skillName}</p>
+        </div>
+    );
+};
 
 export default function About() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -75,37 +80,36 @@ export default function About() {
                             <Journal />
                         </section>
 
-                        <section className="skillSection py-8 w-full max-w-5xl sm:p-5 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10 pt-0lg:p-6 lg:pt-0 mb-6">
-                            <h2 className="text-3xl lg:text-5xl md:text-4xl text-center text-[#1A428A] font-semibold mb-6">
+                        <section className="skillSection py-8 w-full max-w-5xl sm:p-5 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10  lg:p-6 lg:pt-6 mb-6">
+                            <h2 className="text-3xl md:text-4xl text-center text-[#1A428A] font-semibold mb-6">
                                 My Skills & Familiar Technology:
                             </h2>
                             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                                <SkillItem imgSrc="/images/about/html.png" altText="HTML" skillName="HTML5" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/css.png" altText="CSS" skillName="CSS3" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/javascript.jpg" altText="JavaScript" skillName="JavaScript" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/react.jpg" altText="React" skillName="React" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/next js.jpg" altText="Next.js" skillName="Next.JS" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/vite.jpg" altText="Vite" skillName="Vite" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/tailwindcss.jpg" altText="TailwindCSS" skillName="TailwindCSS" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/npm.jpg" altText="NPM" skillName="NPM" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/github.jpg" altText="GitHub" skillName="GitHub" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/git.jpg" altText="Git" skillName="Git" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/vercel.jpg" altText="Vercel" skillName="Vercel" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/wordpress.jpg" altText="WordPress" skillName="WordPress" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/google cloud.jpg" altText="Google Cloud" skillName="Google Cloud" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/google maps api.jpg" altText="Google Maps API" skillName="Google Maps API" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/figma.jpg" altText="Figma" skillName="Figma" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/creative cloud.jpg" altText="Adobe Creative Cloud" skillName="Creative Cloud" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/indesign.jpg" altText="Adobe InDesign" skillName="InDesign" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/illustrator.jpg" altText="Adobe Illustrator" skillName="Illustrator" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/photoshop.jpg" altText="Adobe Photoshop" skillName="Photoshop" width="60" height="60" />
-                                <SkillItem imgSrc="/images/about/express.jpg" altText="Adobe Express" skillName="Express" width="60" height="60" />
-
+                                <SkillItem imgSrc="/images/about/html.jpg" altText="HTML" skillName="HTML5" />
+                                <SkillItem imgSrc="/images/about/css.jpg" altText="CSS" skillName="CSS3" />
+                                <SkillItem imgSrc="/images/about/javascript.jpg" altText="JavaScript" skillName="JavaScript" />
+                                <SkillItem imgSrc="/images/about/react.jpg" altText="React" skillName="React" />
+                                <SkillItem imgSrc="/images/about/next js.jpg" altText="Next.js" skillName="Next.JS" />
+                                <SkillItem imgSrc="/images/about/vite.jpg" altText="Vite" skillName="Vite" />
+                                <SkillItem imgSrc="/images/about/tailwindcss.jpg" altText="TailwindCSS" skillName="TailwindCSS" />
+                                <SkillItem imgSrc="/images/about/npm.jpg" altText="NPM" skillName="NPM" />
+                                <SkillItem imgSrc="/images/about/github.jpg" altText="GitHub" skillName="GitHub" />
+                                <SkillItem imgSrc="/images/about/git.jpg" altText="Git" skillName="Git" />
+                                <SkillItem imgSrc="/images/about/vercel.jpg" altText="Vercel" skillName="Vercel" />
+                                <SkillItem imgSrc="/images/about/wordpress.jpg" altText="WordPress" skillName="WordPress" />
+                                <SkillItem imgSrc="/images/about/google cloud.jpg" altText="Google Cloud" skillName="Google Cloud" />
+                                <SkillItem imgSrc="/images/about/google maps api.jpg" altText="Google Maps API" skillName="Google Maps API" />
+                                <SkillItem imgSrc="/images/about/figma.jpg" altText="Figma" skillName="Figma" />
+                                <SkillItem imgSrc="/images/about/creative cloud.jpg" altText="Adobe Creative Cloud" skillName="Creative Cloud" />
+                                <SkillItem imgSrc="/images/about/indesign.jpg" altText="Adobe InDesign" skillName="InDesign" />
+                                <SkillItem imgSrc="/images/about/illustrator.jpg" altText="Adobe Illustrator" skillName="Illustrator" />
+                                <SkillItem imgSrc="/images/about/photoshop.jpg" altText="Adobe Photoshop" skillName="Photoshop" />
+                                <SkillItem imgSrc="/images/about/express.jpg" altText="Adobe Express" skillName="Express" />
                             </div>
                         </section>
 
                         <section className="text-center py-8 max-w-5xl mx-auto pt-4 p-6 mb-8">
-                            <p className="text-2xl mb-6 lg:text-3xl">Got a project in mind? Or just want to say hello? Let’s connect!</p>
+                            <p className="text-2xl mb-6 lg:text-3xl">Have a project idea or just want to chat? Reach out—I’d love to hear from you!</p>
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"

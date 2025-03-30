@@ -24,6 +24,13 @@
   }
 }
 
+@font-face {
+  font-family: 'Zally';
+  src: url('/my-font/Zally-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   scrollbar-color: #aaac24 rgb(170, 172, 36, 0.5);
   scrollbar-width: 0.5px;

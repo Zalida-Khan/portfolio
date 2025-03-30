@@ -85,6 +85,7 @@
 .filterButton.active {
   background-color: var(--button-bg);
   color: white;
+  cursor: default;
 }
 
 .filterButton.inactive {

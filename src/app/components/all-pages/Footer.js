@@ -43,8 +43,10 @@ export default function Footer() {
       </div>
 
       <div className="text-md text-[#6C5B7B] text-center mt-8 font-normal tracking-wide">
-        <p className="text-md opacity-90 font-syne">Developed & designed by me! &copy; <span className="text-md opacity-90">2025 Zalida Khan </span> </p>
-      </div>
+  <p className="text-md opacity-90">
+    Developed & designed by me! &copy; <span style={{ fontFamily: 'Zally, sans-serif' }} className="text-md opacity-90">2025 Zalida Khan</span>
+  </p>
+</div>
 
     </footer>
   );

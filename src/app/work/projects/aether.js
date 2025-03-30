@@ -105,7 +105,7 @@ function CaseStudy({ post }) {
           | Iterations | Usability Testing
         </h4>
         <SliderSwitcher openModal={openModal} post={posts[4]}
-          className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer" : ""}`} />
+          className={`shadow-lg w-full h-auto p-4 rounded-2xl object-contain transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer" : ""}`} />
       </section>
 
       <section>

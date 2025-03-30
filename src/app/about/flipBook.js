@@ -32,7 +32,7 @@ export default function Flipbook() {
             <div className="book">
                 <div className="cover">
                     <label className="flex w-full h-full" htmlFor="checkboxCover">
-                        <Image src="/images/about/cover-front.jpg" alt="cover" width={500} height={500} />
+                        <Image src="/images/about/cover-front.jpg" alt="cover" width={500} height={600} />
                     </label>
                 </div>
 
@@ -41,7 +41,7 @@ export default function Flipbook() {
                         {page.rightImage && (
                             <div className="frontPage absolute flex items-center justify-center w-full h-full rounded-l-[15px]">
                                 <label htmlFor={`checkboxPage${index + 1}`}>
-                                    <Image className="right" src={`/images/about/${page.rightImage}`} alt={`Page ${index + 1} Right`} width={500} height={500} />
+                                    <Image className="right" src={`/images/about/${page.rightImage}`} alt={`Page ${index + 1} Right`} width={500} height={600} />
                                 </label>
                             </div>
                         )}
@@ -49,7 +49,7 @@ export default function Flipbook() {
                         {page.leftImage && (
                             <div className="backPage absolute flex items-center justify-center w-full h-full rounded-l-[15px]">
                                 <label htmlFor={`checkboxPage${index + 1}`}>
-                                    <Image className="left" src={`/images/about/${page.leftImage}`} alt={`Page ${index + 1} Left`} width={500} height={500} />
+                                    <Image className="left" src={`/images/about/${page.leftImage}`} alt={`Page ${index + 1} Left`} width={500} height={600} />
                                 </label>
                             </div>
                         )}
@@ -57,7 +57,7 @@ export default function Flipbook() {
                 ))}
 
                 <div className="backCover" onClick={resetBook}>
-                    <Image src="/images/about/backcover-inside.jpg" alt="back cover inside" width={500} height={500} />
+                    <Image src="/images/about/backcover-inside.jpg" alt="back cover inside" width={500} height={600} />
                 </div>
             </div>
         </div>
