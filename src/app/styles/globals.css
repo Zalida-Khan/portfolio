@@ -259,11 +259,12 @@ footer {
   transition: transform 1s ease;
   overflow: visible;
   width: 100%;
+  height: auto;
 }
 
 .book {
-  width: 180px;
-  height: 280px;
+  width: 200px;
+  height: 280px; 
   position: relative;
   border-radius: 5px 15px 15px 5px;
   perspective: 1500px;
@@ -315,6 +316,8 @@ input[type="checkbox"] {
   background-color: white;
   border-radius: 0 15px 15px 0;
   display: flex;
+  width: 180px;
+  height: 250px;
   justify-content: center;
   transform-origin: center left;
   transform-style: preserve-3d;
@@ -387,8 +390,10 @@ input[type="checkbox"] {
 }
 
 .flipbookContainer.opened {
-  transform: translateX(50%);
+  transform: translateX(38%);
+  max-width: 0 auto;
 }
+
 
 #checkboxPage1:not(:checked) ~ .book .page1 {
   z-index: 8;
@@ -422,26 +427,6 @@ input[type="checkbox"] {
 #checkboxPage6:checked ~ .book #page6 {
   transform: rotateY(-180deg);
   z-index: 15;
-}
-
-@media (max-width: 768px) {
-  .flipbookContainer {
-    height: auto;
-}
-  .flipbookContainer.opened {
-    transform: translateX(38%);
-    max-width: 0 auto;
-  }
-
-  .book {
-    width: 180px;
-    height: 280px; 
-  }
-
-  .page {
-    width: 160px;
-    height: 240px;
-  }
 }
 
 @media (min-width: 780px) {
