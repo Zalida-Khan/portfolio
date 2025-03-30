@@ -264,14 +264,16 @@ footer {
 
 .book {
   width: 180px;
-  height: 300px; 
+  height: 260px; 
   position: relative;
   border-radius: 5px 15px 15px 5px;
   perspective: 1500px;
   display: flex;
   align-items: center;
-  transition: transform 1s ease;
   margin: 0 auto;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  max-width: 0 auto;
 }
 
 .flipbookContainer, .book {
@@ -317,7 +319,7 @@ input[type="checkbox"] {
   border-radius: 0 15px 15px 0;
   display: flex;
   width: 170px;
-  height: 240px;
+  height: 230px;
   justify-content: center;
   transform-origin: center left;
   transform-style: preserve-3d;
@@ -391,7 +393,7 @@ input[type="checkbox"] {
 }
 
 .flipbookContainer.opened {
-  transform: translateX(40%);
+  transform: translateX(35%);
   max-width: 0 auto;
 }
 
