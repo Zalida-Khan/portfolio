@@ -358,8 +358,6 @@ input[type="checkbox"] {
 .backPage {
   transform: rotateY(180deg);
   backface-visibility: hidden;
-  box-shadow: none;
-  box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
   border-radius: 0 15px 15px 0;
 }
 
