@@ -317,7 +317,7 @@ input[type="checkbox"] {
   border-radius: 0 15px 15px 0;
   display: flex;
   width: 180px;
-  height: 220px;
+  height: 210px;
   justify-content: center;
   transform-origin: center left;
   transform-style: preserve-3d;
