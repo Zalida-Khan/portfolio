@@ -80,7 +80,7 @@ export default function About() {
                             <Journal />
                         </section>
 
-                        <section className="skillSection py-8 w-full max-w-5xl sm:p-5 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10  lg:p-6 lg:pt-6 mb-6">
+                        <section className="skillSection py-8 w-full max-w-5xl sm:p-4 pb-5 md:p-6 md:pb-2 lg:pb-5 lg:p-10 lg:pt-6 mb-6">
                             <h2 className="text-3xl md:text-4xl text-center text-[#1A428A] font-semibold mb-6">
                                 My Skills & Familiar Technology:
                             </h2>

@@ -356,6 +356,7 @@ input[type="checkbox"] {
 .backPage {
   transform: rotateY(180deg);
   backface-visibility: hidden;
+  box-shadow: none;
   box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
   border-radius: 0 15px 15px 0;
 }
@@ -390,7 +391,7 @@ input[type="checkbox"] {
 }
 
 .flipbookContainer.opened {
-  transform: translateX(50%);
+  transform: translateX(40%);
   max-width: 0 auto;
 }
 
@@ -444,5 +445,9 @@ input[type="checkbox"] {
     width: 360px;
     height: 480px;
     margin: 0 auto;
+  }
+
+  .backPage {
+    box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
   }
 }
