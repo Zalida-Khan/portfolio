@@ -264,7 +264,7 @@ footer {
 
 .book {
   width: 190px;
-  height: 250px; 
+  height: 240px; 
   position: relative;
   border-radius: 5px 15px 15px 5px;
   perspective: 1500px;
@@ -356,8 +356,8 @@ input[type="checkbox"] {
 .backPage {
   transform: rotateY(180deg);
   backface-visibility: hidden;
-  box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
   border-radius: 0 15px 15px 0;
+  box-shadow: none;
 }
 
 .backCover img {
@@ -390,7 +390,7 @@ input[type="checkbox"] {
 }
 
 .flipbookContainer.opened {
-  transform: translateX(50%);
+  transform: translateX(35%);
   max-width: 0 auto;
 }
 
@@ -433,6 +433,10 @@ input[type="checkbox"] {
     max-width: 0 auto;
     transform: translateX(50%);
     transition: transform 1s;
+  }
+
+  .backPage {
+    box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
   }
 
   .page {
