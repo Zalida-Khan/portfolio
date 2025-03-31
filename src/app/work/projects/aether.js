@@ -127,6 +127,27 @@ function CaseStudy({ post }) {
         </iframe>
       </section>
 
+ <section>
+  <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
+    | Marketing Materials
+  </h3>
+  <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
+    Brochure | Business Cards | Tote Designs/ Stickers
+  </h4>
+  <p className="text-md text-black mb-6">
+    These marketing materials were created to promote our app. The tote bags and stickers were especially effective in catching people's attention and encouraging them to check out our app demo.
+  </p>
+  <img
+    src={post.gallery[5]}
+    alt="Marketing Materials"
+    onClick={() => openModal(5)}
+    title="View image"
+    className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${
+      isLgDevice ? "hover:opacity-80 cursor-pointer" : ""
+    }`}
+  />
+</section>
+
       <section>
         <h3 className="text-2xl font-semibold mt-6 mb-4" style={{ color: "#1A428A" }}>
           | Key Takeaways

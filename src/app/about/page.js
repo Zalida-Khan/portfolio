@@ -91,6 +91,7 @@ export default function About() {
                                 <SkillItem imgSrc="/images/about/react.jpg" altText="React" skillName="React" />
                                 <SkillItem imgSrc="/images/about/next js.jpg" altText="Next.js" skillName="Next.JS" />
                                 <SkillItem imgSrc="/images/about/vite.jpg" altText="Vite" skillName="Vite" />
+                                <SkillItem imgSrc="/images/about/bootstrap.jpg" altText="Bootstrap" skillName="Bootstrap" />
                                 <SkillItem imgSrc="/images/about/tailwindcss.jpg" altText="TailwindCSS" skillName="TailwindCSS" />
                                 <SkillItem imgSrc="/images/about/npm.jpg" altText="NPM" skillName="NPM" />
                                 <SkillItem imgSrc="/images/about/github.jpg" altText="GitHub" skillName="GitHub" />
