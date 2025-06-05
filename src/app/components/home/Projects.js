@@ -7,7 +7,7 @@ import Link from "next/link";
 const projects = [
     {
         title: "Sugar Magic",
-        category: "Can Design – Product Design",
+        category: "Product Design – Graphic Design",
         image: "/images/magic/sugarmagic-animated.mp4",
         link: "/work/sugar-magic",
     },
@@ -25,7 +25,7 @@ const projects = [
     },
     {
         title: "The Yolk",
-        category: "Menu Design – Branding – Graphic Design",
+        category: "Menu Design – Graphic Design",
         image: "/images/yolk/menu-cover.webp",
         link: "/work/the-yolk",
     },
@@ -72,9 +72,14 @@ export default function ProjectsSection() {
                         Ranging from brand design, product design to frontend development and web design.
                     </p>
                     <div className="mt-4 text-right">
-                        <Link href="/work" scroll={false} className="relative text-[#1A428A] text-lg font-semibold">
-                            <span>View All &gt;</span>
+                        <Link
+                            href="/work"
+                            scroll={false}
+                            className="inline-block text-[#1A428A] text-lg font-semibold transition-transform duration-200 hover:-translate-y-1"
+                        >
+                            View All &gt;
                         </Link>
+
                     </div>
                 </div>
 
@@ -110,9 +115,8 @@ export default function ProjectsSection() {
                                 <h3 className="text-3xl font-semibold text-[#1A3A7A]">{project.title}</h3>
                                 <Link href={project.link}>
                                     <button
-                                        className={`projectButton px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${
-                                            inViewButtons.has(String(index)) ? "animateFadeIn" : ""
-                                        }`}
+                                        className={`projectButton px-6 py-3 lg:px-7 lg:py-2 lg:font-light lg:text-lg text-white bg-[#AAAC24] rounded-3xl text-sm font-semibold hover:bg-[#1A428A] hover:text-white transition-all duration-300 ease-in-out ${inViewButtons.has(String(index)) ? "animateFadeIn" : ""
+                                            }`}
                                         data-index={index}
                                         style={{
                                             animationDelay: `${index * 0.00}s`,

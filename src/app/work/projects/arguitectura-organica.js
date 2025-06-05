@@ -43,7 +43,7 @@ function MagazineDesign({ post }) {
 
             <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Colour Palette & Usage:</h4>
             <p className="text-[#000] text-md mt-2">
-                The palette consists of blue, green, yellow, red, and orange in a bright yet muted tone. Yellow is designated for the logo, black for body text, while the remaining colours are applied to headings, subheadings, and captions to maintain a cohesive visual identity.
+            The palette consists of blue, green, yellow, red, and orange in a bright yet muted tone. Yellow is primarily designated for the logo but is also used in headings to add emphasis. Black is used for body text, while the remaining colours are applied to headings, subheadings, and captions to maintain a cohesive visual identity.
             </p>
             {renderGalleryImages(post.gallery.slice(2, 4), 2)}
 
@@ -83,8 +83,9 @@ function MagazineDesign({ post }) {
                     <h4 className="text-[#1A428A] text-lg font-semibold">What Went Well:</h4>
                     <ul className="text-[#000] mt-2 text-md">
                         <li className="mt-1"><strong>Good Use of Colour and Images:</strong> The colour palette complemented the images, enhancing the overall design.</li>
-                        <li className="mt-1"><strong>Image Conversions:</strong>In both print and digital formats, There needed to be sme changes made to the images. Using Photoshop to convert images to cymk for print version and fixing the ppi  </li>
-
+                        <li className="mt-1">
+                            <strong>Image Conversions:</strong> In both print and digital formats, changes were made to the images. Photoshop was used to convert images to CMYK for the print version and to fix the PPI.
+                        </li>
                         <li className="mt-1"><strong>Print Accuracy:</strong> The final printed magazine accurately reflected the digital design, with consistent colours, fonts, and layout.</li>
                     </ul>
                 </div>
@@ -92,10 +93,11 @@ function MagazineDesign({ post }) {
                 <div className="mt-4">
                     <h4 className="text-[#1A428A] text-lg font-semibold">Thought Process & What Was Learned:</h4>
                     <p className="text-[#000] mt-1 text-md">
-                        This project explored the intersection of architecture and sustainability, drawing inspiration from Javier Senosiain's organic architecture. Key lessons included balancing design elements for both print and digital formats, selecting legible fonts, and maintaining layout consistency across various mediums. Additionally, a deeper understanding of sustainable design principles was gained, which can be benefifical for future projects.
-                        {/* Working with Photoshop to convert colour settings/image mode to cymk for print version so it could be printed. As well as using Image size in Photoshop to better meet the requirements of printing.   */}
+                        This project explored the intersection of architecture and sustainability, drawing inspiration from Javier Senosiain's organic architecture. Key lessons included balancing design elements for both print and digital formats, selecting legible fonts, and maintaining layout consistency across various mediums. Additionally, a deeper understanding of sustainable design principles was gained, which will be beneficial for future projects.
+                        Working with Photoshop to convert color settings/image mode to CMYK for the print version, ensuring it was printable. Also, using Image Size in Photoshop to meet printing requirements.
                     </p>
                 </div>
+
             </div>
 
             {isModalOpen && (

@@ -10,12 +10,12 @@ const posts = [
     timeline: "September – November 2024",
     role: "Designer",
     tools: "InDesign – Photoshop – Figma",
-    logoAndTypography: 'The "Arquitectura Organica" logo featuring two different fonts giving an organic feel through their fluid lines. Took advantage of san serif fonts since it is easier to read on print or even on digital formats.',
+    logoAndTypography: 'The "Arquitectura Organica" logo featuring two different fonts giving an organic feel through their fluid lines. Sans-serif fonts were used for the headings and body copy, as they are easier to read in both print and digital formats.',
     mandate: "The project’s goal was to create print and an interative magazine on “organic architecture,” focusing on Javier Senosiain’s work, which combines design and nature through orgnic, sustainable forms. ",
     links: "https://www.figma.com/proto/B2JX6lLr74CtJUg9W78B45/ARQUITECTURA-ORGANIC-(Mobile%2FTablet)?node-id=315-294&p=f&t=gH2KzfrDA27AMBC1-1&scaling=scale-down&content-scaling=fixed&page-id=67%3A2&starting-point-node-id=306%3A9",
     links1: "https://www.figma.com/proto/VKVkZEKtHBwTi5DmE5bDCu/ARQUITECTURA-ORGANIC?node-id=315-294&starting-point-node-id=306%3A9&t=MxWa7PQxM4wkEutY-1/",
     heading: "Introduction",
-    overview: "This magazine explores the design of a sustainable architecture project inspired by Javier Senosiain’s organic architecture style. It showcases how the project was adapted for both print and digital versions, emphasizing the integration of natural forms and sustainability.",
+    overview: "This magazine explores the design of a sustainable architecture project inspired by Javier Senosiain’s organic architecture style. It showcases how the project was adapted for both print and digital versions, emphasizing the integration of natural forms and sustainability. Special attention was given to maintaining consistency across platforms, ensuring readability and visual balance in both formats. Through this process, a deeper understanding of eco-conscious design practices and the challenges of cross-medium publishing was gained.",
     secOverview: "The magazine dives into the evolution of an organic architecture project, highlighting the design’s shift from concept to both print and digital formats. Ensuring CYMK colours were used for print and the same colours were reflected in rgb for the digital version. Both the versions maintain consistency and quality ",
     gallery: [
       "/images/magazine/A-LOGO.png",
@@ -124,11 +124,11 @@ const posts = [
     "projectType": "Mobile App",
     "timeline": "September – December 2024",
     "role": "Multidisciplinary Designer and Developer",
-    "tools": "Figma – Adobe InDesign – Photoshop – Illustrator – HTML/CSS, JavaScript (Next.js) – Visual Studio Code",
+    "tools": "Figma – Adobe InDesign – Photoshop – Illustrator – HTML/CSS, JavaScript (Next.js) – React Native – Expo Go – Visual Studio Code",
     "mandate": "Caregivers, including family members, friends, or professionals often spend excessive time on repetitive form-filling tasks. The Aether App automates this process, helping caregivers save time and reduce stress by simplifying data management.",
     "overview": "Aether is an innovative AI-driven app designed to simplify the process of managing important documents for caregivers, whether they are family members, friends, or professionals. The app streamlines document comprehension and completion with features like summarization, autofilling, scanning, and multi-profile management. By reducing administrative burdens and eliminating the complexities of navigating forms and documents, Aether saves valuable time and minimizes stress, allowing caregivers to save time so they can focus on what matters most.",
     "goal": "Caregivers, whether family members, friends, or professionals, often struggle with managing paperwork, organizing information, and navigating complex forms. Aether simplifies this process by automating repetitive tasks, clarifying jargon, and streamlining paperwork. This saves time, reduces stress, and allows caregivers to focus on providing quality care.",
-    "purpose": "Based on our user research, we've developed two user personas to better understand caregivers' challenges. These personas help us shape features like jargon simplification, autofilling, and multi-profile management to address real-life issues caregivers face. By focusing on their pain points, we aim to make Aether a seamless and intuitive tool that truly supports their needs.",
+    "purpose": "Based on our user research, we've developed two user personas to better understand caregivers' challenges. These personas help us shape features like jargon simplification, autofilling, and multi-profile management to address real-life issues caregivers face. By focusing on their pain points, we aimed to make Aether an easy to use tool that truly supports their needs.",
     "targetAudience": [
       {
         "group": "Family Members",
@@ -202,13 +202,15 @@ const posts = [
     "gallery": [
       "/images/aether/primary-persona.webp",
       "/images/aether/secondary-persona.webp",
+      "/images/aether/workflow.png",
       "/images/aether/low-fi-frames.jpg",
       "/images/aether/mid-fi-frames.jpg",
       "/images/aether/hi-fi-frames.jpg",
       "/images/aether/marketing-mat.webp",
+      // "/images/aether/workflow.png",
     ],
     "links2": "https://aether-blog.vercel.app/",
-    "links3": "https://www.figma.com/proto/7uFLSzWU4gw74WYdgnm9cW/Aether?node-id=366-368&t=HTLk6hNvAYIi1YWF-1&scaling=scale-down&content-scaling=fixed&page-id=366%3A367&starting-point-node-id=366%3A368",
+    "links3": "https://www.figma.com/proto/7uFLSzWU4gw74WYdgnm9cW/Aether-Mobile-App?node-id=6191-626&starting-point-node-id=6191%3A626&t=F1IwiXP1I3yMnA74-1",
     "links4": "https://www.figma.com/proto/nzhtkPCGzn1CFTVlAsZSFQ/Aether-App?node-id=2750-7065&starting-point-node-id=2750%3A7345&t=p0tbTSRgXgUKLe2m-1"
   },
   {

@@ -49,11 +49,11 @@ export default function PostPage() {
   ].filter((link) => link.url);
 
   const renderLinks = (links) => (
-    <ul className="text-[#1A428A] cursor-pointer flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 lg:col-span-2">
+    <ul className="text-[#1A428A] cursor-pointer flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:gap-x-4 lg:col-span-2">
       {links.map((link, index) => (
         <li key={index} className={`${link.visibleOn === "lg" ? "hidden lg:block" : ""} ${link.visibleOn === "sm" ? "block sm:block lg:hidden" : ""}`}>
           <a
-            className="text-[#AAAC24] hover:text-[#1A428A] text-md flex items-center"
+            className="text-[#AAAC24] hover:text-[#1A428A] text-md flex items-center transition-transform duration-200 hover:-translate-y-1"
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -73,6 +73,17 @@ export default function PostPage() {
 
   return (
     <div className="containerWork bg-white text-[#1A428A] min-h-screen font-poppins">
+      <div className="w-full max-w-4xl mx-auto mt-6 px-4 mb-4">
+        <button
+          onClick={() => {
+            router.push('/work');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="text-black hover:text-[#AAAC24] bg-transparent flex items-center gap-2 transition-transform duration-200 hover:-translate-y-1 focus:outline-none active:translate-y-0.5"
+        >
+          &#8592; <span className="text-base sm:text-lg">Back to Work</span>
+        </button>
+      </div>
       <Header />
       <h1 className="text-4xl text-[#1A428A] lg:text-5xl font-semibold text-center">{post.title}</h1>
       <p className="text-center text-black p-3 pt-2">
@@ -103,21 +114,27 @@ export default function PostPage() {
         <div className="flex justify-between items-center mt-10">
           <button
             onClick={() => {
-              router.push(`/work/${previousPost?.slug}`);
-              scrollToTop();
+              if (previousPost) {
+                router.push(`/work/${previousPost.slug}`);
+                scrollToTop();
+              }
             }}
             disabled={!previousPost}
-            className="text-black hover:text-[#AAAC24] bg-transparent disabled:text-gray-400 flex items-center gap-2"
+            className={`text-black bg-transparent flex items-center gap-2 disabled:text-gray-400 focus:outline-none active:translate-y-0.5 ${previousPost ? 'hover:text-[#AAAC24] transform transition-transform duration-200 hover:-translate-y-1' : ''
+              }`}
           >
             &#8592; {previousPost?.title || "Back"}
           </button>
           <button
             onClick={() => {
-              router.push(`/work/${nextPost?.slug}`);
-              scrollToTop();
+              if (nextPost) {
+                router.push(`/work/${nextPost.slug}`);
+                scrollToTop();
+              }
             }}
             disabled={!nextPost}
-            className="text-black hover:text-[#AAAC24] bg-transparent disabled:text-gray-400 flex items-center gap-2"
+            className={`text-black bg-transparent flex items-center gap-2 disabled:text-gray-400 focus:outline-none active:translate-y-0.5 ${nextPost ? 'hover:text-[#AAAC24] transform transition-transform duration-200 hover:-translate-y-1' : ''
+              }`}
           >
             {nextPost?.title || "Next"} &#8594;
           </button>

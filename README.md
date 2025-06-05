@@ -16,9 +16,6 @@ what I used to build my portfolio:
   <a href="https://nextjs.org">
     <img src="https://img.shields.io/badge/Next.js-AAAC24?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   </a>
-  <a href="https://www.typescriptlang.org/">
-  <img src="https://img.shields.io/badge/typescript-AAAC24?style=for-the-badge&logo=typescript&logoColor=white">
-  </a>
   <a href="https://tailwindcss.com">
     <img src="https://img.shields.io/badge/Tailwind_CSS-AAAC24?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
   </a>

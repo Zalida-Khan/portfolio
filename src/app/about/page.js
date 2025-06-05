@@ -70,13 +70,19 @@ export default function About() {
                                         Hey there, I'm Zalida! 👋
                                     </h3>
                                     <p className="mt-3 text-md md:text-lg leading-relaxed text-gray-800">
-                                        I’m a design student at the British Columbia Institute of Technology, with a passion for creating user-focused digital experiences. My areas of expertise include <strong>graphic design, UI/UX design, and front-end development</strong>.
+                                        I’m a digital design and development student at the British Columbia Institute of Technology, with a passion for creating user-focused digital experiences. My areas of expertise include <strong>graphic design, UI/UX design, and front-end development</strong>.
                                     </p>
                                 </div>
                             </div>
                         </section>
-                        <section className='flex flex-col mt-2 mb-5 lg:mt-0 md:mt-0 sm:mt-2'>
-                            <h3 className="text-2xl text-center md:text-3xl font-semibold text-[#1A428A] flex flex-col mb-4 mt-0 md:mt-6 lg:mt-2">Learn More About Me!</h3>
+                        <section className='flex flex-col mt-2 mb-4 lg:mt-0 md:mt-0 sm:mt-2'>
+                            <h3 className="text-2xl text-center md:text-3xl font-semibold text-[#1A428A] flex flex-col mb-2 mt-0 md:mt-4 lg:mt-2">Learn More About Me!</h3>
+                            <p className="text-md md:text-lg flex flex-col text-center text-gray-700 mb-2">
+                                Explore some of my personal interests, hobbies, and what inspires me.
+                            </p>                        </section>
+
+                        <section className='flex flex-col mt-0 mb-5 lg:mt-0 md:mt-0 sm:mt-2'>
+
                             <Journal />
                         </section>
 
@@ -89,11 +95,12 @@ export default function About() {
                                 <SkillItem imgSrc="/images/about/css.jpg" altText="CSS" skillName="CSS3" />
                                 <SkillItem imgSrc="/images/about/javascript.jpg" altText="JavaScript" skillName="JavaScript" />
                                 <SkillItem imgSrc="/images/about/react.jpg" altText="React" skillName="React" />
-                                <SkillItem imgSrc="/images/about/next js.jpg" altText="Next.js" skillName="Next.JS" />
+                                <SkillItem imgSrc="/images/about/next js.jpg" altText="Next.js" skillName="Next.js" />
                                 <SkillItem imgSrc="/images/about/vite.jpg" altText="Vite" skillName="Vite" />
                                 <SkillItem imgSrc="/images/about/bootstrap.jpg" altText="Bootstrap" skillName="Bootstrap" />
                                 <SkillItem imgSrc="/images/about/tailwindcss.jpg" altText="TailwindCSS" skillName="TailwindCSS" />
                                 <SkillItem imgSrc="/images/about/npm.jpg" altText="NPM" skillName="NPM" />
+                                <SkillItem imgSrc="/images/about/vs code.jpg" altText="Visual Studio Code" skillName="Visual Studio Code" />
                                 <SkillItem imgSrc="/images/about/github.jpg" altText="GitHub" skillName="GitHub" />
                                 <SkillItem imgSrc="/images/about/git.jpg" altText="Git" skillName="Git" />
                                 <SkillItem imgSrc="/images/about/vercel.jpg" altText="Vercel" skillName="Vercel" />
@@ -101,21 +108,23 @@ export default function About() {
                                 <SkillItem imgSrc="/images/about/google cloud.jpg" altText="Google Cloud" skillName="Google Cloud" />
                                 <SkillItem imgSrc="/images/about/google maps api.jpg" altText="Google Maps API" skillName="Google Maps API" />
                                 <SkillItem imgSrc="/images/about/figma.jpg" altText="Figma" skillName="Figma" />
-                                <SkillItem imgSrc="/images/about/creative cloud.jpg" altText="Adobe Creative Cloud" skillName="Creative Cloud" />
-                                <SkillItem imgSrc="/images/about/indesign.jpg" altText="Adobe InDesign" skillName="InDesign" />
-                                <SkillItem imgSrc="/images/about/illustrator.jpg" altText="Adobe Illustrator" skillName="Illustrator" />
-                                <SkillItem imgSrc="/images/about/photoshop.jpg" altText="Adobe Photoshop" skillName="Photoshop" />
-                                <SkillItem imgSrc="/images/about/express.jpg" altText="Adobe Express" skillName="Express" />
+                                <SkillItem imgSrc="/images/about/creative cloud.jpg" altText="Adobe Creative Cloud" skillName="Adobe Creative Cloud" />
+                                <SkillItem imgSrc="/images/about/indesign.jpg" altText="Adobe InDesign" skillName="Adobe InDesign" />
+                                <SkillItem imgSrc="/images/about/illustrator.jpg" altText="Adobe Illustrator" skillName="Adobe Illustrator" />
+                                <SkillItem imgSrc="/images/about/photoshop.jpg" altText="Adobe Photoshop" skillName="Adobe Photoshop" />
+                                <SkillItem imgSrc="/images/about/lightroom.jpg" altText="Adobe Lightroom" skillName="Adobe Lightroom" />
+                                <SkillItem imgSrc="/images/about/express.jpg" altText="Adobe Express" skillName="Adobe Express" />
+                                <SkillItem imgSrc="/images/about/clipchamp.jpg" altText="Microsoft Clipchamp" skillName="Microsoft Clipchamp" />
                             </div>
                         </section>
 
-                        <section className="text-center py-8 max-w-5xl mx-auto pt-4 p-6 mb-8">
+                        <section className="text-center py-8 max-w-5xl mx-auto pt-8 p-6 mb-8">
                             <p className="text-2xl mb-6 lg:text-3xl">Have a project idea or just want to chat? Reach out—I’d love to hear from you!</p>
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://www.linkedin.com/in/zalida-khan"
-                                className="px-6 py-4 text-md rounded-full mt-4 inline-block bg-[#AAAC24] text-white font-normal hover:bg-[#1A428A] hover:text-[#ffffff] transition-all duration-300 ease-in-out"
+                                className="px-6 py-4 text-md rounded-full mt-4 inline-block bg-[#AAAC24] text-white font-normal hover:bg-[#1A428A] hover:text-[#ffffff] transition-all duration-300 ease-in-out transition-transform duration-200 hover:-translate-y-1"
                             >
                                 Let's Connect!
                             </a>

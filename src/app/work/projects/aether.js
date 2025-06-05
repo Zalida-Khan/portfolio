@@ -64,37 +64,58 @@ function CaseStudy({ post }) {
         <h3 className="text-2xl font-semibold mb-2" style={{ color: "#1A428A" }}>
           | Project Overview
         </h3>
-        <p className="text-md text-black mb-6">{post.overview}</p>
+        <p className="text-md text-black mb-4">{post.overview}</p>
       </section>
 
       <section>
         <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
           | Problem & Solution
         </h3>
-        <p className="text-md text-black mb-6">{post.goal}</p>
+        <p className="text-md text-black ">{post.goal}</p>
       </section>
 
       <section>
         <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
-          | Target Audience/ User Research
+          Target Audience/ User Research
         </h3>
         <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
-          | Personas
+          Personas
         </h4>
         <p className="text-md text-black mb-6">{post.purpose}</p>
         <TabsSwitcher tabs={tabs} />
       </section>
 
       <section>
+        <section>
+          <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
+            | Workflow
+          </h3>
+          <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
+            User Journey Map
+          </h4>
+          <p className="text-md text-black mb-6">
+            To make the design process smoother and the app easier to use, a customer journey map was created. It shows how caregivers move through the app, highlighting key steps and moments that matter most—helping us create a better overall experience.
+          </p>
+          <img
+            src={post.gallery[2]}
+            alt="Marketing Materials"
+            onClick={() => openModal(2)}
+            title="View image"
+            className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer" : ""
+              }`}
+          />
+        </section>
+
         <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
           | Design Process
         </h3>
         <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
-          | Lo-fi Wireframe
+          Lo-fi Wireframe | Style Guide
         </h4>
         <p className="text-md text-black mb-6">
-          Outlined the app’s structure to address user pain points, focusing on accessibility and ease of use from the beginning.
-        </p>
+          The Lo-fi Wireframe outlines the app’s structure with a focus on accessibility and ease of use. It maps out the key features that address user pain points, such as navigation flow and user touchpoints, especially tailored for caregivers.
+          The Style Guide defines Aether’s visual language and brand personality.
+          The visual system for Aether emphasizes clarity, simplicity, and guidance—core principles that shaped the app’s identity.        </p>
         <iframe
           className="shadow-lg mb-6 w-full h-[400px] sm:w-full flex justify-center lg:w-full md:w-full md:h-[600px] lg:h-[600px] rounded-3xl"
           src="https://embed.figma.com/design/7uFLSzWU4gw74WYdgnm9cW/Aether?node-id=49-10&embed-host=share"
@@ -102,7 +123,7 @@ function CaseStudy({ post }) {
           allowFullScreen
         ></iframe>
         <h4 className="text-xl font-semibold" style={{ color: "#AAAC24" }}>
-          | Iterations | Usability Testing
+          Iterations | Usability Testing
         </h4>
         <SliderSwitcher openModal={openModal} post={posts[4]}
           className={`shadow-lg w-full h-auto p-4 rounded-2xl object-contain transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer" : ""}`} />
@@ -113,7 +134,7 @@ function CaseStudy({ post }) {
           | Development
         </h3>
         <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
-          | Aether Blog
+          Aether Blog
         </h4>
         <p className="text-md text-black mb-6">
           This blog was built using HTML for structure, CSS for styling, and JavaScript for interactivity, such as modals and responsive layouts. The combination of Flexbox and Grid ensures a responsive design across devices, while JavaScript handles dynamic content like image viewing, dark and light mode and tab switching.
@@ -127,60 +148,62 @@ function CaseStudy({ post }) {
         </iframe>
       </section>
 
- <section>
-  <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
-    | Marketing Materials
-  </h3>
-  <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
-    Brochure | Business Cards | Tote Designs/ Stickers
-  </h4>
-  <p className="text-md text-black mb-6">
-    These marketing materials were created to promote our app. The tote bags and stickers were especially effective in catching people's attention and encouraging them to check out our app demo.
-  </p>
-  <img
-    src={post.gallery[5]}
-    alt="Marketing Materials"
-    onClick={() => openModal(5)}
-    title="View image"
-    className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${
-      isLgDevice ? "hover:opacity-80 cursor-pointer" : ""
-    }`}
-  />
-</section>
+      <section>
+        <h3 className="text-2xl font-semibold mt-8 mb-2" style={{ color: "#1A428A" }}>
+          | Marketing Materials
+        </h3>
+        <h4 className="text-xl font-semibold mb-2" style={{ color: "#AAAC24" }}>
+          Brochure | Business Cards | Tote Designs | Stickers
+        </h4>
+        <p className="text-md text-black mb-6">
+          These marketing materials were created to promote our app. The tote bags and stickers were especially effective in catching people's attention and encouraging them to check out our app demo.
+        </p>
+        <img
+          src={post.gallery[6]}
+          alt="Marketing Materials"
+          onClick={() => openModal(6)}
+          title="View image"
+          className={`shadow-lg w-full h-auto rounded-2xl object-cover transition-all duration-300 ${isLgDevice ? "hover:opacity-80 cursor-pointer" : ""
+            }`}
+        />
+      </section>
 
       <section>
         <h3 className="text-2xl font-semibold mt-6 mb-4" style={{ color: "#1A428A" }}>
           | Key Takeaways
         </h3>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">Team Collaboration: </span>
-          <span className="block sm:inline">Worked well with the team, shared ideas, and helped improve the work process.</span>
-        </p>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">Time Management: </span>
-          <span className="block sm:inline">Learned to plan better and keep track of deadlines to stay on top of tasks.</span>
-        </p>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">Marketing Strategy: </span>
-          <span className="block sm:inline">Gained hands-on experience in creating marketing templates that saved time and ensured consistency.</span>
-        </p>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">User-Centered Design: </span>
-          <span className="block sm:inline">Applied simple design principles to make the app easy to use and enjoyable for everyone.</span>
-        </p>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">Customization & Personalization: </span>
-          <span className="block sm:inline">Used design flexibility to help users make the app more personal and meet their needs.</span>
-        </p>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">Technical Problem-Solving: </span>
-          <span className="block sm:inline">Used modern tools to fix issues and make the app faster and more efficient.</span>
-        </p>
-        <p className="text-md text-black text-base mt-4">
-          <span className="font-semibold">Mobile-First Approach: </span>
-          <span className="block sm:inline">Designed with mobile in mind first, ensuring smooth performance on all devices.</span>
-        </p>
+        <ul className="space-y-3 text-black">
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">Team Collaboration:</span> Worked well with the team, shared ideas, and helped improve the work process.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">Time Management:</span> Learned to plan better and keep track of deadlines to stay on top of tasks.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">Marketing Strategy:</span> Gained hands-on experience in creating marketing templates that saved time and ensured consistency.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">User-Centered Design:</span> Applied simple design principles to make the app easy to use and enjoyable for everyone.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">Customization & Personalization:</span> Used design flexibility to help users make the app more personal and meet their needs.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">Technical Problem-Solving:</span> Used modern tools to fix issues and make the app faster and more efficient.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>&#8594;</span>
+            <span><span className="font-semibold">Mobile-First Approach:</span> Designed with mobile in mind first, ensuring smooth performance on all devices.</span>
+          </li>
+        </ul>
       </section>
+
 
       {isModalOpen && (
         <Modal
