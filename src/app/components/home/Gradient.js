@@ -61,7 +61,7 @@ export default function Gradient() {
             <p className="myRoles lg:text-[3.6rem] mt-1 md:mt-4 lg:mt-4 md:text-4xl font-semibold mb-4">
               <span className="text-[#000] font-semibold leading-none">
                 <Typewriter
-                  words={["Zalida Khan.", "a graphic designer!", "a UI/UX designer!", "a front-end developer!"]}
+                  words={["Zalida Khan.", "a multi-disciplinary designer!", "a front-end developer!"]}
                   loop
                   cursor
                   cursorStyle="|"
@@ -76,11 +76,10 @@ export default function Gradient() {
           <div className="lg:col-span-1 flex justify-center items-center lg:mt-10 lg:pt-14 mb-4 pointer-events-none cursor-default">
             <Lottie options={{ animationData, loop: true, autoplay: true, rendererSettings: { preserveAspectRatio: "xMidYMid slice" } }} style={{ width: 200, height: 150 }} />
           </div>
-
           <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-0 lg:pl-10 pr-10 lg:pr-10 lg:mt-12 lg:pt-10">
-            <h2 className="text-xl lg:text-2xl font-bold font-syne text-[#000] mb-4">With a sharp eye for detail!</h2>
+            <h2 className="text-xl lg:text-2xl font-bold font-syne text-[#000] mb-4">Designing and coding with clarity!</h2>
             <p className="text-md text-left font-poppins font-light text-[#000] mb-4">
-              Bringing creative designs to life, creating user-centered UI/UX, and building seamless front-end experiences.
+              I work across branding, logos, and UI/UX, and I also build websites with front-end development. I make sure my designs are simple and practical.
             </p>
           </div>
         </div>
