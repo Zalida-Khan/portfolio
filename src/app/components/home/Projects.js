@@ -7,7 +7,7 @@ import Link from "next/link";
 const projects = [
     {
         title: "Sugar Magic",
-        category: "Product Design – Graphic Design",
+        category: "Packaging Design – Graphic Design",
         image: "/images/magic/sugarmagic-animated.mp4",
         link: "/work/sugar-magic",
     },
@@ -18,14 +18,14 @@ const projects = [
         link: "/work/arquitectura-organica",
     },
     {
-        title: "The Exhibition",
-        category: "Poster Design – Graphic Design",
-        image: "/images/exhibition/feature-exhibition-poster.webp",
-        link: "/work/the-exhibition",
+        title: "Aether Mobile App",
+        category: "Case Study – UI/UX & Front-end",
+        image: "/images/aether/feature-aether.webp",
+        link: "/work/aether",
     },
     {
         title: "The Yolk",
-        category: "Menu Design – Graphic Design",
+        category: "Branding Design – Graphic Design",
         image: "/images/yolk/menu-cover.webp",
         link: "/work/the-yolk",
     },
@@ -69,7 +69,7 @@ export default function ProjectsSection() {
                 <div className="lg:col-span-1 lg:pr-6 flex flex-col justify-right">
                     <h2 className="mt-4 text-4xl font-bold text-[#1A3A7A]">Projects</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-2xl">
-                        Ranging from brand design, product design to frontend development and web design.
+                        Some of my work in logos, branding, UI/UX, and front-end development.
                     </p>
                     <div className="mt-4 text-right">
                         <Link
