@@ -1,4 +1,4 @@
-# Zalida's [Portfolio](https://zalidakhan-portfolio.vercel.app)
+# Zalida's [Portfolio](https://zalida-khan.vercel.app/)
 
 This portfolio showcases my work as a multi-disciplinary designer working in branding, logo design, UI/UX, and front-end development. It includes both visual identity projects and web-based work, showing how I approach ideas from concept to final build.
 
@@ -32,6 +32,6 @@ built with:
 
 ## Visit My Portfolio
 
-Check out my full portfolio [over here!](https://zalidakhan-portfolio.vercel.app).
+Check out my full portfolio [over here!](https://zalida-khan.vercel.app/).
 
 Thanks for visiting!
