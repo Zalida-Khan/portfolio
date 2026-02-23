@@ -6,7 +6,7 @@ This portfolio showcases my work as a multi-disciplinary designer working in bra
 
 - **Riding into the Sunset:** Poster design for the National Canadian Museum of History, highlighting 1970s Western cowboy fashion and album art.
 - **Sugar Magic:** Bright, playful packaging design featuring three distinct flavours, each with its own personality.
-- **The Yolk:** Branding and menu design for a breakfast and brunch restaurant, inspired by a vintage, organic aesthetic.
+- **The Yolk:** Branding and menu design for a breakfast and brunch restaurant, inspired by organic shapes and colours.
 
 ## Tech Stack
 
