@@ -79,7 +79,7 @@ export default function Gradient() {
           <div className="lg:col-span-2 flex flex-col justify-center items-start md:pl-0 lg:pl-10 pr-10 lg:pr-10 lg:mt-12 lg:pt-10">
             <h2 className="text-xl lg:text-2xl font-bold font-syne text-[#000] mb-4">Designing and coding with clarity!</h2>
             <p className="text-md text-left font-poppins font-light text-[#000] mb-4">
-              I work across branding, logos, and UI/UX, and I also build websites with front-end development. I make sure my designs are simple and practical.
+              I work across branding, logos, and UI/UX, and I also build websites with front-end development. I make sure my work is simple and practical.
             </p>
           </div>
         </div>
