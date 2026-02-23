@@ -45,7 +45,7 @@ function PosterDesign({ post }) {
 
       <h4 className="text-[#1A428A] text-xl font-semibold mt-8">Visual Inspiration & Design Assets:</h4>
       <p className="text-[#000] text-md mt-2">
-        The design uses symbolic imagery to reflect emotional vulnerability and uncertainty, featuring a drowning figure and a boat on the edge of a waterfall. Concentric circles, made holographic using blending modes in Photoshop, enhance the visual impact. 3D black birds symbolize change and exploration, aligning with the artist’s journey. A Spotify album barcode from the original album adds authenticity."</p>
+        The design uses symbolic imagery to reflect emotional vulnerability and uncertainty, featuring a drowning figure and a boat on the edge of a waterfall. Concentric circles, made holographic using blending modes in Photoshop, enhance the visual impact. 3D black birds symbolize change and exploration, aligning with the artist’s journey. A Spotify album barcode from the original album and company label name adds authenticity.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         {renderGalleryImages(post.gallery.slice(2, 4), 2)}
       </div>
