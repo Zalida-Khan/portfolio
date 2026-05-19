@@ -56,20 +56,20 @@ function PosterDesignTE({ post }) {
                     The mockups show how the poster design translates into real environments, from bus stops to billboards, demonstrating how the concept works across different scales and contexts.
                 </p>
                 {/* Portrait row — both same height, cropped from bottom */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div className="rounded-xl overflow-hidden" style={{ height: "480px" }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div className="rounded-xl overflow-hidden h-[300px] md:h-[500px]">
                         <img src={post.gallery[3]} alt="Exhibition banner on building" title="View image"
                             className={`w-full h-full object-cover object-top transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
                             onClick={() => openModal(3)} />
                     </div>
-                    <div className="rounded-xl overflow-hidden" style={{ height: "480px" }}>
+                    <div className="rounded-xl overflow-hidden h-[300px] md:h-[500px]">
                         <img src={post.gallery[6]} alt="Exhibition brochure mockup" title="View image"
                             className={`w-full h-full object-cover object-top transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
                             onClick={() => openModal(6)} />
                     </div>
                 </div>
                 {/* Landscape row — both same height */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="rounded-xl overflow-hidden" style={{ height: "280px" }}>
                         <img src={post.gallery[4]} alt="Exhibition bus stop mockup" title="View image"
                             className={`w-full h-full object-cover transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}

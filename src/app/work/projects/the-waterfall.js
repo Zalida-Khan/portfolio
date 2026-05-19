@@ -72,20 +72,20 @@ function PosterDesign({ post }) {
           The mockups show how the album cover translates across both vinyl and poster formats, bringing the concept to life in physical and printed media.
         </p>
         {/* Portrait posters — equal height, show from top */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="rounded-xl overflow-hidden" style={{ height: "500px" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="rounded-xl overflow-hidden h-[300px] md:h-[500px]">
             <img src={post.gallery[5]} alt="Album poster design" title="View image"
               className={`w-full h-full object-fill object-top transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
               onClick={() => openModal(5)} />
           </div>
-          <div className="rounded-xl overflow-hidden" style={{ height: "500px" }}>
+          <div className="rounded-xl overflow-hidden h-[300px] md:h-[500px]">
             <img src={post.gallery[6]} alt="Bi-fold poster design" title="View image"
               className={`w-full h-full object-cover object-top transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
               onClick={() => openModal(6)} />
           </div>
         </div>
         {/* Landscape vinyl mockups */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="overflow-hidden rounded-xl" style={{ height: "260px" }}>
             <img src={post.gallery[7]} alt="Vinyl record design" title="View image"
               className={`w-full h-full object-cover transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}

@@ -80,24 +80,22 @@ function MenuDesign({ post }) {
                     The menu layout prioritises easy navigation and visual appeal. Items are organised clearly, and the design makes it straightforward for customers to browse without feeling overwhelmed.
                 </p>
                 {/* Bento grid — first image full width, two below equal */}
-                <div className="flex gap-6">
-                    <div className="overflow-hidden rounded-xl" style={{ height: "400px" }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
+                    <div className="overflow-hidden rounded-xl h-[260px] md:h-[400px]">
                         <img src={post.gallery[7]} alt="Menu design final" title="View image"
                             className={`w-full h-full object-fill transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
                             onClick={() => openModal(7)} />
                     </div>
-                    <div className="grid grid-cols-2 gap-6">
-                        <div className="overflow-hidden rounded-xl" style={{ height: "400px" }}>
+                        <div className="overflow-hidden rounded-xl h-[260px] md:h-[400px]">
                             <img src={post.gallery[8]} alt="Menu spread page 2" title="View image"
                                 className={`w-full h-full object-fill transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
                                 onClick={() => openModal(8)} />
                         </div>
-                        <div className="overflow-hidden rounded-xl" style={{ height: "400px" }}>
+                        <div className="overflow-hidden rounded-xl h-[260px] md:h-[400px]">
                             <img src={post.gallery[9]} alt="Menu spread page 3" title="View image"
                                 className={`w-full h-full object-fill transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
                                 onClick={() => openModal(9)} />
                         </div>
-                    </div>
                 </div>
             </section>
 

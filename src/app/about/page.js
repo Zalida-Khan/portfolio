@@ -296,13 +296,17 @@ export default function About() {
               href="https://www.linkedin.com/in/zalida-khan"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-xl text-sm font-semibold font-poppins transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1A428A] focus:ring-offset-2"
+              className="inline-flex items-center gap-1 px-8 py-3 rounded-xl text-sm font-semibold font-poppins transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#1A428A] focus:ring-offset-2"
               style={{ border: "1.5px solid rgba(26,66,138,0.25)", color: "#1A428A" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "#1A428A"; e.currentTarget.style.background = "rgba(26,66,138,0.06)"; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(26,66,138,0.25)"; e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderWidth = "1.5px"; }}
               aria-label="Connect on LinkedIn (opens in new tab)"
             >
-              LinkedIn ↗
+              LinkedIn 
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 18 20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right style={{ flexShrink: 0 }}">
+            <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+            </svg>
+
             </a>
           </div>
         </section>
