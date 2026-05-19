@@ -10,8 +10,8 @@ import PosterDesign from "../projects/the-waterfall";
 import PosterDesignTE from "../projects/the-exhibition";
 import CaseStudy from "../projects/aether";
 import MenuDesign from "../projects/the-yolk";
-import AssembleIndustries from "../projects/assemble-industries";
-import KhanceptProjects from "../projects/khancept-projects";
+// import AssembleIndustries from "../projects/assemble-industries";
+// import KhanceptProjects from "../projects/khancept-projects";
 import posts from "./posts";
 import { AiOutlineRight } from "react-icons/ai";
 import FadeIn from "../../components/all-pages/fadeIn";
@@ -23,8 +23,8 @@ const projectComponents = {
   "Poster Design": PosterDesignTE,
   "Mobile App": CaseStudy,
   "Branding & Menu Design": MenuDesign,
-  "Branding & Web": AssembleIndustries,
-  "Personal Branding & Web": KhanceptProjects,
+  // "Branding & Web": AssembleIndustries,
+  // "Personal Branding & Web": KhanceptProjects,
 };
 
 // ── Reading Progress Bar ──
