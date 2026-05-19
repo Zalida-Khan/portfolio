@@ -4,117 +4,167 @@ import Modal from "../../components/work/Modal";
 function MenuDesign({ post }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalImageIndex, setModalImageIndex] = useState(0);
-    const [isLgDevice, setIsLgDevice] = useState(window.innerWidth > 1024);
+    const [isLgDevice, setIsLgDevice] = useState(false);
 
     useEffect(() => {
         const handleResize = () => setIsLgDevice(window.innerWidth > 1024);
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const openModal = (index) => isLgDevice && (setModalImageIndex(index), setIsModalOpen(true));
     const closeModal = () => setIsModalOpen(false);
-    const openModal = (index) => {
-        if (isLgDevice) {
-            setModalImageIndex(index);
-            setIsModalOpen(true);
-        }
-    };
+    const goToNext = () => setModalImageIndex((prev) => prev + 1);
+    const goToPrevious = () => setModalImageIndex((prev) => prev - 1);
 
-    const goToNext = () => setModalImageIndex(prev => prev + 1);
-    const goToPrevious = () => setModalImageIndex(prev => prev - 1);
-
-    const renderImages = (images, startIndex, cols = 1) => {
-        const gridClass = cols === 1
-            ? 'grid-cols-1'
-            : `sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-${cols} grid-cols-1`;
-
-        return (
-            <div className={`grid ${gridClass} gap-6 mt-4`}>
-                {images.map((image, index) => (
-                    <img
-                        key={startIndex + index}
-                        src={image}
-                        alt={`Image ${startIndex + index}`}
-                        className={`w-full h-full rounded-3xl shadow-lg object-cover transition-all duration-300 ${isLgDevice ? 'cursor-pointer hover:opacity-80' : ''}`}
-                        title="View image"
-                        onClick={() => openModal(startIndex + index)}
-                    />
-                ))}
-            </div>
-        );
-    };
+    const grid = (images, start, cols = 2) => (
+        <div className={`grid grid-cols-1 ${cols === 3 ? "md:grid-cols-3" : "md:grid-cols-2"} gap-4 mt-5`}>
+            {images.map((img, i) => (
+                <img key={i} src={img} alt={`Gallery image ${start + i + 1}`} title="View image"
+                    className={`w-full h-full rounded-xl object-cover transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
+                    onClick={() => openModal(start + i)} />
+            ))}
+        </div>
+    );
 
     return (
         <div>
-            <h2 className="mt-8 text-[#1A428A] text-2xl font-semibold">{post.heading}</h2>
-            <p className="text-[#000] mt-2">{post.overview}</p>
+            <section className="mb-10">
+                <h3 id="colour-palettes" className="font-syne font-bold text-xl text-[#1A428A] mb-3">
+                    Colour Palettes
+                </h3>
+                <p className="text-[#000] font-light leading-[1.85] text-base">
+                    A vintage-inspired palette was chosen with mustard yellow for menu items, green for prices and red as an accent detail, all sitting on a sky-blue background. The combination gives the brand a warm, retro feel. The logo itself uses bright yellow and white with darker yellow shadows to add depth, which ties back to the restaurant's focus on warmth and brunch culture.
+                </p>
+                {grid(post.gallery.slice(0, 2), 0)}
+            </section>
 
-            <h3 className="text-[#1A428A] text-xl font-bold mt-6">Colour Palettes:</h3>
-            <p className="text-[#000] text-md mt-2">
-                A vintage coloured palette with mustard for menu items, green for prices, and red details on a sky-blue background, creating a warm, retro feel. The logo uses bright yellow and white, with darker yellow shadows for depth, reflecting warmth and the restaurant’s brunch and breakfast focus.</p>
-            {renderImages(post.gallery.slice(0, 2), 0, 2)}
+            <section className="mb-10">
+                <h3 id="typography-logo" className="font-syne font-bold text-xl text-[#1A428A] mb-3">
+                    Typography and Logo
+                </h3>
+                <p className="text-[#000] font-light leading-[1.85] text-base">
+                    The typography pairs bold, chunky display fonts with clean sans-serif typefaces. The combination gives the brand a fresh and approachable character. The logo uses bold, rounded lettering that reflects the restaurant's fun and organic identity, while still feeling polished.
+                </p>
+                {grid(post.gallery.slice(2, 4), 2)}
+            </section>
 
-            <h3 className="text-[#1A428A] text-xl font-bold mt-8">Typography & Logo:</h3>
-            <p className="text-[#000] text-md mt-2">
-                The typography uses bold/chunky fonts paired with clean sans-serif typefaces, giving the brand a fresh and approachable feel. The logo features bold, rounded elements, reflecting the restaurant's fun, organic vibe, as well as their delicious brunch and breakfast offerings.
-            </p>
-            {renderImages(post.gallery.slice(2, 4), 2, 2)}
+            <section className="mb-10">
+                <h3 id="illustrations-assets" className="font-syne font-bold text-xl text-[#1A428A] mb-3">
+                    Illustrations and Assets
+                </h3>
+                <p className="text-[#000] font-light leading-[1.85] text-base">
+                    The illustrations use soft, rounded shapes with a hand-drawn quality that keeps things feeling organic. Some elements are fully coloured while others are left as outlines, giving the designs a layered, half-finished look that adds personality. Supporting patterns and icons maintain visual consistency across all branded materials.
+                </p>
+                {grid(post.gallery.slice(4, 6), 4)}
+            </section>
 
-            <h3 className="text-[#1A428A] text-xl font-bold mt-8">Illustrations & Assets:</h3>
-            <p className="text-[#000] text-md mt-2">
-                The illustrations for The Yolk feature soft, rounded designs with a hand-drawn effect, giving an organic feel. Some elements are coloured, while main areas are left uncoloured, creating a half-outline, half-filled look. Complementing patterns and icons maintain visual consistency and reinforce the brand’s cohesive identity across all materials.</p>
-            {renderImages(post.gallery.slice(4, 6), 4, 2)}
+            <section className="mb-10">
+                <h3 id="packaging" className="font-syne font-bold text-xl text-[#1A428A] mb-3">
+                    Packaging
+                </h3>
+                <p className="text-[#000] font-light leading-[1.85] text-base mb-5">
+                    The packaging keeps things simple with the secondary logo on a white background, echoing the sun-on-cloud imagery. It connects the packaging back to the broader visual identity without overcomplicating the design.
+                </p>
+                <img src={post.gallery[6]} alt="Packaging mockup" title="View image"
+                    className={`w-full rounded-xl object-cover transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
+                    onClick={() => openModal(6)} />
+            </section>
 
-            <h3 className="text-[#1A428A] text-xl font-bold mt-8">Packaging:</h3>
-            <p className="text-[#000] text-md mt-2">
-                The packaging design is minimal, it uses secondary logo with a white background for the same effect of sun on cloud. Helping tie the visual identity together, creating a memorable impression that extends beyond the restaurant itself.</p>
-            {renderImages([post.gallery[6]], 6, 1)}
+            <section className="mb-10">
+                <h3 id="final-product" className="font-syne font-bold text-xl text-[#1A428A] mb-3">
+                    Final Product
+                </h3>
+                <p className="text-[#000] font-light leading-[1.85] text-base mb-5">
+                    The menu layout prioritises easy navigation and visual appeal. Items are organised clearly, and the design makes it straightforward for customers to browse without feeling overwhelmed.
+                </p>
+                {/* Bento grid — first image full width, two below equal */}
+                <div className="flex gap-6">
+                    <div className="overflow-hidden rounded-xl" style={{ height: "400px" }}>
+                        <img src={post.gallery[7]} alt="Menu design final" title="View image"
+                            className={`w-full h-full object-fill transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
+                            onClick={() => openModal(7)} />
+                    </div>
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="overflow-hidden rounded-xl" style={{ height: "400px" }}>
+                            <img src={post.gallery[8]} alt="Menu spread page 2" title="View image"
+                                className={`w-full h-full object-fill transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
+                                onClick={() => openModal(8)} />
+                        </div>
+                        <div className="overflow-hidden rounded-xl" style={{ height: "400px" }}>
+                            <img src={post.gallery[9]} alt="Menu spread page 3" title="View image"
+                                className={`w-full h-full object-fill transition-all duration-300 ${isLgDevice ? "cursor-pointer hover:opacity-80" : ""}`}
+                                onClick={() => openModal(9)} />
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <h3 className="text-[#1A428A] text-xl font-bold mt-8">Final Product:</h3>
-            <p className="text-[#000] text-md mt-2">
-                The menu layout is designed for easy navigation, with an emphasis on showcasing the visual appeal of each dish. The user-friendly layout enhances the dining experience, making it simple for customers to explore the offerings in a visually pleasing way.</p>
-            {renderImages(post.gallery.slice(7, 10), 7, 3)}
+            <section className="mb-10">
+                <h3 id="project-journey" className="font-syne font-bold text-xl text-[#1A428A] mb-6">
+                    Project Journey
+                </h3>
 
-            <div className="mt-6">
-                <h3 className="text-[#1A428A] text-2xl font-bold">Project Journey 🚙</h3>
-
-                <div className="mt-4">
-                    <h4 className="text-[#1A428A] text-lg font-semibold">Challenges Faced:</h4>
-                    <ul className="text-[#000] text-md mt-2">
-                        <li className="mt-1"><strong>Colour Contrast:</strong> The bright yellow logo and blue background clashed, making it hard to read the text clearly.</li>
-                        <li className="mt-1"><strong>Menu Layout:</strong> Fitting a large number of items into a clean, user-friendly design was challenging.</li>
-                        <li className="mt-1"><strong>Interactive PDF:</strong> The navigation buttons didn’t function well initially, causing issues with the interactive pdf version.</li>
+                <div className="mb-6">
+                    <h4 id="challenges" className="font-syne font-semibold text-base text-[#1A428A] mb-3">
+                        Challenges Faced
+                    </h4>
+                    <ul className="space-y-3">
+                        {[
+                            ["Colour Contrast", "The bright yellow logo and blue background initially clashed, making the text hard to read. Several rounds of adjustment were needed to find a combination that worked."],
+                            ["Menu Layout", "Fitting a large number of menu items into a clean and easy-to-navigate layout took careful planning."],
+                            ["Interactive PDF", "Getting the navigation buttons to work correctly in the interactive PDF version required troubleshooting and rebuilding some of the functionality."],
+                        ].map(([title, desc]) => (
+                            <li key={title} className="flex items-start gap-3">
+                                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-xl bg-[#AAAC24]" aria-hidden="true" />
+                                <p className="text-[#000] font-light leading-relaxed text-sm">
+                                    <span className="font-semibold text-gray-800">{title}: </span>{desc}
+                                </p>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
-                <div className="mt-4">
-                    <h4 className="text-[#1A428A] text-lg font-semibold">What Went Well:</h4>
-                    <ul className="text-[#000] text-md mt-2">
-                        <li className="mt-1"><strong>Font Choices:</strong> The bold/chunky, playful fonts gave the brand a fun, cohesive feel.</li>
-                        <li className="mt-1"><strong>Logo Design:</strong> The sun and cloud logo captured the fun, warm atmosphere of The Yolk.</li>
-                        <li className="mt-1"><strong>Menu Differentiation:</strong> Clear design elements helped distinguish the restaurant and kids’ menu, making it easy to navigate.</li>
+                <div className="mb-6">
+                    <h4 id="what-went-well" className="font-syne font-semibold text-base text-[#1A428A] mb-3">
+                        What Went Well
+                    </h4>
+                    <ul className="space-y-3">
+                        {[
+                            ["Font Choices", "The bold, playful typefaces gave the brand a fun and cohesive personality that carried through all the materials."],
+                            ["Logo Design", "The sun and cloud logo felt like a natural fit for the restaurant's warm, welcoming tone."],
+                            ["Menu Differentiation", "Using clear design cues to separate the main menu from the kids menu made the overall experience easier to navigate."],
+                        ].map(([title, desc]) => (
+                            <li key={title} className="flex items-start gap-3">
+                                <span className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-xl bg-[#AAAC24]" aria-hidden="true" />
+                                <p className="text-[#000] font-light leading-relaxed text-sm">
+                                    <span className="font-semibold text-gray-800">{title}: </span>{desc}
+                                </p>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
-                <div className="mt-4">
-                    <h4 className="text-[#1A428A] text-lg font-semibold">Thought Process & What Was Learned:</h4>
-                    <p className="text-[#000] text-md mt-2">
-                        The project focused on balancing fun, organic elements with functionality. Adjusting the colour contrast and refining the layout improved the visual appeal and usability. I learned how important it is to design with the user in mind, especially when working with digital formats, and how consistent branding helps build a strong identity. Not to forget print versions need to have the right font sizes for good experience which took some time to right.
+                <div>
+                    <h4 id="thought-process" className="font-syne font-semibold text-base text-[#1A428A] mb-3">
+                        Thought Process and What Was Learned
+                    </h4>
+                    <p className="text-[#000] font-light leading-[1.85] text-base mb-3">
+                        The goal throughout was to balance a fun, organic visual style with something that was still functional and easy to use. Fixing the colour contrast and refining the layout were the main areas that improved the design the most.
+                    </p>
+                    <p className="text-[#000] font-light leading-[1.85] text-base">
+                        This project was a good reminder of how important it is to design with the end user in mind, particularly when working across digital and print formats. Getting the font sizes right for print specifically took more time than expected, but it was a useful lesson in how small details affect the overall experience.
                     </p>
                 </div>
-            </div>
+            </section>
 
             {isModalOpen && (
-                <Modal
-                    image={post.gallery[modalImageIndex]}
-                    onClose={closeModal}
-                    onNext={goToNext}
-                    onPrevious={goToPrevious}
+                <Modal image={post.gallery[modalImageIndex]} onClose={closeModal}
+                    onNext={goToNext} onPrevious={goToPrevious}
                     disableNext={modalImageIndex === post.gallery.length - 1}
                     disablePrevious={modalImageIndex === 0}
-                    ariaLabel="Modal dialog displaying image"
-                    role="dialog"
-                />
+                    ariaLabel="Modal dialog displaying image" role="dialog" />
             )}
         </div>
     );

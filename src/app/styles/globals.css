@@ -24,17 +24,44 @@
   }
 }
 
-@font-face {
-  font-family: 'Zally';
-  src: url('/my-font/Zally-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   scrollbar-color: #aaac24 rgb(170, 172, 36, 0.5);
-  scrollbar-width: 0.5px;
+  scrollbar-width: thin;
   scroll-behavior: smooth;
+}
+
+/* Skip to main content — accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #AAAC24;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid #1A428A;
+  outline-offset: 2px;
+}
+
+/* Focus ring consistency */
+*:focus-visible {
+  outline: 2px solid #AAAC24;
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -388,9 +415,507 @@ input[type="checkbox"] {
   transform: rotateY(-180deg);
   z-index: 9;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  --background: #efefef;
+  --foreground: #171717;
+  --button-bg: #aaac24;
+  --button-bg-hover: #1a428a;
+  --link-hover: #aaac24;
+  --heading-color: #1a428a;
+  --footer-bg: #e4e0e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --button-bg: #aaac24;
+    --button-bg-hover: #1a428a;
+    --link-hover: #aaac24;
+    --heading-color: #aaac24;
+    --footer-bg: #333333;
+  }
+}
+
+@font-face {
+  font-family: 'Zally';
+  src: url('/my-font/Zally-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scrollbar-color: #aaac24 rgb(170, 172, 36, 0.5);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+/* Skip to main content — accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #AAAC24;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid #1A428A;
+  outline-offset: 2px;
+}
+
+/* Focus ring consistency */
+*:focus-visible {
+  outline: 2px solid #AAAC24;
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--foreground);
+  padding-top: 5px !important;
+}
+
+.content {
+  margin-top: calc(40px + 10vh);
+  background-color: white;
+}
+
+.customRounded {
+  border-radius: 60px;
+}
+
+.customRoundedTwo {
+  border-radius: 50px;
+}
+
+/* .back-to-projects {
+  position: absolute;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  top: 5px;
+  left: 5%;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.back-to-projects:hover {
+  transform: translateY(-4px);
+  color: #AAAC24;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Syne", sans-serif;
+  color: var(--heading-color);
+}
+
+h6 {
+  font: "Syne", sans-serif;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.hamMenu {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hamMenu:hover {
+  color: white;
+  background-color: var(--button-bg-hover);
+}
+
+.containerWork {
+  padding: 95px 0 0 0;
+}
+
+a {
+  text-decoration: none;
+  color: #5a5959;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.containerGradients {
+  padding: 45px 25px;
+}
+
+.containerProjects {
+  padding: 20px 25px;
+}
+
+@media (min-width: 375px) {
+  .meshGradient {
+    max-height: 500px;
+  }
+}
+
+.containerFooter {
+  padding-top: 20px;
+}
+
+.myRoles {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Syne", sans-serif;
+}
+
+.loadingSquares {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 9999;
+}
+
+.squaresContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.square {
+  width: 12px;
+  height: 12px;
+  border-radius: 25%;
+  background-color: #000000;
+  opacity: 1;
+}
+
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.meshGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.4;
+  background: radial-gradient(
+    circle at 20% 30%,
+    #1a428a,
+    #aaac24,
+    #1a428a,
+    #aaac24,
+    #e4e0e5
+  );
+  background-size: 400% 400%;
+  z-index: 0;
+  max-height: 650px;
+  animation: gradientAnimation 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 10% 30%;
+  }
+
+  20% {
+    background-position: 60% 60%;
+  }
+
+  40% {
+    background-position: 80% 20%;
+  }
+
+  60% {
+    background-position: 40% 80%;
+  }
+
+  80% {
+    background-position: 10% 90%;
+  }
+
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+footer {
+  background-color: var(--footer-bg);
+  text-align: center;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animateFadeIn {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.flipbookContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  /* No transform here — container stays still */
+}
+
+.book {
+  width: 190px;
+  height: 240px;
+  position: relative;
+  border-radius: 5px 15px 15px 5px;
+  perspective: 1500px;
+  display: flex;
+  align-items: center;
+  transition: margin-left 0.8s ease;
+  margin: auto;
+}
+
+/* When opened, shift the book left by exactly half its own width
+   so the spine (left edge) sits at the visual centre.
+   Book is 190px wide → half = 95px */
+.flipbookContainer.opened .book {
+  margin-left: calc(50% - 95px);
+}
+
+.flipbookContainer, .book {
+  transition: transform 0.8s ease;
+}
+
+/* Remove the translateX from the container entirely */
 .flipbookContainer.opened {
-  transform: translateX(40%);
+  transform: none;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.cover,
+.backCover {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 15px 15px 5px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  transform-origin: center left;
+  transition: transform 1s;
+}
+
+.cover img {
+  z-index: 20;
+  border-radius: 5px 15px 15px 5px;
+}
+
+.cover.flipped {
+  z-index: 20;
+}
+
+.page {
+  position: absolute;
+  background-color: white;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  width: 180px;
+  height: 210px;
+  justify-content: center;
+  transform-origin: center left;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.page:nth-child(1) {
+  z-index: 7;
+}
+
+.page:nth-child(2) {
+  z-index: 6;
+}
+
+.page:nth-child(3) {
+  z-index: 5;
+}
+
+.page:nth-child(4) {
+  z-index: 4;
+}
+
+.page:nth-child(5) {
+  z-index: 3;
+}
+
+.page:nth-child(6) {
+  z-index: 2;
+}
+
+.frontPage {
+  backface-visibility: hidden;
+  border-radius: 15px 0 0 15px;
+}
+
+.backPage {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 0 15px 15px 0;
+  box-shadow: none;
+}
+
+.backCover img {
+  border-radius: 5px 15px 15px 5px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.page .left {
+  border-radius: 15px 0 0 15px;
+}
+
+.page .right {
+  border-radius: 0 15px 15px 0;
+}
+
+#checkboxCover:not(:checked) ~ .book .cover {
+  z-index: 16;
+}
+
+#checkboxCover:checked ~ .book .cover {
+  transform: rotateY(-180deg);
+  z-index: 9;
+}
+
+/* opened state handled per breakpoint above */
+
+#checkboxPage1:not(:checked) ~ .book .page1 {
+  z-index: 8;
+}
+
+#checkboxPage1:checked ~ .book #page1 {
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+
+#checkboxPage2:checked ~ .book #page2 {
+  transform: rotateY(-180deg);
+  z-index: 11;
+}
+
+#checkboxPage3:checked ~ .book #page3 {
+  transform: rotateY(-180deg);
+  z-index: 12;
+}
+
+#checkboxPage4:checked ~ .book #page4 {
+  transform: rotateY(-180deg);
+  z-index: 13;
+}
+
+#checkboxPage5:checked ~ .book #page5 {
+  transform: rotateY(-180deg);
+  z-index: 14;
+}
+
+#checkboxPage6:checked ~ .book #page6 {
+  transform: rotateY(-180deg);
+  z-index: 15;
+}
+
+@media (min-width: 780px) {
+  .flipbookContainer.opened {
+    transform: none;
+  }
+
+  /* Book is 360px wide → half = 180px */
+  .flipbookContainer.opened .book {
+    margin-left: calc(50% - 180px);
+    transition: margin-left 0.8s ease;
+  }
+
+  .backPage {
+    box-shadow: 0 0 2px rgba(41, 41, 41, 0.2);
+  }
+
+  .page {
+    width: 330px;
+    height: 450px;
+  }
+
+  .book {
+    width: 360px;
+    height: 480px;
+    margin: 0 auto;
+  }
+}
+.flipbookContainer.opened {
+  transform: translateX(22%);
   max-width: 0 auto;
 }
 
@@ -431,7 +956,7 @@ input[type="checkbox"] {
 @media (min-width: 780px) {
   .flipbookContainer.opened {
     max-width: 0 auto;
-    transform: translateX(50%);
+    transform: translateX(14%);
     transition: transform 1s;
   }
 

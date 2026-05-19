@@ -1,100 +1,215 @@
+"use client";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-function MenuAnimation({ menuItems }) {
-  return (
-    <div className="flex min-w-fit flex-col gap-10 overflow-hidden mt-4">
-      {menuItems.map((item, index) => (
-        <Link key={index} href={item.link} passHref>
-          <div className="group flex items-center gap-1">
-            <ArrowRight className="size-6 -translate-x-full text-black opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:text-[#aaac24] group-hover:opacity-100 md:size-12" />
-            <h1 className="z-10 -translate-x-6 font-poppins font-normal text-black text-2xl transition-transform duration-300 ease-out group-hover:translate-x-0 group-hover:text-[#aaac24] dark:text-black md:-translate-x-12 md:text-6xl md:group-hover:translate-x-0">
-              {item.name}
-            </h1>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
-}
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const [usingMouse, setUsingMouse] = React.useState(false);
   const pathname = usePathname();
 
   const menuItems = [
-    { name: "Home", link: "/" },
-    { name: "Work", link: "/work" },
+    { name: "Home",  link: "/" },
+    { name: "Work",  link: "/work" },
     { name: "About", link: "/about" },
   ];
 
+  // Detect mouse vs keyboard — hide focus ring on mouse click only
+  React.useEffect(() => {
+    const onMouseDown = () => setUsingMouse(true);
+    const onKeyDown = () => setUsingMouse(false);
+    window.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
   React.useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    return () => { document.body.style.overflow = "auto"; };
   }, [isMenuOpen]);
 
+  // Solidify nav on scroll — Jetson-style
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  React.useEffect(() => { setIsMenuOpen(false); }, [pathname]);
+
   return (
-    <nav className="fixed bg-white/50 backdrop-blur-lg top-0 left-0 w-full z-50">
-      <div className="flex items-center pl-5 pr-5 sm:pl-5 sm:pr-5 justify-between w-full">
-        <div className="pt-5 pb-5 z-20 bg-transparent">
-          <a href="/" className="focus:outline-none focus:ring-0">
+    <>
+      {usingMouse && (
+        <style>{`* :focus { outline: none !important; box-shadow: none !important; }`}</style>
+      )}
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 h-16"
+        style={{
+          background: scrolled
+            ? "rgba(251,250,241,0.97)"
+            : "rgba(251,250,241,0.82)",
+          backdropFilter: "blur(18px)",
+          WebkitBackdropFilter: "blur(18px)",
+          borderBottom: "1px solid rgba(26,66,138,0.07)",
+          transition: "background 0.3s ease",
+        }}
+        aria-label="Main navigation"
+      >
+        <div className="max-w-6xl mx-auto h-full px-5 sm:px-8 flex items-center justify-between">
+
+          {/* Logo */}
+          <a
+            href="/"
+            className="z-20 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#1A428A] focus:ring-offset-2 rounded"
+            aria-label="Zalida Khan — home"
+          >
             <img
               src="/images/Monogram-logo.png"
-              alt="a monogram logo with the letters z and k"
-              className="h-10"
-              loading="lazy"
-              height={40}
+              alt="ZK monogram logo"
+              className="h-9 w-auto"
+              loading="eager"
+              height={36}
             />
           </a>
-        </div>
 
-        <div className="pt-5 pb-5 hidden sm:flex gap-8 justify-end w-full">
-          {menuItems.map((item, index) => {
-            const isActive = pathname === item.link;
-            return (
-              <div key={index} className="relative">
-                <Link href={item.link} passHref>
-                  <div
-                    className={`relative px-2 py-2 text-lg focus:outline-none focus:ring-0 ${isActive
-                        ? "text-[#aaac24] font-normal cursor-default"
-                        : "text-black group cursor-pointer"
-                      }`}
+          {/* Desktop centre links */}
+          <ul
+            className="hidden sm:flex absolute left-1/2 -translate-x-1/2 gap-1 list-none"
+            role="list"
+          >
+            {menuItems.map((item) => {
+              const isActive = pathname === item.link;
+              return (
+                <li key={item.link}>
+                  <Link
+                    href={item.link}
+                    className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1A428A] ${
+                      isActive
+                        ? "text-[#1A428A] font-semibold"
+                        : "text-[#000] hover:text-[#1A428A]"
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
                   >
                     {item.name}
-                    <span
-                      className={`absolute bottom-2 left-1/2 w-0 h-1 bg-[#aaac24] rounded-full transition-all duration-300 ease-in-out transform -translate-x-1/2 ${isActive ? "w-0" : "group-hover:w-4/5"
-                        }`}
-                    ></span>
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+                    {isActive && (
+                      <span
+                        className="absolute bottom-1 left-1/2 -translate-x-1/2 w-6 h-[2.5px] bg-[#AAAC24] rounded-sm"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-        <div className="sm:hidden z-20">
+          {/* Desktop CTA */}
+          <a
+            href="mailto:zalidakhan13@gmail.com?subject=Let's Connect"
+            className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 rounded-xl border-2 border-[#1a428a] text-[#1a428a] font-semibold font-poppins text-sm tracking-wide backdrop-blur-sm bg-transparent transition-all duration-300 hover:border-[#1a428a] hover:bg-[#1a428a]/60 hover:text-white hover:shadow-md focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            aria-label="Email Zalida to connect"
+          >
+            Let&apos;s Talk
+          </a>
+
+          {/* Hamburger */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-lg focus:outline-none focus:ring-0 hamMenu"
+            className="sm:hidden z-20 flex flex-col gap-[5px] p-1.5 bg-transparent border-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1A428A] rounded"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <span
+              className="block w-[22px] h-[1.5px] bg-gray-800 rounded-xl transition-all duration-300"
+              style={{ transform: isMenuOpen ? "translateY(6.5px) rotate(45deg)" : "none" }}
+            />
+            <span
+              className="block w-[22px] h-[1.5px] bg-gray-800 rounded-xl transition-all duration-300"
+              style={{ opacity: isMenuOpen ? 0 : 1, transform: isMenuOpen ? "scaleX(0)" : "none" }}
+            />
+            <span
+              className="block w-[22px] h-[1.5px] bg-gray-800 rounded-xl transition-all duration-300"
+              style={{ transform: isMenuOpen ? "translateY(-6.5px) rotate(-45deg)" : "none" }}
+            />
           </button>
+
+        </div>
+      </nav>
+
+      {/* Full-screen mobile menu */}
+      <div
+        className="fixed inset-0 z-40 flex flex-col justify-center px-10 sm:hidden"
+        style={{
+          background: "#FBFAF1",
+          opacity: isMenuOpen ? 1 : 0,
+          pointerEvents: isMenuOpen ? "all" : "none",
+          transform: isMenuOpen ? "translateY(0)" : "translateY(-10px)",
+          transition: "opacity 0.35s ease, transform 0.35s ease",
+        }}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+      >
+        <nav aria-label="Mobile navigation">
+          {menuItems.map((item) => {
+            const isActive = pathname === item.link;
+            return (
+              <Link
+                key={item.link}
+                href={item.link}
+                className={`group flex items-center gap-1 py-1 focus:outline-none ${
+                  isActive ? "text-[#1A428A]" : "text-gray-900 hover:text-[#AAAC24]"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                <ArrowRight
+                  className="size-10 md:size-12 -translate-x-full opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100"
+                  style={{ color: isActive ? "#1A428A" : "#AAAC24" }}
+                />
+                <span
+                  className="font-syne font-extrabold leading-none -translate-x-6 transition-transform duration-300 ease-out group-hover:translate-x-0 md:-translate-x-12"
+                  style={{ fontSize: "clamp(2.5rem,11vw,5rem)" }}
+                >
+                  {item.name}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Bottom links */}
+        <div
+          className="absolute bottom-8 left-10 right-10 flex justify-between items-center border-t border-[#1A428A]/10 pt-5"
+        >
+          <a
+            href="https://linkedin.com/in/zalida-khan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-gray-800 hover:text-[#1A428A] transition-colors focus:outline-none"
+          >
+            LinkedIn ↗
+          </a>
+          <a
+            href="https://github.com/Zalida-Khan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-gray-800 hover:text-[#1A428A] transition-colors focus:outline-none"
+          >
+            GitHub ↗
+          </a>
+          <a
+            href="mailto:zalidakhan13@gmail.com"
+            className="text-sm font-medium text-gray-800 hover:text-[#1A428A] transition-colors focus:outline-none"
+          >
+            Email ↗
+          </a>
         </div>
       </div>
-
-      <div
-        className={`pt-24 absolute top-0 left-0 w-full h-screen bg-white z-10 shadow-lg p-8 transition-all duration-300 ease-in-out transform flex flex-col ${isMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full pointer-events-none hidden"
-          }`}
-      >
-        <MenuAnimation menuItems={menuItems} />
-      </div>
-    </nav>
+    </>
   );
 }

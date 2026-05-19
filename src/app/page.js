@@ -12,23 +12,23 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 600);
-
+    const timer = setTimeout(() => setIsLoaded(true), 600);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="bg-white text-[#1A428A] min-h-screen pt-20 font-poppins">
+    // removed pt-20 — header is fixed so page content should start at top
+    <div className="bg-white text-[#1A428A] min-h-screen font-poppins">
       <div className="relative">
         <Header />
-        <div className="meshGradient absolute left-0 right-0 bottom-0 z-0"></div>
 
-        <Gradient />
-        <FadeIn>
-          <ProjectsSection />
-        </FadeIn>
+        <div id="main-content">
+          {/* Hero gets its own top padding to clear the fixed header (80px) */}
+          <Gradient />
+          <FadeIn>
+            <ProjectsSection />
+          </FadeIn>
+        </div>
 
         <Footer />
 
